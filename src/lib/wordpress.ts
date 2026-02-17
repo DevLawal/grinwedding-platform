@@ -7,7 +7,7 @@ const MOCK_POSTS: Post[] = [
         id: 1,
         date: new Date().toISOString(),
         slug: 'perfect-summer-wedding',
-        title: { rendered: '10 Tips for the Perfect Summer Wedding' },
+        title: { rendered: '10 Tips for the Perfect Summer Wedding Preparation For Young Couples' },
         excerpt: { rendered: '<p>Planning a summer wedding? Here are our top tips for beating the heat and creating unforgettable memories.</p>' },
         content: { rendered: '<p>Full content goes here...</p>' },
         _embedded: {
@@ -26,7 +26,7 @@ const MOCK_POSTS: Post[] = [
         id: 2,
         date: new Date().toISOString(),
         slug: 'rustic-charm-decor',
-        title: { rendered: 'Rustic Charm: Decor Ideas for 2026' },
+        title: { rendered: 'Rustic Charm: Decor Ideas for 2026. All You Need To Know About Planning Your Wedding' },
         excerpt: { rendered: '<p>Discover the latest trends in rustic wedding decor, from reclaimed wood to wildflower arrangements.</p>' },
         content: { rendered: '<p>Full content goes here...</p>' },
         _embedded: {
@@ -45,7 +45,7 @@ const MOCK_POSTS: Post[] = [
         id: 3,
         date: new Date().toISOString(),
         slug: 'choosing-your-photographer',
-        title: { rendered: 'How to Choose Your Wedding Photographer' },
+        title: { rendered: 'How to Choose Your Wedding Photographer.A Complete Guide For Couples' },
         excerpt: { rendered: '<p>Your wedding photos are forever. Learn what questions to ask to find the perfect photographer for your style.</p>' },
         content: { rendered: '<p>Full content goes here...</p>' },
         _embedded: {
