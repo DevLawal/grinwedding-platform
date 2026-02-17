@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+
+  --color-rose-500: #e11d48;
+  --color-rose-600: #be123c;
+}
+
+/* 
+  Tailwind v4 uses CSS variables for theme configuration.
+*/
+
+html {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  /* Larger base font for readability */
+  line-height: 1.6;
+  color: #111;
+  background-color: #fff;
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: var(--color-rose-500);
+  color: white;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* Standard wide container */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  /* Standard wide desktop */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration: none;
+}
