@@ -17,10 +17,10 @@ export default function NewsletterCard() {
   };
 
   return (
-    <div className="bg-charcoal text-white p-10 border border-gray-100/10">
+    <div className="bg-charcoal p-10 border border-gray-100/10">
       <div className="mb-10">
-        <h3 className="text-xl font-serif font-black mb-4">The Intel Feed</h3>
-        <p className="text-gray-400 text-[0.85rem] font-medium leading-relaxed">
+        <p className="text-white text-xl font-serif mb-4">Subscribe to Our Newsletter</p>
+        <p className="text-white text-[0.85rem] font-medium leading-relaxed">
           Join <span className="text-white font-black">10,000+</span> elite planners receiving weekly intelligence on the wedding economy.
         </p>
       </div>
@@ -33,7 +33,7 @@ export default function NewsletterCard() {
           placeholder="ENTER EXECUTIVE EMAIL"
           required
           disabled={status === 'loading' || status === 'success'}
-          className="w-full bg-white/5 border border-white/10 px-0 py-4 text-[10px] font-black tracking-widest uppercase focus:outline-none focus:border-plum transition-colors disabled:opacity-50 border-x-0 border-t-0 border-b-[1px]"
+          className="w-full pl-4 bg-white/5 border border-white/10 px-0 py-4 text-white text-[10px] font-black tracking-widest uppercase focus:outline-none focus:border-plum transition-colors disabled:opacity-50 border-x-0 border-t-0 border-b-[1px]"
         />
         
         <button
