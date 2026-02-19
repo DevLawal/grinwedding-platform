@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { BudgetInputs, CategoryPriorities, City, WeddingType, WeddingScale } from '@/lib/calculator/types';
 import { calculateBudget } from '@/lib/calculator/budgetLogic';
 import WelcomeStep from './steps/WelcomeStep';
@@ -84,51 +85,63 @@ export default function BudgetCalculator() {
   };
 
   return (
-    <div className="min-h-screen bg-white py-12 px-4">
-      {currentStep === 'welcome' && (
-        <WelcomeStep onStart={handleStart} />
-      )}
+    <div className="min-h-screen bg-white py-12 px-4 selection:bg-purple-100 selection:text-purple-900">
+      <AnimatePresence mode="wait">
+        {currentStep === 'welcome' && (
+          <motion.div key="welcome" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <WelcomeStep onStart={handleStart} />
+          </motion.div>
+        )}
 
-      {currentStep === 'basics' && (
-        <WeddingBasicsStep
-          city={city}
-          weddingType={weddingType}
-          weddingScale={weddingScale}
-          onCityChange={setCity}
-          onWeddingTypeChange={setWeddingType}
-          onWeddingScaleChange={setWeddingScale}
-          onNext={handleBasicsNext}
-          onBack={() => setCurrentStep('welcome')}
-        />
-      )}
+        {currentStep === 'basics' && (
+          <motion.div key="basics" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <WeddingBasicsStep
+              city={city}
+              weddingType={weddingType}
+              weddingScale={weddingScale}
+              onCityChange={setCity}
+              onWeddingTypeChange={setWeddingType}
+              onWeddingScaleChange={setWeddingScale}
+              onNext={handleBasicsNext}
+              onBack={() => setCurrentStep('welcome')}
+            />
+          </motion.div>
+        )}
 
-      {currentStep === 'guest-budget' && (
-        <GuestBudgetStep
-          city={city}
-          guestCount={guestCount}
-          totalBudget={totalBudget}
-          onGuestCountChange={setGuestCount}
-          onTotalBudgetChange={setTotalBudget}
-          onNext={handleGuestBudgetNext}
-          onBack={() => setCurrentStep('basics')}
-        />
-      )}
+        {currentStep === 'guest-budget' && (
+          <motion.div key="guest-budget" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <GuestBudgetStep
+              city={city}
+              guestCount={guestCount}
+              totalBudget={totalBudget}
+              onGuestCountChange={setGuestCount}
+              onTotalBudgetChange={setTotalBudget}
+              onNext={handleGuestBudgetNext}
+              onBack={() => setCurrentStep('basics')}
+            />
+          </motion.div>
+        )}
 
-      {currentStep === 'priorities' && (
-        <PrioritiesStep
-          priorities={priorities}
-          onPrioritiesChange={setPriorities}
-          onNext={handlePrioritiesNext}
-          onBack={() => setCurrentStep('guest-budget')}
-        />
-      )}
+        {currentStep === 'priorities' && (
+          <motion.div key="priorities" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <PrioritiesStep
+              priorities={priorities}
+              onPrioritiesChange={setPriorities}
+              onNext={handlePrioritiesNext}
+              onBack={() => setCurrentStep('guest-budget')}
+            />
+          </motion.div>
+        )}
 
-      {currentStep === 'results' && results && (
-        <ResultsView
-          results={results}
-          onStartOver={handleStartOver}
-        />
-      )}
+        {currentStep === 'results' && results && (
+          <motion.div key="results" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <ResultsView
+              results={results}
+              onStartOver={handleStartOver}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

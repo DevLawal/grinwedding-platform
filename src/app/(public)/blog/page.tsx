@@ -28,7 +28,9 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 
             <div className="mt-12">
                 {/* Simplified pagination for MVP */}
-                <Pagination currentPage={currentPage} totalPages={currentPage + 1} basePath="/blog" />
+                {posts.length >= 9 && (
+                    <Pagination currentPage={currentPage} totalPages={currentPage + 1} basePath="/blog" />
+                )}
             </div>
         </div>
     );

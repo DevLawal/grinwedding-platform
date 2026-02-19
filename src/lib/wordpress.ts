@@ -1,109 +1,230 @@
 import { Post, Category, Tag } from "@/types/wordpress";
 export type { Post, Category, Tag };
 
-// Mock Data
+const API_URL = process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'https://grinweddings.ng/graphql';
+
 const MOCK_POSTS: Post[] = [
-    {
-        id: 1,
-        date: new Date().toISOString(),
-        slug: 'perfect-summer-wedding',
-        title: { rendered: '10 Tips for the Perfect Summer Wedding Preparation For Young Couples' },
-        excerpt: { rendered: '<p>Planning a summer wedding? Here are our top tips for beating the heat and creating unforgettable memories.</p>' },
-        content: { rendered: '<p>Full content goes here...</p>' },
-        _embedded: {
-            'wp:featuredmedia': [{
-                source_url: 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=1000&auto=format&fit=crop',
-                alt_text: 'Summer wedding decor'
-            }],
-            author: [{ name: 'Sarah Editor', avatar_urls: {} }]
-        },
-        featured_media: 1,
-        author: 1,
-        categories: [1],
-        tags: [1]
+  {
+    id: 'mock-1',
+    date: new Date().toISOString(),
+    slug: 'the-future-of-wedding-analytics',
+    title: 'The Future of Wedding Analytics: 2027 Trends',
+    excerpt: 'Discover how modern couples are using data to optimize their big day.',
+    content: '<p>Content for mock analytics post...</p>',
+    featuredImage: {
+      node: {
+        sourceUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80',
+        altText: 'Wedding analytics'
+      }
     },
-    {
-        id: 2,
-        date: new Date().toISOString(),
-        slug: 'rustic-charm-decor',
-        title: { rendered: 'Rustic Charm: Decor Ideas for 2026. All You Need To Know About Planning Your Wedding' },
-        excerpt: { rendered: '<p>Discover the latest trends in rustic wedding decor, from reclaimed wood to wildflower arrangements.</p>' },
-        content: { rendered: '<p>Full content goes here...</p>' },
-        _embedded: {
-            'wp:featuredmedia': [{
-                source_url: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1000&auto=format&fit=crop',
-                alt_text: 'Rustic wedding decor'
-            }],
-            author: [{ name: 'Mike Design', avatar_urls: {} }]
-        },
-        featured_media: 2,
-        author: 2,
-        categories: [2],
-        tags: [2]
+    author: {
+      node: {
+        name: 'John Analytics',
+        avatar: { url: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80' }
+      }
     },
-    {
-        id: 3,
-        date: new Date().toISOString(),
-        slug: 'choosing-your-photographer',
-        title: { rendered: 'How to Choose Your Wedding Photographer.A Complete Guide For Couples' },
-        excerpt: { rendered: '<p>Your wedding photos are forever. Learn what questions to ask to find the perfect photographer for your style.</p>' },
-        content: { rendered: '<p>Full content goes here...</p>' },
-        _embedded: {
-            'wp:featuredmedia': [{
-                source_url: 'https://images.unsplash.com/photo-1537633552985-df8429e8048b?q=80&w=1000&auto=format&fit=crop',
-                alt_text: 'Wedding photographer'
-            }],
-            author: [{ name: 'Sarah Editor', avatar_urls: {} }]
-        },
-        featured_media: 3,
-        author: 1,
-        categories: [1, 4],
-        tags: []
+    categories: {
+      nodes: [{ id: 'cat-1', name: 'Planning', slug: 'planning' }]
     }
+  },
+  {
+    id: 'mock-2',
+    date: new Date().toISOString(),
+    slug: 'capital-allocation-for-elite-weddings',
+    title: 'Capital Allocation: Where to Spend and Where to Save',
+    excerpt: 'An executive breakdown of the $122Bn wedding industry dynamics.',
+    content: '<p>Content for mock capital allocation post...</p>',
+    featuredImage: {
+      node: {
+        sourceUrl: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80',
+        altText: 'Capital allocation'
+      }
+    },
+    author: {
+      node: {
+        name: 'Sarah Finance',
+        avatar: { url: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80' }
+      }
+    },
+    categories: {
+      nodes: [{ id: 'cat-2', name: 'Finance', slug: 'finance' }]
+    }
+  }
 ];
 
 const MOCK_CATEGORIES: Category[] = [
-    { id: 1, name: 'Planning', slug: 'planning', count: 5 },
-    { id: 2, name: 'Decor', slug: 'decor', count: 3 },
-    { id: 3, name: 'Real Weddings', slug: 'real-weddings', count: 8 },
-    { id: 4, name: 'Tips & Tricks', slug: 'tips-tricks', count: 4 }
+  { id: 'cat-1', name: 'Planning', slug: 'planning', count: 12 },
+  { id: 'cat-2', name: 'Finance', slug: 'finance', count: 8 },
+  { id: 'cat-3', name: 'Venues', slug: 'venues', count: 45 }
 ];
 
-const MOCK_TAGS: Tag[] = [
-    { id: 1, name: 'Summer', slug: 'summer', count: 2 },
-    { id: 2, name: 'Vintage', slug: 'vintage', count: 1 }
-];
+async function wpFetch(query: string, variables = {}) {
+    console.log('>>> [DEBUG] wpFetch called with API_URL:', API_URL);
+    try {
+        const res = await fetch(API_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ query, variables }),
+            next: { revalidate: 3600 } 
+        });
+
+        if (!res.ok) {
+            console.warn(`WP Fetch failed with status: ${res.status}`);
+            return null;
+        }
+
+        const json = await res.json();
+        if (json.errors) {
+            console.error('WPGraphQL Errors:', json.errors);
+            return null;
+        }
+        return json.data;
+    } catch (error) {
+        console.error('WP Fetch Network/Socket Error:', error);
+        return null;
+    }
+}
 
 export async function getPosts(perPage = 10, page = 1): Promise<Post[]> {
-    console.log('Fetching mock posts');
-    // Simulate network delay
-    await new Promise(resolve => setTimeout(resolve, 500));
-    const start = (page - 1) * perPage;
-    const end = start + perPage;
-    return MOCK_POSTS.slice(start, end);
+    const query = `
+        query GetPosts($first: Int) {
+          posts(first: $first, where: { orderby: { field: DATE, order: DESC } }) {
+            nodes {
+              id
+              date
+              slug
+              title
+              excerpt
+              content
+              featuredImage {
+                node {
+                  sourceUrl
+                  altText
+                }
+              }
+              author {
+                node {
+                  name
+                  avatar {
+                    url
+                  }
+                }
+              }
+              categories {
+                nodes {
+                  id
+                  name
+                  slug
+                }
+              }
+            }
+          }
+        }
+    `;
+
+    const data = await wpFetch(query, { first: perPage });
+    if (!data?.posts?.nodes) {
+        console.warn('>>> [DEBUG] No posts nodes found, using mock data');
+        return MOCK_POSTS.slice(0, perPage);
+    }
+
+    return data.posts.nodes;
 }
 
 export async function getPostBySlug(slug: string): Promise<Post | null> {
-    console.log(`Fetching mock post: ${slug}`);
-    await new Promise(resolve => setTimeout(resolve, 500));
-    return MOCK_POSTS.find(p => p.slug === slug) || null;
+    // ... query stays the same ...
+    const query = `
+        query GetPostBySlug($id: ID!) {
+          post(id: $id, idType: SLUG) {
+            id
+            date
+            slug
+            title
+            excerpt
+            content
+            featuredImage {
+              node {
+                sourceUrl
+                altText
+              }
+            }
+            author {
+              node {
+                name
+                avatar {
+                  url
+                }
+              }
+            }
+            categories {
+              nodes {
+                id
+                name
+                slug
+              }
+            }
+          }
+        }
+    `;
+
+    const data = await wpFetch(query, { id: slug });
+    if (!data?.post) {
+        console.warn(`>>> [DEBUG] Post not found for slug ${slug}, using mock search`);
+        return MOCK_POSTS.find(p => p.slug === slug) || null;
+    }
+
+    return data.post;
 }
 
 export async function getCategories(): Promise<Category[]> {
-    await new Promise(resolve => setTimeout(resolve, 500));
-    return MOCK_CATEGORIES;
+    const query = `
+        query GetCategories {
+          categories {
+            nodes {
+              id
+              name
+              slug
+              count
+            }
+          }
+        }
+    `;
+    const data = await wpFetch(query);
+    if (!data?.categories?.nodes) {
+        console.warn('>>> [DEBUG] No categories nodes found, using mock categories');
+        return MOCK_CATEGORIES;
+    }
+
+    return data.categories.nodes;
 }
 
-export async function getTags(): Promise<Tag[]> {
-    await new Promise(resolve => setTimeout(resolve, 500));
-    return MOCK_TAGS;
-}
+export async function getPostsByCategory(categoryId: string, perPage = 10): Promise<Post[]> {
+    const query = `
+        query GetPostsByCategory($categoryId: Int, $first: Int) {
+          posts(first: $first, where: { categoryId: $categoryId }) {
+            nodes {
+              id
+              date
+              slug
+              title
+              excerpt
+              content
+              featuredImage {
+                node {
+                  sourceUrl
+                  altText
+                }
+              }
+            }
+          }
+        }
+    `;
 
-export async function getPostsByCategory(categoryId: number, perPage = 10, page = 1): Promise<Post[]> {
-    console.log(`Fetching mock posts by category: ${categoryId}`);
-    await new Promise(resolve => setTimeout(resolve, 500));
-    const filteredPosts = MOCK_POSTS.filter(post => post.categories.includes(categoryId));
-    const start = (page - 1) * perPage;
-    const end = start + perPage;
-    return filteredPosts.slice(start, end);
+    const data = await wpFetch(query, { categoryId: parseInt(categoryId), first: perPage });
+    if (!data?.posts?.nodes) {
+        console.warn(`>>> [DEBUG] No posts nodes found for category ${categoryId}, using mock fallback`);
+        return MOCK_POSTS.slice(0, perPage);
+    }
+
+    return data.posts.nodes;
 }

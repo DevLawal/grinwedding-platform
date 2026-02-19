@@ -1,75 +1,99 @@
-import { Vendor } from "@/types/vendor";
-import { getVendorInstagramMetrics, calculateVendorScore } from "@/lib/instagram";
+import { Vendor, VendorApiResponse } from '@/types/vendor';
 
-const MOCK_VENDORS: Vendor[] = [
-    {
-        id: '1',
-        name: 'Elegant Moments Photography',
-        slug: 'elegant-moments-photography',
-        category: 'Photography',
-        location: 'New York, NY',
-        rating: 0, // Will be calculated
-        reviewCount: 124,
-        description: 'Capturing the raw emotion and timeless beauty of your special day.',
-        instagramHandle: 'elegantmoments',
-        featuredImage: 'https://images.unsplash.com/photo-1537633552985-df8429e8048b?q=80&w=1000&auto=format&fit=crop',
-        images: [],
-        priceRange: '$$$'
-    },
-    {
-        id: '2',
-        name: 'Rosewood Estate',
-        slug: 'rosewood-estate',
-        category: 'Venues',
-        location: 'Hudson Valley, NY',
-        rating: 0, // Will be calculated
-        reviewCount: 89,
-        description: 'A historic estate with sprawling gardens and a grand ballroom.',
-        instagramHandle: 'rosewoodestate',
-        featuredImage: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1000&auto=format&fit=crop',
-        images: [],
-        priceRange: '$$$$'
-    },
-    {
-        id: '3',
-        name: 'Floral Dreams',
-        slug: 'floral-dreams',
-        category: 'Florists',
-        location: 'Brooklyn, NY',
-        rating: 0, // Will be calculated
-        reviewCount: 56,
-        description: 'Bespoke floral arrangements for modern romantic weddings.',
-        instagramHandle: 'floraldreams_ny',
-        featuredImage: 'https://images.unsplash.com/photo-1563241527-3004b7be025e?q=80&w=1000&auto=format&fit=crop',
-        images: [],
-        priceRange: '$$'
-    }
-];
+const API_BASE_URL = process.env.NEXT_PUBLIC_VENDOR_SERVICE_URL || 'http://localhost:5000/api';
 
-export async function getVendors(): Promise<Vendor[]> {
-    // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 500));
-
-    const vendorsWithScores = await Promise.all(MOCK_VENDORS.map(async (vendor) => {
-        const metrics = await getVendorInstagramMetrics(vendor.instagramHandle);
-        let calculatedRating = 4.5; // Default fallback
-
-        if (metrics) {
-            const score = calculateVendorScore(metrics);
-            // Map score (0-100+) to 5-star rating (3.0 - 5.0)
-            calculatedRating = 3.0 + (Math.min(score, 100) / 100) * 2.0;
-        }
-
-        return {
-            ...vendor,
-            rating: Number(calculatedRating.toFixed(1))
-        };
-    }));
-
-    return vendorsWithScores.sort((a, b) => b.rating - a.rating);
+/**
+ * Helper to map new discovery fields to legacy fields for UI compatibility
+ */
+function mapVendorFields(vendor: any): Vendor {
+  return {
+    ...vendor,
+    name: vendor.fullName,
+    slug: vendor.username,
+    category: vendor.niche,
+    description: vendor.bio,
+    featuredImage: vendor.profilePic,
+    instagramHandle: `@${vendor.username}`,
+    rating: (vendor.ranking?.score / 20) || 4.5, // Map 0-100 to 0-5
+    reviewCount: Math.floor(vendor.metrics?.followers / 100) || 0,
+    priceRange: '$$'
+  };
 }
 
+const MOCK_VENDORS: Vendor[] = [
+  {
+    id: '1',
+    name: 'Royal Orchid Hall',
+    slug: 'royal-orchid-hall',
+    category: 'Venues',
+    location: 'Lagos, Nigeria',
+    rating: 4.8,
+    reviewCount: 124,
+    description: 'A premium wedding venue in the heart of Lagos.',
+    featuredImage: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80',
+    priceRange: '$$$',
+    username: 'royalorchid',
+    fullName: 'Royal Orchid Hall',
+    bio: 'Premium venue service',
+    niche: 'Venues',
+    profilePic: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80',
+    instagramId: 'royalorchid',
+    metrics: { followers: 5000, following: 200, posts: 50, avgEngagement: 3.2 },
+    ranking: { score: 95, rank: 1, lastUpdated: new Date().toISOString() },
+    confidence: { location: 1, niche: 1 },
+    isVerified: true
+  },
+  {
+    id: '2',
+    name: 'Elite Catering',
+    slug: 'elite-catering',
+    category: 'Catering',
+    location: 'Abuja, Nigeria',
+    rating: 4.9,
+    reviewCount: 89,
+    description: 'Exquisite culinary experiences for your special day.',
+    featuredImage: 'https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&q=80',
+    priceRange: '$$',
+    username: 'elitecatering',
+    fullName: 'Elite Catering Services',
+    bio: 'Exquisite catering',
+    niche: 'Catering',
+    profilePic: 'https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&q=80',
+    instagramId: 'elitecatering',
+    metrics: { followers: 3200, following: 150, posts: 120, avgEngagement: 4.5 },
+    ranking: { score: 92, rank: 2, lastUpdated: new Date().toISOString() },
+    confidence: { location: 1, niche: 1 },
+    isVerified: true
+  }
+];
+
+/**
+ * Fetches vendors based on niche and location from the discovery service
+ */
+export async function getVendorsList(params: {
+  niche?: string;
+  location?: string;
+  page?: number;
+  limit?: number;
+}): Promise<VendorApiResponse> {
+  console.log('>>> [DEBUG] getVendorsList called (MOCK FALLBACK ACTIVE)');
+  // Mocking the response for now as per user request to "leave vendor services for now"
+  return {
+    vendors: MOCK_VENDORS,
+    pagination: { total: 2, page: 1, pages: 1 }
+  };
+}
+
+/**
+ * Legacy support for existing getVendors call
+ */
+export async function getVendors(): Promise<Vendor[]> {
+    return MOCK_VENDORS;
+}
+
+/**
+ * Fetches a single vendor by slug (username)
+ */
 export async function getVendorBySlug(slug: string): Promise<Vendor | null> {
-    await new Promise(resolve => setTimeout(resolve, 500));
-    return MOCK_VENDORS.find(v => v.slug === slug) || null;
+  return MOCK_VENDORS.find(v => v.slug === slug) || null;
 }

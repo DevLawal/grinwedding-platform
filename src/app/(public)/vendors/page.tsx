@@ -35,7 +35,7 @@ export default async function VendorsPage() {
                         <button
                             key={filter}
                             className={`px-4 py-2 text-sm font-bold transition-colors uppercase tracking-wider ${filter === 'All'
-                                ? 'text-rose-600 border-b-2 border-rose-600'
+                                ? 'text-purple-600 border-b-2 border-purple-600'
                                 : 'text-gray-400 hover:text-gray-900'
                                 }`}
                         >
@@ -59,7 +59,7 @@ export default async function VendorsPage() {
                         <tbody className="divide-y divide-gray-100">
                             {vendors.map((vendor, index) => (
                                 <tr key={vendor.id} className="group hover:bg-gray-50 transition-colors">
-                                    <td className="py-6 pr-6 font-mono text-2xl font-bold text-gray-300 group-hover:text-rose-500">
+                                    <td className="py-6 pr-6 font-mono text-2xl font-bold text-gray-300 group-hover:text-purple-500">
                                         #{index + 1}
                                     </td>
                                     <td className="py-6 px-4">
@@ -73,7 +73,7 @@ export default async function VendorsPage() {
                                                 />
                                             </div>
                                             <div>
-                                                <Link href={`/vendors/${vendor.slug}`} className="block text-lg font-bold text-gray-900 group-hover:text-rose-600 hover:underline">
+                                                <Link href={`/vendors/${vendor.slug}`} className="block text-lg font-bold text-gray-900 group-hover:text-purple-600 hover:underline">
                                                     {vendor.name}
                                                 </Link>
                                                 <span className="text-xs text-gray-500 uppercase tracking-wide font-medium">

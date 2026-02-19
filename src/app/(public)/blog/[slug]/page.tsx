@@ -21,14 +21,9 @@ export default async function SinglePostPage({ params }: PageProps) {
         notFound();
     }
 
-    const featuredImage = post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
-    const authorName = post._embedded?.author?.[0]?.name;
-    const categories = post._embedded?.['wp:term']?.[0] || [];
-
-    // Sanitize content on server side (using jsdom for DOMPurify if needed, or just let html-react-parser handle standard parsing)
-    // For basic WP content, parse() is usually enough, but strictly we might want to sanitize.
-    // Since we are using html-react-parser, it renders components.
-    // Let's just use parse(post.content.rendered) directly for now as it's standard Next.js WP pattern.
+    const featuredImage = (typeof post.featuredImage === 'string' ? post.featuredImage : post.featuredImage?.node?.sourceUrl) || '';
+    const authorName = post.author?.node?.name;
+    const categories = post.categories?.nodes || [];
 
     return (
         <article className="pb-20">
@@ -42,7 +37,7 @@ export default async function SinglePostPage({ params }: PageProps) {
                     </div>
 
                     <h1 className="font-serif text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                        {parse(post.title.rendered)}
+                        {parse(post.title)}
                     </h1>
 
                     <div className="flex items-center justify-center text-gray-500 text-sm gap-4">
@@ -59,7 +54,7 @@ export default async function SinglePostPage({ params }: PageProps) {
                     <div className="relative w-full max-w-5xl mx-auto h-[400px] md:h-[600px] rounded-xl overflow-hidden shadow-xl">
                         <Image
                             src={featuredImage}
-                            alt={post.title.rendered}
+                            alt={post.featuredImage?.node?.altText || post.title}
                             fill
                             className="object-cover"
                             priority
@@ -70,14 +65,14 @@ export default async function SinglePostPage({ params }: PageProps) {
 
             {/* Content */}
             <div className="container mx-auto px-4">
-                <div className="max-w-3xl mx-auto prose prose-lg prose-rose prose-headings:font-serif">
-                    {parse(post.content.rendered)}
+                <div className="max-w-3xl mx-auto prose prose-lg prose-violet prose-headings:font-serif">
+                    {parse(post.content)}
                 </div>
             </div>
 
             {/* Navigation back */}
             <div className="container mx-auto px-4 mt-16 text-center">
-                <Link href="/blog" className="text-rose-500 hover:text-rose-600 font-semibold">
+                <Link href="/blog" className="text-purple-600 hover:text-purple-700 font-semibold">
                     &larr; Back to all stories
                 </Link>
             </div>

@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Users, Wallet, TrendingUp, AlertTriangle, Info, ArrowLeft, ArrowRight } from 'lucide-react';
 import { City } from '@/lib/calculator/types';
 import { COST_PER_GUEST_RANGES, CITY_NAMES } from '@/lib/calculator/constants';
 
@@ -49,137 +51,163 @@ export default function GuestBudgetStep({
     }
   };
 
-  const formatNumber = (num: number) => {
-    return num.toLocaleString();
-  };
-
+  const formatNumber = (num: number) => num.toLocaleString();
   const canProceed = guestCount > 0;
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <motion.div 
+      initial={{ opacity: 0, x: 20 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -20 }}
+      className="max-w-3xl mx-auto px-6"
+    >
       {/* Progress Indicator */}
-      <div className="mb-8">
-        <p className="text-sm text-gray-500 mb-2">Step 2 of 4</p>
-        <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
-          <div className="h-full bg-rose-600 rounded-full transition-all" style={{ width: '50%' }} />
+      <div className="mb-12">
+        <div className="flex justify-between items-end mb-4">
+          <div>
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-purple-600">Phase 02</span>
+            <h2 className="text-2xl font-serif font-black text-black">Capital Projection</h2>
+          </div>
+          <p className="text-[10px] font-black uppercase tracking-widest text-gray-400">50% Complete</p>
+        </div>
+        <div className="h-1 bg-gray-100 overflow-hidden">
+          <motion.div 
+            initial={{ width: '25%' }}
+            animate={{ width: '50%' }}
+            className="h-full bg-black" 
+          />
         </div>
       </div>
 
-      <h2 className="text-3xl font-bold text-gray-900 mb-2">Guest count and budget</h2>
-      <p className="text-gray-600 mb-8">
-        These are the biggest factors in your wedding cost
-      </p>
-
-      <div className="space-y-8">
+      <div className="space-y-12">
         {/* Guest Count */}
-        <div>
-          <label htmlFor="guestCount" className="block text-sm font-semibold text-gray-900 mb-3">
-            How many guests are you expecting?
-          </label>
-          <input
-            type="number"
-            id="guestCount"
-            value={guestCount || ''}
-            onChange={(e) => onGuestCountChange(parseInt(e.target.value, 10) || 0)}
-            placeholder="e.g., 200"
-            min="1"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent text-gray-900 text-lg"
-          />
-          <p className="text-xs text-gray-500 mt-2">
-            Be realistic - guest lists often grow by 20-30%
+        <section>
+          <div className="flex items-center gap-2 mb-6">
+            <Users className="w-4 h-4 text-purple-600" />
+            <label htmlFor="guestCount" className="text-sm font-black uppercase tracking-widest text-black">
+              Expected Volume
+            </label>
+          </div>
+          <div className="relative">
+            <input
+              type="number"
+              id="guestCount"
+              value={guestCount || ''}
+              onChange={(e) => onGuestCountChange(parseInt(e.target.value, 10) || 0)}
+              placeholder="e.g., 200"
+              min="1"
+              className="w-full bg-gray-50 border-2 border-transparent px-6 py-6 text-2xl font-black text-black focus:outline-none focus:border-black transition-all"
+            />
+            <span className="absolute right-6 top-1/2 -translate-y-1/2 text-[10px] font-black uppercase tracking-widest text-gray-400">Attendees</span>
+          </div>
+          <p className="text-[10px] text-gray-400 font-bold mt-2 uppercase tracking-tight italic">
+            * Statistical variance suggests a 15% increase in final list metrics.
           </p>
-        </div>
+        </section>
 
         {/* Total Budget */}
-        <div>
-          <label htmlFor="totalBudget" className="block text-sm font-semibold text-gray-900 mb-3">
-            What's your total budget? <span className="text-gray-500 font-normal">(Optional)</span>
-          </label>
+        <section>
+          <div className="flex items-center gap-2 mb-6">
+            <Wallet className="w-4 h-4 text-purple-600" />
+            <label htmlFor="totalBudget" className="text-sm font-black uppercase tracking-widest text-black">
+              Budget Allocation <span className="text-gray-400 font-bold">(Target Cap)</span>
+            </label>
+          </div>
           <div className="relative">
-            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-lg">₦</span>
+            <span className="absolute left-6 top-1/2 -translate-y-1/2 text-2xl font-black text-gray-400">₦</span>
             <input
               type="text"
               id="totalBudget"
               value={budgetInput}
               onChange={(e) => handleBudgetChange(e.target.value)}
               placeholder="e.g., 5,000,000"
-              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent text-gray-900 text-lg"
+              className="w-full bg-gray-50 border-2 border-transparent pl-12 pr-6 py-6 text-2xl font-black text-black focus:outline-none focus:border-black transition-all"
             />
           </div>
-          <p className="text-xs text-gray-500 mt-2">
-            Not sure? Leave blank and we'll suggest one based on typical costs in {CITY_NAMES[city]}
+          <p className="text-[10px] text-gray-400 font-bold mt-2 uppercase tracking-tight">
+            Leave blank for automated market-derived projection in {CITY_NAMES[city].toUpperCase()}.
           </p>
-        </div>
+        </section>
 
-        {/* Cost Per Guest Display */}
-        {guestCount > 0 && (
-          <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-            <div className="flex items-center justify-between mb-4">
-              <div>
-                <p className="text-sm text-gray-600">Cost per guest</p>
-                <p className="text-2xl font-bold text-gray-900">
-                  {totalBudget ? `₦${formatNumber(Math.round(costPerGuest))}` : '—'}
-                </p>
+        {/* Real-time Analysis Panel */}
+        <AnimatePresence>
+          {guestCount > 0 && (
+            <motion.section
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              className="bg-black text-white p-8 shadow-2xl relative overflow-hidden group"
+            >
+              <div className="absolute top-0 right-0 p-4">
+                <TrendingUp className="w-12 h-12 text-white/5 group-hover:text-purple-600/10 transition-colors" />
               </div>
-              <div className="text-right">
-                <p className="text-sm text-gray-600">Typical range in {CITY_NAMES[city]}</p>
-                <p className="text-sm font-medium text-gray-900">
-                  ₦{formatNumber(costRange.min)} - ₦{formatNumber(costRange.max)}
-                </p>
-              </div>
-            </div>
-
-            {/* Warning if budget is too low */}
-            {showBudgetWarning && (
-              <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
-                <div className="flex gap-3">
-                  <span className="text-amber-600 text-xl">⚠️</span>
-                  <div>
-                    <p className="font-medium text-amber-900 text-sm">Budget may be challenging</p>
-                    <p className="text-amber-800 text-sm mt-1">
-                      Your budget of ₦{formatNumber(Math.round(costPerGuest))} per guest is below the typical 
-                      range for {CITY_NAMES[city]}. Consider adjusting your budget or reducing guest count.
-                    </p>
-                  </div>
+              
+              <div className="grid md:grid-cols-2 gap-8 relative z-10">
+                <div>
+                  <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-2">Cost Per Head Index</p>
+                  <p className="text-4xl font-serif font-black">
+                    {totalBudget ? `₦${formatNumber(Math.round(costPerGuest))}` : 'PROJECTION'}
+                  </p>
+                </div>
+                <div className="flex flex-col justify-end text-right">
+                  <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1">{CITY_NAMES[city]} Market Range</p>
+                  <p className="text-xs font-black text-purple-500 uppercase tracking-widest">
+                    ₦{formatNumber(costRange.min)} — ₦{formatNumber(costRange.max)}
+                  </p>
                 </div>
               </div>
-            )}
 
-            {/* Info if no budget entered */}
-            {!totalBudget && (
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                <div className="flex gap-3">
-                  <span className="text-blue-600 text-xl">ℹ️</span>
-                  <div>
-                    <p className="font-medium text-blue-900 text-sm">We'll estimate for you</p>
-                    <p className="text-blue-800 text-sm mt-1">
-                      Based on {guestCount} guests in {CITY_NAMES[city]}, we'll suggest a budget of approximately 
-                      ₦{formatNumber(Math.round(guestCount * avgCostPerGuest))}.
-                    </p>
+              {/* Status Indicators */}
+              <div className="mt-8 pt-8 border-t border-white/10">
+                {showBudgetWarning && (
+                  <div className="flex gap-4 items-start text-purple-400">
+                    <AlertTriangle className="w-5 h-5 shrink-0" />
+                    <div>
+                      <p className="text-xs font-black uppercase tracking-tight">Challenge Detected</p>
+                      <p className="text-[10px] font-medium leading-relaxed uppercase tracking-tighter opacity-80">
+                        Input metrics are significantly below market baseline for {CITY_NAMES[city]}.
+                        Advisory: Consider volume reduction or capital expansion.
+                      </p>
+                    </div>
                   </div>
-                </div>
+                )}
+
+                {!totalBudget && (
+                  <div className="flex gap-4 items-start text-blue-400">
+                    <Info className="w-5 h-5 shrink-0" />
+                    <div>
+                      <p className="text-xs font-black uppercase tracking-tight">Auto-Projection Active</p>
+                      <p className="text-[10px] font-medium leading-relaxed uppercase tracking-tighter opacity-80">
+                        Based on {guestCount} attendees, we project a functional capital requirement of approximately 
+                        ₦{formatNumber(Math.round(guestCount * avgCostPerGuest))}.
+                      </p>
+                    </div>
+                  </div>
+                )}
               </div>
-            )}
-          </div>
-        )}
+            </motion.section>
+          )}
+        </AnimatePresence>
       </div>
 
-      {/* Navigation Buttons */}
-      <div className="flex gap-4 mt-12">
+      {/* Navigation Suite */}
+      <div className="flex gap-6 mt-16 pt-12 border-t border-gray-100">
         <button
           onClick={onBack}
-          className="flex-1 px-6 py-3 border border-gray-300 rounded-lg text-gray-700 font-medium hover:bg-gray-50 transition-colors"
+          className="flex-1 px-8 py-5 border-2 border-black text-black text-xs font-black uppercase tracking-[0.2em] hover:bg-black hover:text-white transition-all flex items-center justify-center gap-3"
         >
-          Back
+          <ArrowLeft className="w-4 h-4" />
+          Retreat
         </button>
         <button
           onClick={onNext}
           disabled={!canProceed}
-          className="flex-1 px-6 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-black transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed"
+          className="flex-1 px-8 py-5 bg-black text-white text-xs font-black uppercase tracking-[0.2em] hover:bg-purple-600 transition-all shadow-2xl flex items-center justify-center gap-3 disabled:bg-gray-800 disabled:opacity-50"
         >
-          Continue
+          Proceed
+          <ArrowRight className="w-4 h-4" />
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }

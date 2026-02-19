@@ -1,31 +1,50 @@
 export interface Post {
-    id: number;
+    id: string;
     date: string;
     slug: string;
-    title: { rendered: string };
-    excerpt: { rendered: string };
-    content: { rendered: string };
-    featured_media?: number;
-    author: number;
-    categories: number[];
-    tags: number[];
-    _embedded?: {
-        'wp:featuredmedia'?: Array<{ source_url: string; alt_text?: string }>;
-        author?: Array<{ name: string; avatar_urls?: Record<string, string> }>;
-        'wp:term'?: Array<Array<{ id: number; name: string; slug: string }>>;
+    title: string;
+    excerpt: string;
+    content: string;
+    featuredImage?: {
+        node: {
+            sourceUrl: string;
+            altText?: string;
+        };
+    };
+    author: {
+        node: {
+            name: string;
+            avatar?: {
+                url: string;
+            };
+        };
+    };
+    categories: {
+        nodes: Array<{
+            id: string;
+            name: string;
+            slug: string;
+        }>;
+    };
+    tags?: {
+        nodes: Array<{
+            id: string;
+            name: string;
+            slug: string;
+        }>;
     };
 }
 
 export interface Category {
-    id: number;
+    id: string;
     name: string;
     slug: string;
-    count: number;
+    count?: number;
 }
 
 export interface Tag {
-    id: number;
+    id: string;
     name: string;
     slug: string;
-    count: number;
+    count?: number;
 }

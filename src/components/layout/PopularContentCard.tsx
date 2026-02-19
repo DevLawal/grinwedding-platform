@@ -36,30 +36,41 @@ const popularItems: PopularItem[] = [
 
 export default function PopularContentCard() {
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-6">
-      <h3 className="text-lg font-bold text-gray-900 mb-4">
-        Popular Content
+    <div className="bg-white border border-gray-100 shadow-premium p-8">
+      <h3 className="text-xs font-black uppercase tracking-[0.2em] text-purple-600 mb-8 flex items-center gap-2">
+        <span className="w-4 h-[1px] bg-purple-600" />
+        Market Movers
       </h3>
       
-      <div className="space-y-4">
+      <div className="space-y-8">
         {popularItems.map((item, index) => (
-          <div key={index} className="group">
+          <div key={index} className="group relative">
             <Link 
               href={item.href}
               className="block"
             >
-              <h4 className="text-sm font-medium text-gray-900 group-hover:text-rose-600 transition-colors mb-1 leading-snug">
-                {item.title}
-              </h4>
-              <p className="text-xs text-gray-500 uppercase tracking-wide">
-                {item.metric} {item.metricLabel}
-              </p>
+              <div className="flex gap-4">
+                <span className="font-mono text-xl font-black text-gray-100 group-hover:text-purple-600 transition-colors">
+                  0{index + 1}
+                </span>
+                <div>
+                  <h4 className="text-sm font-black text-black group-hover:text-purple-600 transition-colors mb-2 leading-tight tracking-tight underline decoration-gray-100 group-hover:decoration-purple-100 decoration-2 underline-offset-4">
+                    {item.title}
+                  </h4>
+                  <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2">
+                    <span className="text-purple-600">{item.metric}</span> {item.metricLabel}
+                  </p>
+                </div>
+              </div>
             </Link>
-            {index < popularItems.length - 1 && (
-              <div className="border-b border-gray-100 mt-4" />
-            )}
           </div>
         ))}
+      </div>
+
+      <div className="mt-10 pt-6 border-t border-gray-50 flex justify-center">
+        <Link href="/blog" className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 hover:text-black transition-colors">
+          View All Analytics →
+        </Link>
       </div>
     </div>
   );

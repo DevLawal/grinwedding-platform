@@ -19,14 +19,14 @@ export default async function CategoryPage({ params, searchParams }: CategoryPag
     }
 
     const currentPage = Number(searchParams.page) || 1;
-    const posts = await getPostsByCategory(category.id, 9, currentPage);
+    const posts = await getPostsByCategory(category.id, 9);
 
     return (
         <div className="container mx-auto px-4 py-12">
             <header className="text-center mb-16">
-                <span className="text-rose-500 font-semibold tracking-wider text-sm uppercase">Category</span>
+                <span className="text-purple-600 font-semibold tracking-wider text-sm uppercase">Category</span>
                 <h1 className="font-serif text-4xl font-bold text-gray-900 mt-2">{category.name}</h1>
-                <div className="w-16 h-1 bg-rose-300 mx-auto mt-6"></div>
+                <div className="w-16 h-1 bg-purple-300 mx-auto mt-6"></div>
             </header>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -11,7 +11,7 @@ export default function DashboardPage() {
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                     <h3 className="text-gray-500 text-sm font-medium uppercase tracking-wider mb-2">Days to Go</h3>
                     <div className="text-3xl font-bold text-gray-900">142</div>
-                    <p className="text-rose-500 text-sm mt-1">March 24, 2027</p>
+                    <p className="text-purple-600 text-sm mt-1">March 24, 2027</p>
                 </div>
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                     <h3 className="text-gray-500 text-sm font-medium uppercase tracking-wider mb-2">Confirmed Guests</h3>
@@ -29,7 +29,7 @@ export default function DashboardPage() {
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
                 <div className="px-6 py-4 border-b border-gray-50 flex justify-between items-center">
                     <h2 className="font-semibold text-gray-900">Recent Activity</h2>
-                    <button className="text-sm text-rose-500 font-medium hover:text-rose-600">View All</button>
+                    <button className="text-sm text-purple-600 font-medium hover:text-purple-700">View All</button>
                 </div>
                 <div className="p-6 text-center text-gray-500 italic">
                     No recent activity to show.

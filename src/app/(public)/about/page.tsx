@@ -14,12 +14,12 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
                 <div className="relative h-[500px] w-full bg-gray-100 rounded-lg overflow-hidden">
                     {/* Placeholder for About Image if we had one */}
-                    <div className="absolute inset-0 flex items-center justify-center text-gray-400 bg-rose-50">
+                    <div className="absolute inset-0 flex items-center justify-center text-gray-400 bg-purple-50">
                         Place for Image
                     </div>
                 </div>
 
-                <div className="prose prose-lg prose-rose">
+                <div className="prose prose-lg prose-violet">
                     <h3 className="font-serif text-2xl font-bold text-gray-900">Why We Started</h3>
                     <p>
                         We believe every love story deserves a beautiful beginning. Our blog is dedicated to helping couples navigate the journey of wedding planning with style, grace, and confidence.

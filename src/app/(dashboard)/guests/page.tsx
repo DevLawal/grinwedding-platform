@@ -3,7 +3,7 @@ export default function GuestsPage() {
         <div>
             <div className="flex justify-between items-center mb-6">
                 <h1 className="text-2xl font-bold text-gray-900">Guest List</h1>
-                <button className="bg-rose-500 text-white px-4 py-2 rounded-md hover:bg-rose-600 transition-colors">
+                <button className="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 transition-colors">
                     + Add Guest
                 </button>
             </div>
@@ -16,7 +16,7 @@ export default function GuestsPage() {
                 <p className="text-gray-500 text-center max-w-sm mb-6">
                     Start building your guest list by importing contacts or adding them manually.
                 </p>
-                <button className="text-rose-500 font-medium hover:text-rose-600">
+                <button className="text-purple-600 font-medium hover:text-purple-700">
                     Import from Spreadsheet
                 </button>
             </div>

@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+import { MapPin, Church, Heart, Users, Zap, Layout, ArrowLeft, ArrowRight } from 'lucide-react';
 import { City, WeddingType, WeddingScale } from '@/lib/calculator/types';
 import { CITY_NAMES, WEDDING_TYPE_NAMES } from '@/lib/calculator/constants';
 
@@ -23,172 +25,139 @@ export default function WeddingBasicsStep({
   onBack,
 }: WeddingBasicsStepProps) {
   return (
-    <div className="max-w-2xl mx-auto">
+    <motion.div 
+      initial={{ opacity: 0, x: 20 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -20 }}
+      className="max-w-3xl mx-auto px-6"
+    >
       {/* Progress Indicator */}
-      <div className="mb-8">
-        <p className="text-sm text-gray-500 mb-2">Step 1 of 4</p>
-        <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
-          <div className="h-full bg-rose-600 rounded-full" style={{ width: '25%' }} />
+      <div className="mb-12">
+        <div className="flex justify-between items-end mb-4">
+          <div>
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-purple-600">Phase 01</span>
+            <h2 className="text-2xl font-serif font-black text-black">Foundation Metrics</h2>
+          </div>
+          <p className="text-[10px] font-black uppercase tracking-widest text-gray-400">25% Complete</p>
+        </div>
+        <div className="h-1 bg-gray-100 overflow-hidden">
+          <motion.div 
+            initial={{ width: 0 }}
+            animate={{ width: '25%' }}
+            className="h-full bg-black" 
+          />
         </div>
       </div>
 
-      <h2 className="text-3xl font-bold text-gray-900 mb-2">Let's start with the basics</h2>
-      <p className="text-gray-600 mb-8">
-        Tell us about your wedding so we can provide accurate estimates
-      </p>
-
-      <div className="space-y-8">
+      <div className="space-y-12">
         {/* City Selection */}
-        <div>
-          <label htmlFor="city" className="block text-sm font-semibold text-gray-900 mb-3">
-            Where is your wedding?
-          </label>
+        <section>
+          <div className="flex items-center gap-2 mb-6">
+            <MapPin className="w-4 h-4 text-purple-600" />
+            <label htmlFor="city" className="text-sm font-black uppercase tracking-widest text-black">
+              Geographic Intersection
+            </label>
+          </div>
           <select
             id="city"
             value={city}
             onChange={(e) => onCityChange(e.target.value as City)}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent text-gray-900"
+            className="w-full bg-gray-50 border-2 border-transparent px-6 py-4 text-sm font-bold text-black focus:outline-none focus:border-black transition-all appearance-none cursor-pointer"
           >
             {Object.entries(CITY_NAMES).map(([value, label]) => (
               <option key={value} value={value}>
-                {label}
+                {label.toUpperCase()} Market
               </option>
             ))}
           </select>
-          <p className="text-xs text-gray-500 mt-2">
-            Costs vary significantly by location
+          <p className="text-[10px] text-gray-400 font-bold mt-2 uppercase tracking-tight italic">
+            * Market rates fluctuate based on municipal demand and vendor density.
           </p>
-        </div>
+        </section>
 
         {/* Wedding Type */}
-        <div>
-          <label className="block text-sm font-semibold text-gray-900 mb-3">
-            What type of wedding are you planning?
-          </label>
-          <div className="space-y-3">
-            {Object.entries(WEDDING_TYPE_NAMES).map(([value, label]) => (
-              <label
-                key={value}
-                className={`flex items-start p-4 border-2 rounded-lg cursor-pointer transition-all ${
-                  weddingType === value
-                    ? 'border-rose-600 bg-rose-50'
-                    : 'border-gray-200 hover:border-gray-300'
-                }`}
-              >
-                <input
-                  type="radio"
-                  name="weddingType"
-                  value={value}
-                  checked={weddingType === value}
-                  onChange={(e) => onWeddingTypeChange(e.target.value as WeddingType)}
-                  className="mt-1 text-rose-600 focus:ring-rose-500"
-                />
-                <div className="ml-3">
-                  <div className="font-medium text-gray-900">{label}</div>
-                  <div className="text-sm text-gray-600 mt-1">
-                    {value === 'traditional' && 'Traditional ceremony only'}
-                    {value === 'white' && 'Church/court wedding only'}
-                    {value === 'both' && 'Engagement, traditional, and white wedding'}
-                  </div>
-                </div>
-              </label>
-            ))}
+        <section>
+          <div className="flex items-center gap-2 mb-6">
+            <Zap className="w-4 h-4 text-purple-600" />
+            <h3 className="text-sm font-black uppercase tracking-widest text-black">Ceremonial Scope</h3>
           </div>
-        </div>
+          <div className="grid md:grid-cols-3 gap-4">
+            {Object.entries(WEDDING_TYPE_NAMES).map(([value, label]) => {
+              const isActive = weddingType === value;
+              return (
+                <button
+                  key={value}
+                  onClick={() => onWeddingTypeChange(value as WeddingType)}
+                  className={`p-6 border-2 text-left transition-all group ${
+                    isActive ? 'border-black bg-black text-white shadow-xl scale-[1.02]' : 'border-gray-100 hover:border-gray-200 bg-white'
+                  }`}
+                >
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-4 ${isActive ? 'bg-purple-600 text-white' : 'bg-gray-50 text-gray-400 group-hover:bg-purple-50 group-hover:text-purple-600'}`}>
+                    {value === 'traditional' && <Heart className="w-4 h-4" />}
+                    {value === 'white' && <Church className="w-4 h-4" />}
+                    {value === 'both' && <Layout className="w-4 h-4" />}
+                  </div>
+                  <div className="font-black text-xs uppercase tracking-widest mb-2">{label}</div>
+                  <div className={`text-[10px] font-medium leading-relaxed ${isActive ? 'text-gray-400' : 'text-gray-500'}`}>
+                    {value === 'traditional' && 'Native cultural rites only'}
+                    {value === 'white' && 'Modern religious/legal ceremony'}
+                    {value === 'both' && 'Full multi-day hybrid experience'}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </section>
 
         {/* Wedding Scale */}
-        <div>
-          <label className="block text-sm font-semibold text-gray-900 mb-3">
-            What's the scale of your wedding?
-          </label>
-          <div className="space-y-3">
-            <label
-              className={`flex items-start p-4 border-2 rounded-lg cursor-pointer transition-all ${
-                weddingScale === 'intimate'
-                  ? 'border-rose-600 bg-rose-50'
-                  : 'border-gray-200 hover:border-gray-300'
-              }`}
-            >
-              <input
-                type="radio"
-                name="weddingScale"
-                value="intimate"
-                checked={weddingScale === 'intimate'}
-                onChange={(e) => onWeddingScaleChange(e.target.value as WeddingScale)}
-                className="mt-1 text-rose-600 focus:ring-rose-500"
-              />
-              <div className="ml-3">
-                <div className="font-medium text-gray-900">Intimate</div>
-                <div className="text-sm text-gray-600 mt-1">
-                  Under 100 guests - Close family and friends
-                </div>
-              </div>
-            </label>
-
-            <label
-              className={`flex items-start p-4 border-2 rounded-lg cursor-pointer transition-all ${
-                weddingScale === 'standard'
-                  ? 'border-rose-600 bg-rose-50'
-                  : 'border-gray-200 hover:border-gray-300'
-              }`}
-            >
-              <input
-                type="radio"
-                name="weddingScale"
-                value="standard"
-                checked={weddingScale === 'standard'}
-                onChange={(e) => onWeddingScaleChange(e.target.value as WeddingScale)}
-                className="mt-1 text-rose-600 focus:ring-rose-500"
-              />
-              <div className="ml-3">
-                <div className="font-medium text-gray-900">Standard</div>
-                <div className="text-sm text-gray-600 mt-1">
-                  100-300 guests - Traditional wedding size
-                </div>
-              </div>
-            </label>
-
-            <label
-              className={`flex items-start p-4 border-2 rounded-lg cursor-pointer transition-all ${
-                weddingScale === 'luxury'
-                  ? 'border-rose-600 bg-rose-50'
-                  : 'border-gray-200 hover:border-gray-300'
-              }`}
-            >
-              <input
-                type="radio"
-                name="weddingScale"
-                value="luxury"
-                checked={weddingScale === 'luxury'}
-                onChange={(e) => onWeddingScaleChange(e.target.value as WeddingScale)}
-                className="mt-1 text-rose-600 focus:ring-rose-500"
-              />
-              <div className="ml-3">
-                <div className="font-medium text-gray-900">Luxury</div>
-                <div className="text-sm text-gray-600 mt-1">
-                  300+ guests - Grand celebration
-                </div>
-              </div>
-            </label>
+        <section>
+          <div className="flex items-center gap-2 mb-6">
+            <Users className="w-4 h-4 text-purple-600" />
+            <h3 className="text-sm font-black uppercase tracking-widest text-black">Volume & Prestige</h3>
           </div>
-        </div>
+          <div className="grid md:grid-cols-3 gap-4">
+            {[
+              { id: 'intimate', label: 'Selective', desc: '< 100 Guests' },
+              { id: 'standard', label: 'Conventional', desc: '100-300 Guests' },
+              { id: 'luxury', label: 'Enterprise', desc: '300+ Guests' },
+            ].map((scale) => {
+              const isActive = weddingScale === scale.id;
+              return (
+                <button
+                  key={scale.id}
+                  onClick={() => onWeddingScaleChange(scale.id as WeddingScale)}
+                  className={`p-6 border-2 text-left transition-all ${
+                    isActive ? 'border-black bg-black text-white shadow-xl scale-[1.02]' : 'border-gray-100 hover:border-gray-200 bg-white'
+                  }`}
+                >
+                  <div className="font-black text-xs uppercase tracking-[0.15em] mb-1">{scale.label}</div>
+                  <div className={`text-[10px] font-bold ${isActive ? 'text-purple-500' : 'text-gray-400'}`}>
+                    {scale.desc}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </section>
       </div>
 
-      {/* Navigation Buttons */}
-      <div className="flex gap-4 mt-12">
+      {/* Navigation Suite */}
+      <div className="flex gap-6 mt-16 pt-12 border-t border-gray-100">
         <button
           onClick={onBack}
-          className="flex-1 px-6 py-3 border border-gray-300 rounded-lg text-gray-700 font-medium hover:bg-gray-50 transition-colors"
+          className="flex-1 px-8 py-5 border-2 border-black text-black text-xs font-black uppercase tracking-[0.2em] hover:bg-black hover:text-white transition-all flex items-center justify-center gap-3"
         >
-          Back
+          <ArrowLeft className="w-4 h-4" />
+          Retreat
         </button>
         <button
           onClick={onNext}
-          className="flex-1 px-6 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-black transition-colors"
+          className="flex-1 px-8 py-5 bg-black text-white text-xs font-black uppercase tracking-[0.2em] hover:bg-purple-600 transition-all shadow-2xl flex items-center justify-center gap-3"
         >
-          Continue
+          Proceed
+          <ArrowRight className="w-4 h-4" />
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }

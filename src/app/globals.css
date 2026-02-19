@@ -4,8 +4,14 @@
   --font-sans: var(--font-inter);
   --font-serif: var(--font-playfair);
 
-  --color-rose-500: #e11d48;
-  --color-rose-600: #be123c;
+  --color-purple-50: #f5f3ff;
+  --color-purple-100: #ede9fe;
+  --color-purple-600: #7c3aed;
+  --color-purple-700: #6d28d9;
+  --color-purple-900: #4c1d95;
+  
+  --shadow-premium: 0 10px 40px -10px rgba(124, 58, 237, 0.05), 0 4px 12px -2px rgba(0, 0, 0, 0.02);
+  --shadow-hover: 0 20px 50px -12px rgba(124, 58, 237, 0.12), 0 8px 16px -4px rgba(0, 0, 0, 0.04);
 }
 
 /* 
@@ -18,17 +24,18 @@ html {
   /* Larger base font for readability */
   line-height: 1.6;
   color: #111;
-  background-color: #fff;
+  background-color: #fafafa;
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background-color: var(--color-rose-500);
+  background-color: var(--color-purple-600);
   color: white;
 }
 
 body {
-  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
 }
 
 h1,
@@ -38,16 +45,23 @@ h4,
 h5,
 h6 {
   font-family: var(--font-serif);
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #000;
+}
+
+/* Grid Helper */
+.magazine-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2.5rem;
 }
 
 /* Standard wide container */
 .container {
   width: 100%;
-  max-width: 1280px;
-  /* Standard wide desktop */
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.5rem;
@@ -57,8 +71,17 @@ h6 {
 a {
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
+  transition: all 0.2s ease;
 }
 
 a:hover {
   text-decoration: none;
+}
+
+.text-subtle {
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }

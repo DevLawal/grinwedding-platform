@@ -6,8 +6,12 @@ export default function Footer() {
             <div className="container mx-auto px-4 py-12">
                 <div className="grid md:grid-cols-3 gap-12 font-sans">
                     <div>
-                        <Link href="/" className="block font-serif text-2xl font-bold text-gray-900 mb-6">
-                            Grin<span className="text-rose-600">.</span>
+                        <Link href="/" className="block mb-6">
+                            <img 
+                                src="/images/logo.png" 
+                                alt="Grin Weddings" 
+                                className="h-20 w-auto object-contain grayscale brightness-0 opacity-80 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300"
+                            />
                         </Link>
                         <p className="text-gray-500 text-sm leading-loose max-w-sm">
                             Data-driven wedding planning for modern couples.
@@ -18,10 +22,10 @@ export default function Footer() {
                     <div>
                         <h4 className="font-bold mb-6 text-gray-900 uppercase text-xs tracking-widest">Explore</h4>
                         <ul className="space-y-3 text-sm text-gray-600">
-                            <li><Link href="/vendors" className="hover:text-rose-600 transition-colors">Vendor Rankings</Link></li>
-                            <li><Link href="/blog" className="hover:text-rose-600 transition-colors">Latest Insights</Link></li>
-                            <li><Link href="/tools/budget-calculator" className="hover:text-rose-600 transition-colors">Budget Calculator</Link></li>
-                            <li><Link href="/about" className="hover:text-rose-600 transition-colors">About Grin</Link></li>
+                            <li><Link href="/vendors" className="hover:text-purple-600 transition-colors">Vendor Rankings</Link></li>
+                            <li><Link href="/blog" className="hover:text-purple-600 transition-colors">Latest Insights</Link></li>
+                            <li><Link href="/tools/budget-calculator" className="hover:text-purple-600 transition-colors">Budget Calculator</Link></li>
+                            <li><Link href="/about" className="hover:text-purple-600 transition-colors">About Grin</Link></li>
                         </ul>
                     </div>
 
@@ -30,7 +34,7 @@ export default function Footer() {
                         <p className="text-gray-500 text-sm mb-4">
                             Questions? We'd love to help.
                         </p>
-                        <Link href="/contact" className="text-rose-600 font-medium hover:text-rose-700 transition-colors">
+                        <Link href="/contact" className="text-purple-600 font-medium hover:text-purple-700 transition-colors">
                             Contact Support &rarr;
                         </Link>
                     </div>

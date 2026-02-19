@@ -4,6 +4,7 @@ import "./globals.css";
 import Sidebar from "@/components/layout/Sidebar";
 import MobileHeader from "@/components/layout/MobileHeader";
 import Footer from "@/components/layout/Footer";
+import PageTransition from "@/components/layout/PageTransition";
 
 const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: '--font-playfair' });
@@ -20,13 +21,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="font-sans text-gray-800 bg-white flex flex-col min-h-screen">
+      <body className="font-sans text-gray-800 bg-white flex flex-col min-h-screen selection:bg-purple-100 selection:text-purple-900">
         <Sidebar />
         <MobileHeader />
-        <main className="flex-grow lg:ml-64">
-          {children}
+        <main className="flex-grow lg:ml-64 flex flex-col">
+          <PageTransition>
+            {children}
+          </PageTransition>
+          <Footer />
         </main>
-        <Footer />
       </body>
     </html>
   );

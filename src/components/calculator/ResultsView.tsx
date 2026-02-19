@@ -1,3 +1,18 @@
+import { motion } from 'framer-motion';
+import { 
+  CheckCircle2, 
+  DollarSign, 
+  Users, 
+  PieChart, 
+  AlertTriangle, 
+  Info, 
+  TrendingDown, 
+  FileText, 
+  Printer, 
+  RefreshCcw,
+  Target,
+  Gem
+} from 'lucide-react';
 import { BudgetResults } from '@/lib/calculator/types';
 import { formatCurrency } from '@/lib/calculator/budgetLogic';
 import { CATEGORIES } from '@/lib/calculator/constants';
@@ -10,189 +25,220 @@ interface ResultsViewProps {
 export default function ResultsView({ results, onStartOver }: ResultsViewProps) {
   const { totalBudget, estimatedBudget, costPerGuest, categories, warnings, suggestions, hiddenCosts } = results;
 
-  // Separate warnings by type
   const errors = warnings.filter(w => w.type === 'error');
   const warningsList = warnings.filter(w => w.type === 'warning');
   const infos = warnings.filter(w => w.type === 'info');
 
-  const handlePrint = () => {
-    window.print();
+  const handlePrint = () => window.print();
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
+  };
+
+  const item = {
+    hidden: { y: 20, opacity: 0 },
+    show: { y: 0, opacity: 1 }
   };
 
   return (
-    <div className="max-w-5xl mx-auto">
+    <motion.div 
+      variants={container}
+      initial="hidden"
+      animate="show"
+      className="max-w-6xl mx-auto px-6 py-12"
+    >
       {/* Header */}
-      <div className="text-center mb-12">
-        <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
-          <span>✓</span>
-          <span>Your budget is ready!</span>
+      <motion.div variants={item} className="text-center mb-16">
+        <div className="inline-flex items-center gap-2 bg-black text-white px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-6">
+          <CheckCircle2 className="w-3 h-3 text-purple-500" />
+          <span>Executive Analysis Complete</span>
         </div>
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Your Wedding Budget Breakdown</h1>
+        <h1 className="text-4xl md:text-6xl font-serif font-black text-black mb-6 tracking-tight">
+          Your Market Projections.
+        </h1>
         {estimatedBudget && (
-          <p className="text-gray-600">
-            We've estimated your budget based on typical costs. Adjust as needed!
+          <p className="text-lg text-gray-500 font-medium max-w-2xl mx-auto italic">
+            "Based on live market data and sector trends. Precision calculated for your specific profile."
           </p>
         )}
-      </div>
+      </motion.div>
 
-      {/* Summary Cards */}
-      <div className="grid md:grid-cols-3 gap-6 mb-12">
-        <div className="bg-gradient-to-br from-rose-50 to-rose-100 p-6 rounded-lg border border-rose-200">
-          <p className="text-sm text-rose-700 font-medium mb-1">Total Budget</p>
-          <p className="text-3xl font-bold text-rose-900">{formatCurrency(totalBudget)}</p>
-        </div>
-        <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
-          <p className="text-sm text-blue-700 font-medium mb-1">Cost Per Guest</p>
-          <p className="text-3xl font-bold text-blue-900">{formatCurrency(costPerGuest)}</p>
-        </div>
-        <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg border border-purple-200">
-          <p className="text-sm text-purple-700 font-medium mb-1">Budget Categories</p>
-          <p className="text-3xl font-bold text-purple-900">{categories.length}</p>
-        </div>
-      </div>
+      {/* Summary Matrix */}
+      <motion.div variants={item} className="grid md:grid-cols-3 gap-8 mb-16">
+        {[
+          { label: 'Total Capital Outlay', value: formatCurrency(totalBudget), icon: DollarSign, color: 'text-purple-600', bg: 'bg-purple-50' },
+          { label: 'Cost Per Guest Index', value: formatCurrency(costPerGuest), icon: Users, color: 'text-blue-600', bg: 'bg-blue-50' },
+          { label: 'Active Cost Centers', value: categories.length, icon: PieChart, color: 'text-purple-600', bg: 'bg-purple-50' },
+        ].map((stat) => (
+          <div key={stat.label} className="bg-white p-8 border border-gray-100 shadow-premium relative group overflow-hidden">
+            <div className={`absolute top-0 right-0 w-16 h-16 ${stat.bg} opacity-20 -mr-8 -mt-8 group-hover:scale-150 transition-transform duration-500`} />
+            <stat.icon className={`w-5 h-5 ${stat.color} mb-4`} />
+            <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-2">{stat.label}</p>
+            <p className="text-3xl font-serif font-black text-black">{stat.value}</p>
+          </div>
+        ))}
+      </motion.div>
 
-      {/* Errors (if any) */}
-      {errors.length > 0 && (
-        <div className="mb-8">
-          {errors.map((error) => (
-            <div key={error.id} className="bg-red-50 border border-red-200 rounded-lg p-4 mb-4">
-              <div className="flex gap-3">
-                <span className="text-red-600 text-xl">🚨</span>
-                <div>
-                  <p className="font-semibold text-red-900">{error.title}</p>
-                  <p className="text-red-800 text-sm mt-1">{error.message}</p>
+      <div className="grid lg:grid-cols-3 gap-12">
+        {/* Left: Detailed Breakdown */}
+        <motion.div variants={item} className="lg:col-span-2 space-y-12">
+          {/* Breakdown Card */}
+          <div className="bg-white border border-gray-100 shadow-premium p-10">
+            <div className="flex items-center justify-between mb-10 pb-4 border-b-2 border-black">
+              <h2 className="text-2xl font-serif font-black text-black flex items-center gap-3">
+                <Target className="w-6 h-6 text-purple-600" />
+                Capital Allocation
+              </h2>
+              <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Sector Metrics</span>
+            </div>
+            
+            <div className="space-y-8">
+              {categories.map((category) => {
+                const categoryDef = CATEGORIES.find(c => c.id === category.id);
+                return (
+                  <div key={category.id} className="group">
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center gap-4">
+                        <span className="text-2xl grayscale group-hover:grayscale-0 transition-all">{categoryDef?.icon}</span>
+                        <div>
+                          <span className="block text-sm font-black text-black uppercase tracking-tight">{category.name}</span>
+                          <span className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">{category.percentage.toFixed(1)}% weight</span>
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <span className="text-lg font-mono font-black text-black">{formatCurrency(category.amount)}</span>
+                      </div>
+                    </div>
+                    
+                    <div className="h-2 bg-gray-50 overflow-hidden">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: `${category.percentage}%` }}
+                        transition={{ duration: 1, ease: "easeOut" }}
+                        className="h-full bg-black group-hover:bg-purple-600 transition-colors"
+                      />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Hidden Costs Matrix */}
+          <div className="bg-gray-50 p-10 border border-gray-100 italic relative overflow-hidden">
+            <div className="absolute top-0 right-0 p-4">
+              <AlertTriangle className="w-12 h-12 text-black/5" />
+            </div>
+            <h2 className="text-xl font-serif font-black text-black mb-6 underline decoration-purple-600 decoration-2 underline-offset-8">Invisible Liabilities</h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              {hiddenCosts.map((cost, index) => (
+                <div key={index} className="flex items-center gap-3 text-gray-600">
+                  <div className="w-1.5 h-1.5 rounded-full bg-purple-600" />
+                  <span className="text-xs font-bold uppercase tracking-tighter">{cost}</span>
                 </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Right: Intel & Optimization */}
+        <motion.div variants={item} className="space-y-8">
+          {/* Errors/Warnings */}
+          {(errors.length > 0 || warningsList.length > 0) && (
+            <div className="bg-purple-600 text-white p-8 shadow-2xl">
+              <h2 className="text-xs font-black uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
+                <AlertTriangle className="w-4 h-4" />
+                Risk Assessment
+              </h2>
+              <div className="space-y-6">
+                {[...errors, ...warningsList].map((warning) => (
+                  <div key={warning.id} className="border-l-2 border-white/20 pl-4">
+                    <p className="text-xs font-black uppercase tracking-tight mb-1">{warning.title}</p>
+                    <p className="text-[10px] text-white/70 font-medium leading-relaxed uppercase tracking-tighter">{warning.message}</p>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
-        </div>
-      )}
+          )}
 
-      {/* Budget Breakdown */}
-      <div className="bg-white border border-gray-200 rounded-lg p-8 mb-8">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">Budget Breakdown by Category</h2>
-        
-        <div className="space-y-4">
-          {categories.map((category) => {
-            const categoryDef = CATEGORIES.find(c => c.id === category.id);
-            return (
-              <div key={category.id} className="group">
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xl">{categoryDef?.icon}</span>
-                    <span className="font-medium text-gray-900">{category.name}</span>
+          {/* Money Saving Intelligence */}
+          {suggestions.length > 0 && (
+            <div className="bg-black text-white p-8 shadow-2xl">
+              <h2 className="text-xs font-black uppercase tracking-[0.2em] mb-8 flex items-center gap-2 text-purple-500">
+                <TrendingDown className="w-4 h-4" />
+                Capital Optimization
+              </h2>
+              <div className="space-y-8">
+                {suggestions.map((suggestion) => (
+                  <div key={suggestion.id} className="group">
+                    <div className="flex items-start gap-4 mb-2">
+                       <Gem className="w-4 h-4 text-purple-500 mt-1 shrink-0" />
+                       <div>
+                         <p className="text-xs font-black uppercase tracking-tight text-white mb-2">{suggestion.title}</p>
+                         <p className="text-[10px] text-gray-400 font-medium leading-relaxed uppercase tracking-tighter mb-3">{suggestion.description}</p>
+                         {suggestion.potentialSavings && (
+                           <span className="inline-block bg-white/5 border border-white/10 px-2 py-1 text-[9px] font-black text-purple-500 uppercase tracking-[0.1em]">
+                             Est. Efficiency: {formatCurrency(suggestion.potentialSavings)}
+                           </span>
+                         )}
+                       </div>
+                    </div>
                   </div>
-                  <div className="text-right">
-                    <span className="font-bold text-gray-900">{formatCurrency(category.amount)}</span>
-                    <span className="text-sm text-gray-500 ml-2">({category.percentage.toFixed(1)}%)</span>
-                  </div>
-                </div>
-                
-                {/* Visual Bar */}
-                <div className="h-3 bg-gray-100 rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-gradient-to-r from-rose-500 to-rose-600 rounded-full transition-all duration-500 group-hover:from-rose-600 group-hover:to-rose-700"
-                    style={{ width: `${category.percentage}%` }}
-                  />
-                </div>
+                ))}
               </div>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* Warnings */}
-      {warningsList.length > 0 && (
-        <div className="bg-white border border-gray-200 rounded-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">⚠️ Reality Check</h2>
-          <div className="space-y-4">
-            {warningsList.map((warning) => (
-              <div key={warning.id} className="bg-amber-50 border border-amber-200 rounded-lg p-4">
-                <p className="font-semibold text-amber-900 text-sm">{warning.title}</p>
-                <p className="text-amber-800 text-sm mt-1">{warning.message}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Info Messages */}
-      {infos.length > 0 && (
-        <div className="bg-white border border-gray-200 rounded-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">💡 Good to Know</h2>
-          <div className="space-y-4">
-            {infos.map((info) => (
-              <div key={info.id} className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                <p className="font-semibold text-blue-900 text-sm">{info.title}</p>
-                <p className="text-blue-800 text-sm mt-1">{info.message}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Smart Suggestions */}
-      {suggestions.length > 0 && (
-        <div className="bg-white border border-gray-200 rounded-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">💰 Money-Saving Tips</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {suggestions.map((suggestion) => (
-              <div key={suggestion.id} className="bg-green-50 border border-green-200 rounded-lg p-4">
-                <div className="flex items-start gap-3">
-                  <span className="text-2xl">{suggestion.icon}</span>
-                  <div className="flex-1">
-                    <p className="font-semibold text-green-900 text-sm">{suggestion.title}</p>
-                    <p className="text-green-800 text-sm mt-1">{suggestion.description}</p>
-                    {suggestion.potentialSavings && (
-                      <p className="text-green-700 text-xs font-medium mt-2">
-                        Potential savings: {formatCurrency(suggestion.potentialSavings)}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Hidden Costs */}
-      <div className="bg-white border border-gray-200 rounded-lg p-8 mb-8">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">📋 Don't Forget These Costs</h2>
-        <div className="grid md:grid-cols-2 gap-3">
-          {hiddenCosts.map((cost, index) => (
-            <div key={index} className="flex items-center gap-2 text-gray-700">
-              <span className="text-rose-600">•</span>
-              <span className="text-sm">{cost}</span>
             </div>
-          ))}
-        </div>
+          )}
+
+          {/* Good to Know */}
+          {infos.length > 0 && (
+            <div className="bg-white border border-gray-100 p-8 shadow-premium">
+              <h3 className="text-xs font-black uppercase tracking-[0.2em] text-gray-400 mb-6 flex items-center gap-2">
+                <Info className="w-4 h-4 text-purple-600" />
+                The Dossier
+              </h3>
+              <div className="space-y-6">
+                {infos.map((info) => (
+                  <div key={info.id}>
+                    <p className="text-xs font-black text-black mb-1 uppercase tracking-tight">{info.title}</p>
+                    <p className="text-[10px] text-gray-500 font-medium uppercase tracking-tighter">{info.message}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </motion.div>
       </div>
 
-      {/* Action Buttons */}
-      <div className="flex flex-col sm:flex-row gap-4 print:hidden">
+      {/* Action Suite */}
+      <motion.div variants={item} className="mt-16 flex flex-col sm:flex-row gap-6 print:hidden border-t-2 border-black pt-12">
         <button
           onClick={handlePrint}
-          className="flex-1 px-6 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-black transition-colors"
+          className="flex-1 bg-black text-white px-8 py-5 text-xs font-black uppercase tracking-[0.2em] hover:bg-purple-600 transition-all shadow-xl flex items-center justify-center gap-3"
         >
-          Print / Save as PDF
+          <Printer className="w-4 h-4" />
+          Export Executive PDF
         </button>
         <button
           onClick={onStartOver}
-          className="flex-1 px-6 py-3 border border-gray-300 rounded-lg text-gray-700 font-medium hover:bg-gray-50 transition-colors"
+          className="flex-1 border-2 border-black text-black px-8 py-5 text-xs font-black uppercase tracking-[0.2em] hover:bg-black hover:text-white transition-all flex items-center justify-center gap-3"
         >
-          Start Over
+          <RefreshCcw className="w-4 h-4" />
+          Re-initialize Analysis
         </button>
-      </div>
+      </motion.div>
 
-      {/* Print Styles */}
-      <style jsx>{`
+      {/* Global CSS for Print and Perfection */}
+      <style jsx global>{`
         @media print {
-          .print\\:hidden {
-            display: none !important;
-          }
+          .print\\:hidden { display: none !important; }
+          body { background: white !important; }
+          .shadow-premium { box-shadow: none !important; border: 1px solid #eee !important; }
         }
       `}</style>
-    </div>
+    </motion.div>
   );
 }

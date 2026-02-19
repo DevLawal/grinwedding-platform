@@ -37,17 +37,19 @@ export default async function VendorProfilePage({ params }: VendorProfileProps) 
         <div className="bg-white min-h-screen pb-20">
             {/* Hero Image */}
             <div className="relative h-[50vh] min-h-[400px]">
-                <Image
-                    src={vendor.featuredImage}
-                    alt={vendor.name}
-                    fill
-                    className="object-cover"
-                    priority
-                />
+                {vendor.featuredImage && (
+                    <Image
+                        src={vendor.featuredImage}
+                        alt={vendor.name || 'Vendor'}
+                        fill
+                        className="object-cover"
+                        priority
+                    />
+                )}
                 <div className="absolute inset-0 bg-black/30" />
                 <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/80 to-transparent">
                     <div className="container mx-auto">
-                        <span className="bg-rose-500 text-white px-3 py-1 rounded text-sm font-bold uppercase tracking-wide mb-3 inline-block">
+                        <span className="bg-purple-600 text-white px-3 py-1 rounded text-sm font-bold uppercase tracking-wide mb-3 inline-block">
                             {vendor.category}
                         </span>
                         <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mb-2">{vendor.name}</h1>
@@ -103,15 +105,17 @@ export default async function VendorProfilePage({ params }: VendorProfileProps) 
                         </div>
 
                         <div className="space-y-4">
-                            <a
-                                href={`https://instagram.com/${vendor.instagramHandle.replace('@', '')}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="block w-full bg-white border border-gray-200 text-gray-700 font-semibold py-3 px-4 rounded-lg text-center hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
-                            >
-                                <span>📷</span> Instagram
-                            </a>
-                            <button className="block w-full bg-rose-500 text-white font-bold py-3 px-4 rounded-lg text-center hover:bg-rose-600 transition-colors shadow-sm hover:shadow-md">
+                            {vendor.instagramHandle && (
+                                <a
+                                    href={`https://instagram.com/${vendor.instagramHandle.replace('@', '')}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block w-full bg-white border border-gray-200 text-gray-700 font-semibold py-3 px-4 rounded-lg text-center hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
+                                >
+                                    <span>📷</span> Instagram
+                                </a>
+                            )}
+                            <button className="block w-full bg-purple-600 text-white font-bold py-3 px-4 rounded-lg text-center hover:bg-purple-700 transition-colors shadow-sm hover:shadow-md">
                                 Request Quote
                             </button>
                         </div>

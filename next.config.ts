@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: '**.gravatar.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'grinweddings.ng',
       }
     ],
   },

@@ -1,75 +1,108 @@
+import { motion } from 'framer-motion';
+import { CheckCircle2, DollarSign, AlertCircle, Lightbulb, ArrowRight, ShieldCheck } from 'lucide-react';
+
 interface WelcomeStepProps {
   onStart: () => void;
 }
 
 export default function WelcomeStep({ onStart }: WelcomeStepProps) {
   return (
-    <div className="text-center max-w-3xl mx-auto py-12">
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="text-center max-w-4xl mx-auto py-16 px-6"
+    >
+      {/* Badge */}
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.2 }}
+        className="inline-flex items-center gap-2 bg-purple-50 border border-purple-100 px-4 py-2 rounded-full mb-8"
+      >
+        <ShieldCheck className="w-4 h-4 text-purple-600" />
+        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-purple-600">Enterprise Grade Planning</span>
+      </motion.div>
+
       {/* Hero Headline */}
-      <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-        Plan Your Dream Wedding Without Budget Stress
+      <h1 className="text-5xl md:text-7xl font-serif font-black text-black mb-8 leading-[1.05] tracking-tight">
+        Plan Your Wedding<br />Without the Stress.
       </h1>
 
       {/* Value Proposition */}
-      <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+      <p className="text-xl text-gray-500 mb-12 leading-relaxed max-w-2xl mx-auto font-medium">
         Get a realistic, personalized budget breakdown for your wedding. 
-        Our calculator adapts to Nigerian and African wedding realities, 
-        helping you avoid common pitfalls and hidden costs.
+        Our proprietary algorithm adapts to Nigerian and African market realities, 
+        detecting hidden costs before they arise.
       </p>
 
       {/* Trust Signals */}
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12 text-sm text-gray-500">
+      <div className="flex flex-wrap items-center justify-center gap-8 mb-16 text-xs font-black uppercase tracking-[0.1em] text-gray-400">
         <div className="flex items-center gap-2">
-          <span className="text-2xl">✓</span>
-          <span>Used by 10,000+ couples</span>
+          <CheckCircle2 className="w-4 h-4 text-purple-600" />
+          <span>Used by 10,000+ planners</span>
         </div>
         <div className="flex items-center gap-2">
-          <span className="text-2xl">✓</span>
-          <span>100% Free</span>
+          <CheckCircle2 className="w-4 h-4 text-purple-600" />
+          <span>Verified Market Data</span>
         </div>
         <div className="flex items-center gap-2">
-          <span className="text-2xl">✓</span>
-          <span>No signup required</span>
+          <CheckCircle2 className="w-4 h-4 text-purple-600" />
+          <span>Zero Commission</span>
         </div>
       </div>
 
       {/* What You'll Get */}
-      <div className="grid md:grid-cols-3 gap-6 mb-12 text-left">
-        <div className="bg-gray-50 p-6 rounded-lg border border-gray-100">
-          <div className="text-3xl mb-3">💰</div>
-          <h3 className="font-bold text-gray-900 mb-2">Realistic Estimates</h3>
-          <p className="text-sm text-gray-600">
-            Budget breakdowns based on actual wedding costs in your city
-          </p>
-        </div>
-        <div className="bg-gray-50 p-6 rounded-lg border border-gray-100">
-          <div className="text-3xl mb-3">⚠️</div>
-          <h3 className="font-bold text-gray-900 mb-2">Hidden Cost Alerts</h3>
-          <p className="text-sm text-gray-600">
-            We'll remind you about expenses couples often forget
-          </p>
-        </div>
-        <div className="bg-gray-50 p-6 rounded-lg border border-gray-100">
-          <div className="text-3xl mb-3">💡</div>
-          <h3 className="font-bold text-gray-900 mb-2">Smart Suggestions</h3>
-          <p className="text-sm text-gray-600">
-            Actionable tips to save money without compromising quality
-          </p>
-        </div>
+      <div className="grid md:grid-cols-3 gap-8 mb-16 text-left">
+        {[
+          {
+            icon: DollarSign,
+            title: "Market Estimates",
+            description: "Breakdowns derived from current wedding costs in your specific city."
+          },
+          {
+            icon: AlertCircle,
+            title: "Anomaly Alerts",
+            description: "Identify and mitigate expenses that couples often fail to project."
+          },
+          {
+            icon: Lightbulb,
+            title: "Strategic Insights",
+            description: "High-impact tips to optimize spend without sacrificing prestige."
+          }
+        ].map((feat, idx) => (
+          <motion.div 
+            key={feat.title}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 + idx * 0.1 }}
+            className="bg-white p-8 border border-gray-100 shadow-premium hover:shadow-hover transition-all duration-300 group"
+          >
+            <div className="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-black group-hover:text-white transition-colors">
+              <feat.icon className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-serif font-black text-black mb-3">{feat.title}</h3>
+            <p className="text-sm text-gray-500 font-medium leading-relaxed">
+              {feat.description}
+            </p>
+          </motion.div>
+        ))}
       </div>
 
       {/* CTA Button */}
-      <button
+      <motion.button
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
         onClick={onStart}
-        className="bg-gray-900 text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-black transition-colors shadow-sm"
+        className="group bg-black text-white px-10 py-5 text-sm font-black uppercase tracking-[0.2em] hover:bg-purple-600 transition-all shadow-2xl flex items-center gap-4 mx-auto"
       >
-        Start Planning Your Budget
-      </button>
+        Start Executive Analysis
+        <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+      </motion.button>
 
       {/* Time Estimate */}
-      <p className="text-sm text-gray-500 mt-4">
-        Takes about 3 minutes to complete
+      <p className="text-[10px] font-bold text-gray-400 mt-8 uppercase tracking-widest">
+        Average completion time: 180 seconds
       </p>
-    </div>
+    </motion.div>
   );
 }
