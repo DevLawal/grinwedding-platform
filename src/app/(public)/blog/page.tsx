@@ -10,27 +10,27 @@ interface BlogPageProps {
 
 export default async function BlogPage({ searchParams }: BlogPageProps) {
     const currentPage = Number(searchParams.page) || 1;
-    const posts = await getPosts(9, currentPage);
-    // Note: WP API header x-wp-totalpages would be needed for true total pages. 
-    // For simplicity without custom fetcher return types, we'll assume a "Next" button logic or pass dummy total for now.
-    // Ideally getPosts should return { posts, totalPages }.
-    // Let's simplified assumption: if we got 9 posts, there might be more.
+    const posts = await getPosts(12, currentPage);
 
     return (
-        <div className="container mx-auto px-4 py-12">
-            <h1 className="font-serif text-4xl font-bold text-center mb-12">Latest Wedding Stories</h1>
+        <div className="bg-ivory min-h-screen py-24">
+            <div className="container">
+                <header className="mb-20 text-center border-b border-gray-100 pb-16">
+                    <h1 className="font-serif text-5xl md:text-7xl font-black text-charcoal mb-6 tracking-tight">Intelligence Journal.</h1>
+                    <p className="text-gray-400 font-black uppercase text-[10px] tracking-[0.4em]">Tracking the evolution of the wedding economy</p>
+                </header>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {posts.map(post => (
-                    <PostCard key={post.id} post={post} />
-                ))}
-            </div>
+                <div className="magazine-grid">
+                    {posts.map(post => (
+                        <PostCard key={post.id} post={post} />
+                    ))}
+                </div>
 
-            <div className="mt-12">
-                {/* Simplified pagination for MVP */}
-                {posts.length >= 9 && (
-                    <Pagination currentPage={currentPage} totalPages={currentPage + 1} basePath="/blog" />
-                )}
+                <div className="mt-24 pt-12 border-t border-gray-50 flex justify-center">
+                    {posts.length >= 12 && (
+                        <Pagination currentPage={currentPage} totalPages={currentPage + 1} basePath="/blog" />
+                    )}
+                </div>
             </div>
         </div>
     );

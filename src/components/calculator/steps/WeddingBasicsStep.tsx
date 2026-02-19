@@ -29,7 +29,7 @@ export default function WeddingBasicsStep({
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -20 }}
-      className="max-w-3xl mx-auto px-6"
+      className="max-w-3xl pt-18 md:pt-8 mx-auto px-6"
     >
       {/* Progress Indicator */}
       <div className="mb-12">
@@ -89,7 +89,7 @@ export default function WeddingBasicsStep({
                   key={value}
                   onClick={() => onWeddingTypeChange(value as WeddingType)}
                   className={`p-6 border-2 text-left transition-all group ${
-                    isActive ? 'border-black bg-black text-white shadow-xl scale-[1.02]' : 'border-gray-100 hover:border-gray-200 bg-white'
+                    isActive ? 'border-black  shadow-xl scale-[1.02]' : 'border-gray-100 hover:border-gray-200 bg-white'
                   }`}
                 >
                   <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-4 ${isActive ? 'bg-purple-600 text-white' : 'bg-gray-50 text-gray-400 group-hover:bg-purple-50 group-hover:text-purple-600'}`}>
@@ -127,7 +127,7 @@ export default function WeddingBasicsStep({
                   key={scale.id}
                   onClick={() => onWeddingScaleChange(scale.id as WeddingScale)}
                   className={`p-6 border-2 text-left transition-all ${
-                    isActive ? 'border-black bg-black text-white shadow-xl scale-[1.02]' : 'border-gray-100 hover:border-gray-200 bg-white'
+                    isActive ? 'border-black  shadow-xl scale-[1.02]' : 'border-gray-100 hover:border-gray-200 bg-white'
                   }`}
                 >
                   <div className="font-black text-xs uppercase tracking-[0.15em] mb-1">{scale.label}</div>

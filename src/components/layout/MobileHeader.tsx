@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -21,32 +20,26 @@ export default function MobileHeader() {
   return (
     <>
       {/* Mobile Header */}
-      <header className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl shadow-premium border-b border-gray-50">
+      <header className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-ivory/90 backdrop-blur-md border-b border-gray-100">
         <div className="flex items-center justify-between px-6 py-4">
-          {/* Logo */}
           <Link 
             href="/" 
-            className="block hover:opacity-80 transition-opacity"
+            className="block hover:opacity-70 transition-opacity"
             onClick={() => setIsMenuOpen(false)}
           >
             <img 
               src="/images/logo.png" 
               alt="Grin Weddings" 
-              className="h-10 w-auto object-contain"
+              className="h-8 w-auto object-contain grayscale brightness-0 opacity-90"
             />
           </Link>
 
-          {/* Hamburger Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-2 text-black hover:bg-gray-100 rounded-full transition-all"
+            className="p-2 text-charcoal hover:text-plum transition-all"
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </header>
@@ -55,27 +48,25 @@ export default function MobileHeader() {
       <AnimatePresence>
         {isMenuOpen && (
           <>
-            {/* Backdrop */}
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="lg:hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
+              className="lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
               onClick={() => setIsMenuOpen(false)}
             />
             
-            {/* Menu Panel */}
             <motion.div 
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="lg:hidden fixed top-0 right-0 bottom-0 w-80 bg-white z-50 shadow-2xl flex flex-col pt-24"
+              className="lg:hidden fixed top-0 right-0 bottom-0 w-80 bg-ivory z-50 shadow-xl flex flex-col pt-24"
             >
-              <div className="px-8 mb-8">
-                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-purple-600">The Grin Network</span>
+              <div className="px-10 mb-8">
+                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">The Network</span>
               </div>
-              <nav className="flex flex-col px-4 gap-2">
+              <nav className="flex flex-col px-10 gap-8">
                 {navItems.map((item, idx) => {
                   const isActive = pathname === item.href;
                   return (
@@ -88,8 +79,8 @@ export default function MobileHeader() {
                       <Link
                         href={item.href}
                         onClick={() => setIsMenuOpen(false)}
-                        className={`block px-4 py-5 text-2xl font-serif font-black tracking-tight ${
-                          isActive ? 'text-purple-600' : 'text-black'
+                        className={`block text-xl font-black uppercase tracking-widest ${
+                          isActive ? 'text-plum' : 'text-charcoal'
                         }`}
                       >
                         {item.label}
@@ -99,9 +90,9 @@ export default function MobileHeader() {
                 })}
               </nav>
               
-              <div className="mt-auto p-8 border-t border-gray-50 bg-gray-50/50">
-                <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-2">Expert Analysis Service</p>
-                <p className="text-xs text-black font-bold italic">Defining the future of wedding planning through data.</p>
+              <div className="mt-auto p-10 border-t border-gray-100">
+                <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-2">Authority Portal</p>
+                <p className="text-xs text-charcoal font-bold leading-relaxed uppercase tracking-tighter">Defining the future of wedding intelligence.</p>
               </div>
             </motion.div>
           </>

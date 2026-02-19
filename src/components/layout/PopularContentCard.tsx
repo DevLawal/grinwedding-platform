@@ -36,29 +36,29 @@ const popularItems: PopularItem[] = [
 
 export default function PopularContentCard() {
   return (
-    <div className="bg-white border border-gray-100 shadow-premium p-8">
-      <h3 className="text-xs font-black uppercase tracking-[0.2em] text-purple-600 mb-8 flex items-center gap-2">
-        <span className="w-4 h-[1px] bg-purple-600" />
+    <div className="bg-white border border-gray-100 p-10">
+      <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 mb-10 pb-4 border-b border-gray-50 flex items-center justify-between">
         Market Movers
+        <span className="text-[8px] opacity-40">VOL 01</span>
       </h3>
       
-      <div className="space-y-8">
+      <div className="space-y-12">
         {popularItems.map((item, index) => (
-          <div key={index} className="group relative">
+          <div key={index} className="group">
             <Link 
               href={item.href}
               className="block"
             >
-              <div className="flex gap-4">
-                <span className="font-mono text-xl font-black text-gray-100 group-hover:text-purple-600 transition-colors">
-                  0{index + 1}
+              <div className="flex gap-6">
+                <span className="font-mono text-xl font-black text-gray-100 group-hover:text-plum transition-colors duration-500">
+                  {String(index + 1).padStart(2, '0')}
                 </span>
                 <div>
-                  <h4 className="text-sm font-black text-black group-hover:text-purple-600 transition-colors mb-2 leading-tight tracking-tight underline decoration-gray-100 group-hover:decoration-purple-100 decoration-2 underline-offset-4">
+                  <h4 className="text-[0.9rem] font-black text-charcoal group-hover:opacity-70 transition-opacity mb-2 leading-snug tracking-tight">
                     {item.title}
                   </h4>
-                  <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2">
-                    <span className="text-purple-600">{item.metric}</span> {item.metricLabel}
+                  <p className="text-[9px] font-black text-gray-300 uppercase tracking-widest flex items-center gap-3">
+                    <span className="text-plum">{item.metric}</span> {item.metricLabel}
                   </p>
                 </div>
               </div>
@@ -67,9 +67,9 @@ export default function PopularContentCard() {
         ))}
       </div>
 
-      <div className="mt-10 pt-6 border-t border-gray-50 flex justify-center">
-        <Link href="/blog" className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 hover:text-black transition-colors">
-          View All Analytics →
+      <div className="mt-12 pt-8 border-t border-gray-50 flex justify-center">
+        <Link href="/blog" className="text-[9px] font-black uppercase tracking-[0.3em] text-gray-400 hover:text-plum transition-all border-b border-transparent hover:border-plum pb-1">
+          Full Analytics &rarr;
         </Link>
       </div>
     </div>

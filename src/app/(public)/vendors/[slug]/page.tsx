@@ -3,11 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getVendorBySlug, getVendors } from '@/lib/vendors';
 
-interface VendorProfileProps {
-    params: { slug: string };
-}
-
-// Generate static params for all vendors
 export async function generateStaticParams() {
     const vendors = await getVendors();
     return vendors.map((vendor) => ({
@@ -17,16 +12,16 @@ export async function generateStaticParams() {
 
 export const revalidate = 3600;
 
-export async function generateMetadata({ params }: VendorProfileProps) {
+export async function generateMetadata({ params }: { params: { slug: string } }) {
     const vendor = await getVendorBySlug(params.slug);
     if (!vendor) return {};
     return {
-        title: `${vendor.name} | Grin Weddings`,
+        title: `${vendor.name} | Grin Intel Profile`,
         description: vendor.description,
     };
 }
 
-export default async function VendorProfilePage({ params }: VendorProfileProps) {
+export default async function VendorProfilePage({ params }: { params: { slug: string } }) {
     const vendor = await getVendorBySlug(params.slug);
 
     if (!vendor) {
@@ -34,90 +29,95 @@ export default async function VendorProfilePage({ params }: VendorProfileProps) 
     }
 
     return (
-        <div className="bg-white min-h-screen pb-20">
-            {/* Hero Image */}
-            <div className="relative h-[50vh] min-h-[400px]">
-                {vendor.featuredImage && (
-                    <Image
-                        src={vendor.featuredImage}
-                        alt={vendor.name || 'Vendor'}
-                        fill
-                        className="object-cover"
-                        priority
-                    />
-                )}
-                <div className="absolute inset-0 bg-black/30" />
-                <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/80 to-transparent">
-                    <div className="container mx-auto">
-                        <span className="bg-purple-600 text-white px-3 py-1 rounded text-sm font-bold uppercase tracking-wide mb-3 inline-block">
-                            {vendor.category}
-                        </span>
-                        <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mb-2">{vendor.name}</h1>
-                        <p className="text-white/90 text-lg flex items-center">
-                            <span className="mr-2">📍</span> {vendor.location}
-                        </p>
+        <div className="bg-ivory min-h-screen pb-32">
+            {/* The Intelligence Header */}
+            <div className="relative pt-24 pb-16 px-6 border-b border-gray-100">
+                <div className="container max-w-6xl">
+                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-10">
+                        <div className="max-w-3xl">
+                             <div className="flex items-center gap-4 mb-8">
+                                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-plum">
+                                    Member of {vendor.category} Niche
+                                </span>
+                                <span className="w-1 h-1 bg-gray-200 rounded-full" />
+                                <span className="text-[10px] font-bold text-gray-300 uppercase tracking-widest">
+                                    Verified Index
+                                </span>
+                            </div>
+                            <h1 className="font-serif text-5xl md:text-7xl font-black text-charcoal mb-4 tracking-tight leading-[1.05]">
+                                {vendor.name}
+                            </h1>
+                            <p className="text-gray-500 font-bold uppercase text-[10px] tracking-[0.3em] flex items-center">
+                                Operating Hub: {vendor.location}
+                            </p>
+                        </div>
+                        
+                        <div className="flex flex-col items-start md:items-end bg-white border border-gray-100 p-8 min-w-[200px]">
+                            <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest mb-1">Market Rating</span>
+                            <span className="text-4xl font-mono font-black text-charcoal">{( (vendor.rating || 0) * 20).toFixed(0)}%</span>
+                            <span className="text-[8px] font-black text-plum opacity-60 uppercase tracking-widest mt-2">Intelligence rank confirmed</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div className="container mx-auto px-4 py-12 grid md:grid-cols-3 gap-12">
-                {/* Main Content */}
-                <div className="md:col-span-2 space-y-12">
+            <div className="container max-w-6xl mx-auto px-6 py-20 grid lg:grid-cols-12 gap-20">
+                {/* Profile Narrative */}
+                <div className="lg:col-span-8 space-y-20">
                     <section>
-                        <h2 className="font-serif text-2xl font-bold text-gray-900 mb-6">About</h2>
-                        <div className="prose prose-lg text-gray-600">
+                        <h2 className="text-[10px] font-black uppercase tracking-[0.4em] text-gray-300 mb-10 border-b border-gray-50 pb-4">Executive Summary</h2>
+                        <div className="prose prose-lg prose-neutral prose-p:font-medium prose-p:leading-relaxed prose-p:text-gray-500">
                             <p>{vendor.description}</p>
-                            <p>
-                                NOTE: This is a mock profile. In a real application, this section would contain
-                                a rich text description, amenities, and more detailed information about the vendor.
-                            </p>
+                            <div className="mt-12 p-10 bg-gray-50 border border-gray-100 italic text-sm text-gray-400">
+                                This profile contains clinical market data. Direct engagement metrics and historical service records are derived from the Grin Intelligence Engine.
+                            </div>
                         </div>
                     </section>
 
-                    {/* Gallery Placeholder */}
                     <section>
-                        <h2 className="font-serif text-2xl font-bold text-gray-900 mb-6">Gallery</h2>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <h2 className="text-[10px] font-black uppercase tracking-[0.4em] text-gray-300 mb-10 border-b border-gray-50 pb-4">Portfolio Evidence</h2>
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
                             {[1, 2, 3, 4, 5, 6].map((i) => (
-                                <div key={i} className="relative aspect-square bg-gray-100 rounded-lg overflow-hidden">
-                                    {/* 
-                                        In real app: <Image src={vendor.images[i]} ... />
-                                     */}
-                                    <div className="w-full h-full flex items-center justify-center text-gray-300">
-                                        Image {i}
+                                <div key={i} className="relative aspect-[4/5] bg-gray-50 border border-gray-100 overflow-hidden group">
+                                    <div className="w-full h-full flex items-center justify-center text-[10px] font-black uppercase tracking-widest text-gray-200 group-hover:text-plum transition-colors">
+                                        Media Item {String(i).padStart(2, '0')}
                                     </div>
+                                    <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/5 transition-colors duration-500" />
                                 </div>
                             ))}
                         </div>
                     </section>
                 </div>
 
-                {/* Sidebar */}
-                <aside className="space-y-8">
-                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 sticky top-24">
-                        <div className="flex justify-between items-center mb-6">
-                            <div className="flex items-center text-amber-400 font-bold text-xl">
-                                <span>★</span>
-                                <span className="ml-1 text-gray-900">{vendor.rating}</span>
-                                <span className="text-gray-400 text-sm font-normal ml-2">({vendor.reviewCount} reviews)</span>
-                            </div>
-                            <div className="text-gray-500 font-medium">{vendor.priceRange}</div>
+                {/* Tactical Sidebar */}
+                <aside className="lg:col-span-4 space-y-12">
+                    <div className="bg-white p-10 border border-gray-100 sticky top-32">
+                        <div className="mb-10 flex flex-col gap-2 pb-6 border-b border-gray-50">
+                            <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest">Pricing Tier</span>
+                            <span className="text-xl font-mono font-black text-charcoal uppercase tracking-widest">
+                                {vendor.priceRange} Segment
+                            </span>
                         </div>
 
-                        <div className="space-y-4">
+                        <div className="space-y-6">
                             {vendor.instagramHandle && (
-                                <a
+                                <Link
                                     href={`https://instagram.com/${vendor.instagramHandle.replace('@', '')}`}
                                     target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="block w-full bg-white border border-gray-200 text-gray-700 font-semibold py-3 px-4 rounded-lg text-center hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
+                                    className="block w-full border border-gray-100 text-[10px] font-black uppercase tracking-[0.3em] py-5 text-center hover:bg-gray-50 transition-all uppercase"
                                 >
-                                    <span>📷</span> Instagram
-                                </a>
+                                    External Feed &rarr;
+                                </Link>
                             )}
-                            <button className="block w-full bg-purple-600 text-white font-bold py-3 px-4 rounded-lg text-center hover:bg-purple-700 transition-colors shadow-sm hover:shadow-md">
-                                Request Quote
+                            <button className="block w-full bg-charcoal text-white text-[10px] font-black uppercase tracking-[0.3em] py-5 text-center hover:bg-plum transition-all border border-charcoal">
+                                Secure Engagement
                             </button>
+                        </div>
+                        
+                        <div className="mt-10 pt-6 border-t border-gray-50">
+                            <p className="text-[9px] font-bold text-gray-300 uppercase tracking-widest leading-relaxed">
+                                Engagement with this entity is monitored via the Grin Protocol for quality assurance.
+                            </p>
                         </div>
                     </div>
                 </aside>

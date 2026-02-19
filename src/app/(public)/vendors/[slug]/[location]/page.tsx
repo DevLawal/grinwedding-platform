@@ -23,8 +23,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locationName = formatTitle(params.location);
 
   return {
-    title: `Best Wedding ${nicheName}s in ${locationName}, Nigeria - Grin Weddings`,
-    description: `Discover and compare top-rated wedding ${nicheName.toLowerCase()}s in ${locationName}. Based on real engagement and activity data.`,
+    title: `Best Wedding ${nicheName}s in ${locationName} | Grin Intel`,
+    description: `The definitive market index for wedding ${nicheName.toLowerCase()}s in ${locationName}. Analyzed for the high-end market.`,
     alternates: {
       canonical: `/vendors/${params.slug}/${params.location}`,
     },
@@ -44,111 +44,102 @@ export default async function VendorListingPage({ params }: Props) {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 mt-16 lg:mt-0">
-      <div className="mb-10 text-center">
-        <h1 className="text-4xl font-serif font-bold text-gray-900 mb-4">
-          Top Wedding {formatTitle(params.slug)}s in {formatTitle(params.location)}
-        </h1>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Handpicked vendors ranked by authenticity, engagement, and consistent quality service in Nigeria.
-        </p>
-      </div>
-
-      {vendors.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {vendors.map((vendor) => (
-            <div key={vendor.username} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
-              <div className="relative h-64 w-full">
-                {vendor.profilePic ? (
-                   <Image 
-                    src={vendor.profilePic} 
-                    alt={vendor.fullName} 
-                    fill 
-                    className="object-cover"
-                    unoptimized // Instagram URLs might need this
-                  />
-                ) : (
-                  <div className="w-full h-full bg-beige-100 flex items-center justify-center">
-                    <span className="text-gray-400 font-serif text-4xl">{vendor.fullName.charAt(0)}</span>
-                  </div>
-                )}
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-gold-600 shadow-sm">
-                  Rank #{vendor.ranking.rank}
-                </div>
-              </div>
-              
-              <div className="p-6">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-xl font-bold text-gray-900 leading-tight">
-                    {vendor.fullName}
-                  </h3>
-                  {vendor.isVerified && (
-                    <span className="text-blue-500" title="Verified Vendor">
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.64.304 1.24.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                    </span>
-                  )}
-                </div>
-                
-                <p className="text-sm text-gray-500 mb-4 line-clamp-2">
-                  {vendor.bio}
-                </p>
-                
-                <div className="flex items-center space-x-4 text-xs font-medium text-gray-400 mb-6">
-                  <div className="flex items-center">
-                    <span className="mr-1">👥</span>
-                    {vendor.metrics.followers.toLocaleString()}
-                  </div>
-                  <div className="flex items-center">
-                    <span className="mr-1">🔥</span>
-                    {vendor.metrics.avgEngagement.toFixed(1)}% ER
-                  </div>
-                </div>
-                
-                <Link 
-                  href={`/vendors/${vendor.username}`}
-                  className="block w-full text-center py-2.5 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors"
-                >
-                  View Profile
-                </Link>
-              </div>
+    <div className="bg-ivory min-h-screen py-24">
+      <div className="container">
+        {/* Intelligence Hub Header */}
+        <header className="mb-20 border-b border-gray-100 pb-16 max-w-4xl">
+            <div className="flex items-center gap-4 mb-8">
+                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-plum">Market Segment</span>
+                <span className="w-1 h-1 bg-gray-200 rounded-full" />
+                <span className="text-[10px] font-bold text-gray-300 uppercase tracking-widest">{location} Sector</span>
             </div>
-          ))}
-        </div>
-      ) : (
-        <div className="text-center py-20 bg-gray-50 rounded-2xl border-2 border-dashed border-gray-200">
-          <p className="text-gray-500 text-lg mb-4">No vendors found for this location yet.</p>
-          <p className="text-sm text-gray-400">Our discovery engine is still exploring this area. Check back soon!</p>
-        </div>
-      )}
+            <h1 className="text-5xl md:text-7xl font-serif font-black text-charcoal mb-8 tracking-tight">
+                {formatTitle(params.slug)}s in {formatTitle(params.location)}.
+            </h1>
+            <p className="text-xl text-gray-500 leading-relaxed font-medium">
+                Our inference engine has mapped the most influential {niche} professionals in the {location} region. Rankings are weighted by market authority and historical consistency.
+            </p>
+        </header>
 
-      <div className="mt-16 bg-beige-50 rounded-2xl p-8 border border-beige-100">
-        <h2 className="text-2xl font-serif font-bold text-gray-900 mb-4">How we rank vendors</h2>
-        <p className="text-gray-600 mb-6">
-          Unlike other platforms, our ranking isn't for sale. We use a data-driven approach that considers follower health, posting consistency, and most importantly, how much their community actually interacts with them.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-sm">
-          <div className="p-4 bg-white rounded-lg shadow-xs">
-            <span className="font-bold text-gray-900 block mb-1">Authenticity</span>
-            We favor vendors with genuine community growth over those with inflated follower counts.
+        {vendors.length > 0 ? (
+          <div className="magazine-grid">
+            {vendors.map((vendor) => (
+              <div key={vendor.username} className="group bg-white border border-gray-100 p-8 flex flex-col h-full">
+                <div className="relative aspect-[4/5] mb-8 bg-gray-50 overflow-hidden border border-gray-50">
+                  {vendor.profilePic ? (
+                     <Image 
+                      src={vendor.profilePic} 
+                      alt={vendor.fullName} 
+                      fill 
+                      className="object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                      unoptimized 
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <span className="text-gray-100 font-serif text-6xl font-black">{vendor.fullName.charAt(0)}</span>
+                    </div>
+                  )}
+                   <div className="absolute top-0 right-0 p-4 bg-charcoal text-white text-[10px] font-black uppercase tracking-[0.2em]">
+                    Rank #{vendor.ranking.rank}
+                  </div>
+                </div>
+                
+                <div className="flex-grow flex flex-col">
+                  <div className="flex justify-between items-start mb-6">
+                    <h3 className="text-lg font-black text-charcoal leading-tight uppercase tracking-tight">
+                      <Link href={`/vendors/${vendor.username}`} className="hover:text-plum transition-colors">
+                        {vendor.fullName}
+                      </Link>
+                    </h3>
+                  </div>
+                  
+                  <p className="text-[13px] text-gray-400 mb-8 line-clamp-2 leading-relaxed">
+                    {vendor.bio}
+                  </p>
+                  
+                  <div className="mt-auto pt-8 border-t border-gray-50 flex items-center justify-between">
+                    <div className="flex flex-col gap-1">
+                        <span className="text-[8px] font-black uppercase tracking-widest text-gray-300">Engagement</span>
+                        <span className="text-xs font-mono font-black text-charcoal">{vendor.metrics.avgEngagement.toFixed(1)}% ER</span>
+                    </div>
+                    <Link 
+                      href={`/vendors/${vendor.username}`}
+                      className="text-[9px] font-black text-charcoal uppercase tracking-[0.2em] border-b-2 border-plum hover:border-charcoal transition-all pb-1"
+                    >
+                      Intel Profile &rarr;
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-          <div className="p-4 bg-white rounded-lg shadow-xs">
-            <span className="font-bold text-gray-900 block mb-1">Engagement</span>
-            High interaction rates signal quality service and community trust.
+        ) : (
+          <div className="text-center py-32 border border-gray-100 bg-white">
+            <p className="text-[10px] font-black uppercase tracking-[0.4em] text-gray-300">No Intelligence Data Found</p>
           </div>
-          <div className="p-4 bg-white rounded-lg shadow-xs">
-            <span className="font-bold text-gray-900 block mb-1">Consistency</span>
-            Active vendors who post regularly show their current availability and dedication.
-          </div>
-          <div className="p-4 bg-white rounded-lg shadow-xs">
-            <span className="font-bold text-gray-900 block mb-1">Location Focus</span>
-            Our inference engine ensures vendors actually serve the Nigerian market.
-          </div>
+        )}
+
+        {/* Theoretical Framework */}
+        <div className="mt-32 max-w-4xl">
+            <h2 className="text-[10px] font-black uppercase tracking-[0.4em] text-gray-300 mb-12 border-b border-gray-50 pb-4">Ranking Methodology</h2>
+            <p className="text-xl text-gray-500 mb-12 font-medium leading-relaxed">
+                The Grin Discovery Protocol prioritizes authentic community influence over inflated metrics.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <span className="text-[10px] font-black text-charcoal uppercase tracking-[0.3em] block mb-4">I. Authenticity Verification</span>
+                    <p className="text-sm text-gray-400 leading-relaxed font-medium text-justify">
+                        We audit follower health filters to ensure that only vendors with genuine market reach are featured in the top percentiles.
+                    </p>
+                </div>
+                <div>
+                    <span className="text-[10px] font-black text-charcoal uppercase tracking-[0.3em] block mb-4">II. Historical Engagement</span>
+                    <p className="text-sm text-gray-400 leading-relaxed font-medium text-justify">
+                        Interaction density serves as a proxy for client satisfaction and current market relevance.
+                    </p>
+                </div>
+            </div>
         </div>
-        <p className="mt-8 text-xs text-gray-400 italic">
-          Disclaimer: Vendor rankings are based on publicly available Instagram activity and do not guarantee service quality.
-        </p>
       </div>
     </div>
   );

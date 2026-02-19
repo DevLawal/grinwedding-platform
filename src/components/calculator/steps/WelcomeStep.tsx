@@ -10,7 +10,7 @@ export default function WelcomeStep({ onStart }: WelcomeStepProps) {
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="text-center max-w-4xl mx-auto py-16 px-6"
+      className="text-center max-w-4xl mx-auto pt-24 md:pt-14 px-6"
     >
       {/* Badge */}
       <motion.div 
@@ -24,8 +24,8 @@ export default function WelcomeStep({ onStart }: WelcomeStepProps) {
       </motion.div>
 
       {/* Hero Headline */}
-      <h1 className="text-5xl md:text-7xl font-serif font-black text-black mb-8 leading-[1.05] tracking-tight">
-        Plan Your Wedding<br />Without the Stress.
+      <h1 className="text-3xl md:text-4xl font-serif font-black text-black mb-8 leading-[1.05] tracking-tight">
+        Plan Your WeddingWithout<br /> the Stress.
       </h1>
 
       {/* Value Proposition */}

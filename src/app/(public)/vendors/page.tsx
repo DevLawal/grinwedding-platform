@@ -1,42 +1,41 @@
 import Link from 'next/link';
 import { getVendors } from '@/lib/vendors';
-import VendorCard from '@/components/vendors/VendorCard';
 
 export const metadata = {
-    title: 'Top Wedding Vendors | Grin Weddings',
-    description: 'Discover and connect with the best wedding photographers, venues, and florists for your dream wedding.',
+    title: 'Vendor Indices | Grin Weddings Authority',
+    description: 'The authoritative database of high-performance wedding vendors in Nigeria. Ranked by real market activity.',
 };
 
-export const revalidate = 3600; // ISR: Revalidate every hour
+export const revalidate = 3600;
 
 export default async function VendorsPage() {
     const vendors = await getVendors();
 
     return (
-        <div className="bg-gray-50 min-h-screen py-12">
-            <div className="container mx-auto px-4">
-                {/* Header */}
-                <div className="mb-16 border-b border-gray-200 pb-8">
-                    <h1 className="text-5xl font-bold text-gray-900 mb-6 tracking-tight">
-                        Vendor Rankings
+        <div className="bg-ivory min-h-screen py-24">
+            <div className="container">
+                {/* Authority Header */}
+                <header className="mb-20 border-b border-gray-100 pb-16 max-w-4xl">
+                    <h1 className="text-5xl md:text-7xl font-serif font-black text-charcoal mb-8 tracking-tight">
+                        Vendor Indices.
                     </h1>
-                    <p className="text-xl text-gray-600 max-w-4xl leading-relaxed">
-                        We analyze Instagram engagement, reviews, and pricing to rank the best wedding professionals.
+                    <p className="text-xl text-gray-500 leading-relaxed font-medium">
+                        A proprietary database of elite wedding professionals, ranked through high-fidelity engagement analysis and market verification.
                         <br />
-                        <span className="text-sm text-gray-400 mt-2 block font-mono">
-                            Last updated: {new Date().toLocaleDateString()}
+                        <span className="text-[10px] font-black text-gray-300 uppercase tracking-[0.4em] mt-8 block">
+                            Last Intel Update: {new Date().toLocaleDateString(undefined, { month: 'long', year: 'numeric' })}
                         </span>
                     </p>
-                </div>
+                </header>
 
-                {/* Filters (Clean Tabs) */}
-                <div className="flex flex-wrap gap-2 mb-12 border-b border-gray-100 pb-4 overflow-x-auto">
-                    {['All', 'Venues', 'Photography', 'Florists', 'Planners'].map((filter) => (
+                {/* Categories - Clinical */}
+                <div className="flex flex-wrap gap-10 mb-16 border-b border-gray-50 pb-6 overflow-x-auto no-scrollbar">
+                    {['Market All', 'Venues', 'Photography', 'Florists', 'Planners'].map((filter) => (
                         <button
                             key={filter}
-                            className={`px-4 py-2 text-sm font-bold transition-colors uppercase tracking-wider ${filter === 'All'
-                                ? 'text-purple-600 border-b-2 border-purple-600'
-                                : 'text-gray-400 hover:text-gray-900'
+                            className={`text-[10px] font-black uppercase tracking-[0.3em] transition-colors pb-4 ${filter === 'Market All'
+                                ? 'text-charcoal border-b-2 border-plum'
+                                : 'text-gray-300 hover:text-charcoal'
                                 }`}
                         >
                             {filter}
@@ -44,60 +43,64 @@ export default async function VendorsPage() {
                     ))}
                 </div>
 
-                {/* Table View */}
-                <div className="overflow-x-auto">
+                {/* The Data Terminal Table */}
+                <div className="bg-white border border-gray-100 overflow-hidden">
                     <table className="w-full text-left border-collapse">
                         <thead>
-                            <tr className="border-b border-gray-200 text-xs uppercase tracking-wider text-gray-400 font-medium">
-                                <th className="py-4 pr-6 w-16">Rank</th>
-                                <th className="py-4 px-4">Vendor</th>
-                                <th className="py-4 px-4 w-32 text-center">Score</th>
-                                <th className="py-4 px-4 w-48">Location</th>
-                                <th className="py-4 px-4 w-32 text-right">Price</th>
+                            <tr className="bg-gray-50/50 border-b border-gray-100 text-[9px] uppercase font-black tracking-[0.25em] text-gray-400">
+                                <th className="py-5 px-8 w-24">Rank</th>
+                                <th className="py-5 px-8">Entity & Sector</th>
+                                <th className="py-5 px-8 w-40 text-center">Market Rating</th>
+                                <th className="py-5 px-8 w-56">Primary Hub</th>
+                                <th className="py-5 px-8 w-40 text-right">Segment</th>
                             </tr>
                         </thead>
-                        <tbody className="divide-y divide-gray-100">
+                        <tbody className="divide-y divide-gray-50">
                             {vendors.map((vendor, index) => (
-                                <tr key={vendor.id} className="group hover:bg-gray-50 transition-colors">
-                                    <td className="py-6 pr-6 font-mono text-2xl font-bold text-gray-300 group-hover:text-purple-500">
-                                        #{index + 1}
+                                <tr key={vendor.id} className="group hover:bg-gray-50/40 transition-all duration-300">
+                                    <td className="py-8 px-8 font-mono text-gray-200 font-black text-lg group-hover:text-charcoal transition-colors">
+                                        {String(index + 1).padStart(2, '0')}
                                     </td>
-                                    <td className="py-6 px-4">
-                                        <div className="flex items-center gap-4">
-                                            <div className="w-12 h-12 relative rounded bg-gray-100 overflow-hidden shrink-0">
-                                                {/* Small Thumbnail */}
+                                    <td className="py-8 px-8">
+                                        <div className="flex items-center gap-6">
+                                            <div className="w-14 h-14 relative bg-gray-50 border border-gray-100 overflow-hidden shrink-0">
                                                 <img
                                                     src={vendor.featuredImage}
                                                     alt=""
-                                                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all"
+                                                    className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
                                                 />
                                             </div>
                                             <div>
-                                                <Link href={`/vendors/${vendor.slug}`} className="block text-lg font-bold text-gray-900 group-hover:text-purple-600 hover:underline">
+                                                <Link href={`/vendors/${vendor.slug}`} className="block text-[0.9rem] font-black text-charcoal hover:text-plum transition-all uppercase tracking-widest mb-1 leading-tight">
                                                     {vendor.name}
                                                 </Link>
-                                                <span className="text-xs text-gray-500 uppercase tracking-wide font-medium">
-                                                    {vendor.category}
+                                                <span className="text-[9px] font-black text-gray-300 uppercase tracking-widest">
+                                                    {vendor.category} Sector
                                                 </span>
                                             </div>
                                         </div>
                                     </td>
-                                    <td className="py-6 px-4 text-center">
+                                    <td className="py-8 px-8 text-center">
                                         <div className="inline-flex flex-col items-center">
-                                            <span className="text-xl font-bold text-gray-900">{vendor.rating}</span>
-                                            <span className="text-[10px] uppercase text-gray-400 font-medium">/ 5.0</span>
+                                            <span className="text-lg font-mono font-black text-charcoal">{(vendor.rating || 0).toFixed(1)}</span>
+                                            <span className="text-[8px] uppercase text-gray-300 font-black tracking-[0.2em]">Scale / 5.0</span>
                                         </div>
                                     </td>
-                                    <td className="py-6 px-4 text-gray-600 text-sm">
+                                    <td className="py-8 px-8 text-gray-500 text-[10px] font-black uppercase tracking-widest">
                                         {vendor.location}
                                     </td>
-                                    <td className="py-6 px-4 text-right font-mono text-gray-400">
-                                        {vendor.priceRange}
+                                    <td className="py-8 px-8 text-right font-mono text-[10px] font-black text-gray-300 uppercase tracking-widest">
+                                        {vendor.priceRange} Segment
                                     </td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
+                </div>
+
+                {/* Footer Disclaimer */}
+                <div className="mt-12 text-[9px] font-black text-gray-300 uppercase tracking-[0.3em] text-center">
+                    Data verified via the Grin Intelligence Engine &bull; {new Date().getFullYear()} GRIN INTEL
                 </div>
             </div>
         </div>

@@ -85,7 +85,7 @@ export default function BudgetCalculator() {
   };
 
   return (
-    <div className="min-h-screen bg-white py-12 px-4 selection:bg-purple-100 selection:text-purple-900">
+    <div className="min-h-screen bg-white px-4 selection:bg-purple-100 selection:text-purple-900">
       <AnimatePresence mode="wait">
         {currentStep === 'welcome' && (
           <motion.div key="welcome" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
