@@ -5,10 +5,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 interface Props {
-  params: {
+  params: Promise<{
     slug: string; // This is the niche/category
     location: string;
-  };
+  }>;
 }
 
 function formatTitle(slug: string) {
@@ -19,21 +19,23 @@ function formatTitle(slug: string) {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const nicheName = formatTitle(params.slug);
-  const locationName = formatTitle(params.location);
+  const { slug, location } = await params;
+  const nicheName = formatTitle(slug);
+  const locationName = formatTitle(location);
 
   return {
     title: `Best Wedding ${nicheName}s in ${locationName} | Grin Intel`,
     description: `The definitive market index for wedding ${nicheName.toLowerCase()}s in ${locationName}. Analyzed for the high-end market.`,
     alternates: {
-      canonical: `/vendors/${params.slug}/${params.location}`,
+      canonical: `/vendors/${slug}/${location}`,
     },
   };
 }
 
 export default async function VendorListingPage({ params }: Props) {
-  const niche = params.slug.replace(/-/g, ' ');
-  const location = params.location.replace(/-/g, ' ');
+  const { slug, location: locationParam } = await params;
+  const niche = slug.replace(/-/g, ' ');
+  const location = locationParam.replace(/-/g, ' ');
 
   let vendors: Vendor[] = [];
   try {
@@ -54,7 +56,7 @@ export default async function VendorListingPage({ params }: Props) {
                 <span className="text-[10px] font-bold text-gray-300 uppercase tracking-widest">{location} Sector</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-serif font-black text-charcoal mb-8 tracking-tight">
-                {formatTitle(params.slug)}s in {formatTitle(params.location)}.
+                {formatTitle(slug)}s in {formatTitle(locationParam)}.
             </h1>
             <p className="text-xl text-gray-500 leading-relaxed font-medium">
                 Our inference engine has mapped the most influential {niche} professionals in the {location} region. Rankings are weighted by market authority and historical consistency.

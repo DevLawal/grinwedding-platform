@@ -5,18 +5,19 @@ import { getPosts } from '@/lib/wordpress';
 export const revalidate = 3600;
 
 interface BlogPageProps {
-    searchParams: { page?: string };
+    searchParams: Promise<{ page?: string }>;
 }
 
 export default async function BlogPage({ searchParams }: BlogPageProps) {
-    const currentPage = Number(searchParams.page) || 1;
+    const { page } = await searchParams;
+    const currentPage = Number(page) || 1;
     const posts = await getPosts(12, currentPage);
 
     return (
         <div className="bg-ivory min-h-screen py-24">
             <div className="container">
                 <header className="mb-20 text-center border-b border-gray-100 pb-16">
-                    <h1 className="font-serif text-5xl md:text-7xl font-black text-charcoal mb-6 tracking-tight">Intelligence Journal.</h1>
+                    <h1 className="font-serif text-5xl md:text-7xl font-black text-charcoal mb-6 tracking-tight">Wedding Insights.</h1>
                     <p className="text-gray-400 font-black uppercase text-[10px] tracking-[0.4em]">Tracking the evolution of the wedding economy</p>
                 </header>
 

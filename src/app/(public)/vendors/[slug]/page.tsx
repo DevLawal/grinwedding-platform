@@ -12,8 +12,9 @@ export async function generateStaticParams() {
 
 export const revalidate = 3600;
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-    const vendor = await getVendorBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
+    const vendor = await getVendorBySlug(slug);
     if (!vendor) return {};
     return {
         title: `${vendor.name} | Grin Intel Profile`,
@@ -21,8 +22,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
 }
 
-export default async function VendorProfilePage({ params }: { params: { slug: string } }) {
-    const vendor = await getVendorBySlug(params.slug);
+export default async function VendorProfilePage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
+    const vendor = await getVendorBySlug(slug);
 
     if (!vendor) {
         notFound();

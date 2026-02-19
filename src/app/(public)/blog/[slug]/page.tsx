@@ -3,52 +3,82 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { format, parseISO } from 'date-fns';
 import parse from 'html-react-parser';
-import { getPostBySlug } from '@/lib/wordpress';
+import { getPostBySlug, getPosts } from '@/lib/wordpress';
+import NewsletterCard from '@/components/layout/NewsletterCard';
+import PostCard from '@/components/blog/PostCard';
 
 export const revalidate = 3600;
 
 interface PageProps {
-    params: { slug: string };
+    params: Promise<{ slug: string }>;
+}
+
+function calculateReadingTime(content: string) {
+    const wordsPerMinute = 200;
+    const words = content.split(/\s+/).length;
+    return Math.ceil(words / wordsPerMinute);
 }
 
 export default async function SinglePostPage({ params }: PageProps) {
-    const post = await getPostBySlug(params.slug);
+    const { slug } = await params;
+    const post = await getPostBySlug(slug);
 
     if (!post) {
         notFound();
     }
 
+    // Fetch related/recent posts for the bottom section
+    const recentPosts = (await getPosts(3)).filter(p => p.slug !== slug).slice(0, 2);
+
     const featuredImage = (typeof post.featuredImage === 'string' ? post.featuredImage : post.featuredImage?.node?.sourceUrl) || '';
     const authorName = post.author?.node?.name || 'Grin Editor';
     const categories = post.categories?.nodes || [];
+    const readingTime = calculateReadingTime(post.content || '');
 
     return (
         <article className="pb-32 bg-ivory min-h-screen">
-            {/* Intel Header */}
-            <header className="pt-24 pb-16 text-center px-6">
+            {/* Navigation & Metada Header */}
+            <div className="pt-12 md:pt-16 pb-12 px-6">
                 <div className="max-w-3xl mx-auto">
-                    <div className="flex justify-center gap-4 mb-10 items-center">
+                    {/* Breadcrumbs */}
+                    <nav className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-gray-300 mb-12">
+                        <Link href="/" className="hover:text-charcoal transition-colors">Home</Link>
+                        <span className="opacity-30">/</span>
+                        <Link href="/blog" className="hover:text-charcoal transition-colors">Insights</Link>
+                        <span className="opacity-30">/</span>
+                        <span className="text-gray-400 truncate max-w-[150px]">{post.title}</span>
+                    </nav>
+
+                    <div className="flex gap-4 mb-8 items-center">
                         <span className="text-[10px] font-black uppercase tracking-[0.3em] text-plum">
                             {categories[0]?.name || 'Intelligence'}
                         </span>
                         <span className="w-1 h-1 bg-gray-200 rounded-full" />
-                        <time className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-                            {format(parseISO(post.date), 'MMM d, yyyy')}
-                        </time>
+                        <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                            {readingTime} MIN READ
+                        </span>
                     </div>
 
-                    <h1 className="font-serif text-4xl md:text-6xl font-black text-charcoal mb-10 leading-[1.1] tracking-tight">
+                    <h1 className="font-serif text-3xl md:text-5xl font-black text-charcoal mb-8 leading-[1.1] tracking-tight">
                         {parse(post.title)}
                     </h1>
 
-                    <div className="flex flex-col items-center gap-2">
-                        <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest">Authored by</span>
-                        <span className="text-sm font-black text-charcoal uppercase tracking-[0.1em]">{authorName}</span>
+                    <div className="flex items-center gap-4 py-6 border-y border-gray-100/50">
+                        <div className="flex flex-col">
+                            <span className="text-[9px] font-black text-gray-300 uppercase tracking-widest mb-1">Authenticated Narrative</span>
+                            <div className="flex items-center gap-2">
+                                <span className="text-xs font-black text-charcoal uppercase tracking-[0.1em]">{authorName}</span>
+                                <span className="text-gray-200">|</span>
+                                <time className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                                    {format(parseISO(post.date), 'MMM d, yyyy')}
+                                </time>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </header>
+            </div>
 
-            {/* Flat Border Image container */}
+            {/* Visual Centerpiece */}
             {featuredImage && (
                 <div className="max-w-5xl mx-auto px-6 mb-20">
                     <div className="relative aspect-[21/9] border border-gray-100 overflow-hidden">
@@ -63,19 +93,52 @@ export default async function SinglePostPage({ params }: PageProps) {
                 </div>
             )}
 
-            {/* Editorial Content Zone */}
-            <div className="max-w-[700px] mx-auto px-6">
-                <div className="prose prose-lg prose-neutral prose-headings:font-serif prose-headings:font-black prose-headings:text-charcoal prose-p:text-gray-600 prose-p:leading-[1.8] prose-p:font-medium">
-                    {parse(post.content)}
+            {/* Primary Content Loop */}
+            <div className="container max-w-6xl mx-auto px-6 grid md:grid-cols-12 gap-16">
+                <div className="md:col-span-8">
+                    <div className="prose prose-lg prose-neutral prose-headings:font-serif prose-headings:font-black prose-headings:text-charcoal prose-p:text-gray-600 prose-p:leading-[1.9] prose-p:font-medium prose-a:text-plum prose-a:no-underline hover:prose-a:underline">
+                        {parse(post.content)}
+                    </div>
+
+                    {/* Signature */}
+                    <div className="mt-24 pt-12 border-t border-gray-100 flex flex-col gap-6">
+                        <p className="text-[10px] font-black uppercase tracking-[0.4em] text-gray-300 italic">
+                            Verified through the Grin Intelligence Protocol &bull; {format(new Date(), 'yyyy')}
+                        </p>
+                    </div>
                 </div>
 
-                {/* Footer Nav */}
-                <div className="mt-24 pt-12 border-t border-gray-100 flex flex-col items-center gap-8">
-                    <p className="text-[10px] font-black uppercase tracking-[0.4em] text-gray-300">End of Intelligence</p>
-                    <Link href="/blog" className="text-[10px] font-black uppercase tracking-[0.2em] text-charcoal border-b-2 border-plum hover:border-charcoal transition-all pb-1">
-                        &larr; Return to Market Streams
-                    </Link>
-                </div>
+                {/* Tactical Sidebar */}
+                <aside className="md:col-span-4 space-y-12">
+                    <NewsletterCard />
+                    
+                    <div className="p-8 border border-gray-100 bg-white">
+                        <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 mb-8 pb-4 border-b border-gray-50">
+                            Further Insights
+                        </h3>
+                        <div className="space-y-10">
+                            {recentPosts.map(p => (
+                                <div key={p.id} className="group">
+                                    <Link href={`/blog/${p.slug}`} className="block">
+                                        <h4 className="font-serif text-lg font-black text-charcoal mb-2 leading-tight group-hover:text-plum transition-colors">
+                                            {parse(p.title)}
+                                        </h4>
+                                        <time className="text-[9px] font-bold text-gray-300 uppercase tracking-widest">
+                                            {format(parseISO(p.date), 'MMM d, yyyy')}
+                                        </time>
+                                    </Link>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            {/* Bottom Nav */}
+            <div className="max-w-3xl mx-auto px-6 mt-32 text-center">
+                <Link href="/blog" className="text-[10px] font-black uppercase tracking-[0.2em] text-charcoal border-b-2 border-plum hover:border-charcoal transition-all pb-1">
+                    &larr; Return to Wedding Insights
+                </Link>
             </div>
         </article>
     );

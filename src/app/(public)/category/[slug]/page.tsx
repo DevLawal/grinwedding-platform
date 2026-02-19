@@ -6,19 +6,21 @@ import Pagination from '@/components/ui/Pagination';
 export const revalidate = 3600;
 
 interface CategoryPageProps {
-    params: { slug: string };
-    searchParams: { page?: string };
+    params: Promise<{ slug: string }>;
+    searchParams: Promise<{ page?: string }>;
 }
 
 export default async function CategoryPage({ params, searchParams }: CategoryPageProps) {
+    const [{ slug }, { page }] = await Promise.all([params, searchParams]);
+    
     const categories = await getCategories();
-    const category = categories.find(c => c.slug === params.slug);
+    const category = categories.find(c => c.slug === slug);
 
     if (!category) {
         notFound();
     }
 
-    const currentPage = Number(searchParams.page) || 1;
+    const currentPage = Number(page) || 1;
     const posts = await getPostsByCategory(category.id, 9);
 
     return (
@@ -41,7 +43,7 @@ export default async function CategoryPage({ params, searchParams }: CategoryPag
             </div>
 
             <div className="mt-12">
-                <Pagination currentPage={currentPage} totalPages={currentPage + 1} basePath={`/category/${params.slug}`} />
+                <Pagination currentPage={currentPage} totalPages={currentPage + 1} basePath={`/category/${slug}`} />
             </div>
         </div>
     );
