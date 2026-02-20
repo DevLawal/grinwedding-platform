@@ -97,3 +97,28 @@ export async function getVendors(): Promise<Vendor[]> {
 export async function getVendorBySlug(slug: string): Promise<Vendor | null> {
   return MOCK_VENDORS.find(v => v.slug === slug) || null;
 }
+
+/**
+ * Triggers a new discovery job for a niche and location
+ */
+export async function triggerDiscovery(niche: string, location: string): Promise<{ message: string; error?: string }> {
+  try {
+    const response = await fetch(`${API_BASE_URL}/discovery/trigger`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ niche, location }),
+    });
+
+    const data = await response.json();
+    if (!response.ok) {
+      throw new Error(data.error || 'Failed to trigger discovery');
+    }
+
+    return data;
+  } catch (error: any) {
+    console.error('Error triggering discovery:', error);
+    return { message: 'Failed to trigger discovery', error: error.message };
+  }
+}

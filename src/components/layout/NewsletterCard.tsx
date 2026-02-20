@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 export default function NewsletterCard() {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
@@ -18,19 +19,28 @@ export default function NewsletterCard() {
 
   return (
     <div className="bg-charcoal p-10 border border-gray-100/10">
-      <div className="mb-10">
+      <div className="mb-5">
         <p className="text-white text-xl font-serif mb-4">Subscribe to Our Newsletter</p>
         <p className="text-white text-[0.85rem] font-medium leading-relaxed">
           Join <span className="text-white font-black">10,000+</span> elite planners receiving weekly intelligence on the wedding economy.
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-3">
+        <input
+          type="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Enter First Name"
+          required
+          disabled={status === 'loading' || status === 'success'}
+          className="w-full pl-4 bg-white/5 border border-white/10 px-0 py-4 text-white text-[10px] font-black tracking-widest uppercase focus:outline-none focus:border-plum transition-colors disabled:opacity-50 border-x-0 border-t-0 border-b-[1px]"
+        />
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="ENTER EXECUTIVE EMAIL"
+          placeholder="Enter Your Email"
           required
           disabled={status === 'loading' || status === 'success'}
           className="w-full pl-4 bg-white/5 border border-white/10 px-0 py-4 text-white text-[10px] font-black tracking-widest uppercase focus:outline-none focus:border-plum transition-colors disabled:opacity-50 border-x-0 border-t-0 border-b-[1px]"
