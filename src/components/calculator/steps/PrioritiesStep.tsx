@@ -82,9 +82,9 @@ export default function PrioritiesStep({
         <div className="flex justify-between items-end mb-4">
           <div>
             <span className="text-[10px] font-black uppercase tracking-[0.2em] text-purple">Phase 03</span>
-            <h2 className="text-2xl font-serif font-black text-white">Value Calibration</h2>
+            <h2 className="text-2xl font-serif font-black text-text">Value Calibration</h2>
           </div>
-          <p className="text-[10px] font-black uppercase tracking-widest text-muted">75% Complete</p>
+          <p className="text-[10px] font-black uppercase tracking-widest text-text-dim">75% Complete</p>
         </div>
         <div className="h-1 bg-surface-2 overflow-hidden">
           <motion.div 
@@ -114,17 +114,17 @@ export default function PrioritiesStep({
             >
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
                 <div className="flex items-center gap-5">
-                  <div className="w-12 h-12 bg-surface-2 rounded-lg flex items-center justify-center text-muted group-hover:bg-purple group-hover:text-white transition-colors">
+                  <div className="w-12 h-12 bg-surface-2 rounded-lg flex items-center justify-center text-text-dim group-hover:bg-purple group-hover:text-base dark:group-hover:text-base-dark transition-colors">
                     <Icon className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-black uppercase tracking-widest text-white mb-1">{category.name}</h3>
-                    <p className="text-[10px] font-bold text-muted uppercase tracking-tight italic decoration-purple decoration-2 underline-offset-4">Sector Focus: {category.description}</p>
+                    <h3 className="text-sm font-black uppercase tracking-widest text-text mb-1">{category.name}</h3>
+                    <p className="text-[10px] font-bold text-text-dim uppercase tracking-tight italic decoration-purple decoration-2 underline-offset-4">Sector Focus: {category.description}</p>
                   </div>
                 </div>
                 <div className="text-right">
                   <p className="text-xs font-black text-purple-bright uppercase tracking-[0.15em] mb-1">{priorityLabel?.label}</p>
-                  <p className="text-[10px] text-muted font-bold uppercase tracking-tighter italic">{priorityLabel?.description}</p>
+                  <p className="text-[10px] text-text-dim font-bold uppercase tracking-tighter italic">{priorityLabel?.description}</p>
                 </div>
               </div>
 
@@ -160,7 +160,7 @@ export default function PrioritiesStep({
                             isActive ? 'bg-purple border-purple scale-150 ring-4 ring-purple/20' : 'bg-surface-2 border-editorial'
                           }`} />
                           <span className={`mt-4 text-[10px] font-black uppercase tracking-widest transition-colors ${
-                            isActive ? 'text-white' : 'text-muted'
+                            isActive ? 'text-text' : 'text-text-dim'
                           }`}>
                             0{label.value}
                           </span>
@@ -177,10 +177,10 @@ export default function PrioritiesStep({
       {/* Market Intelligence Alert */}
       <div className="mt-12 p-8 bg-surface-2 border border-editorial relative overflow-hidden italic">
         <div className="absolute top-0 right-0 p-4 opacity-10">
-           <BarChart3 className="w-12 h-12 text-white" />
+           <BarChart3 className="w-12 h-12 text-text" />
         </div>
-        <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-white mb-3">Market Intelligence Advisory</h3>
-        <p className="text-xs text-muted font-medium leading-relaxed uppercase tracking-tighter">
+        <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-text mb-3">Market Intelligence Advisory</h3>
+        <p className="text-xs text-text-dim font-medium leading-relaxed uppercase tracking-tighter">
           Calibrating sector importance directly influences the variance threshold in your final dossier. 
           Focus capital on segments that drive maximum sentimental or aesthetic ROI for your specific profile.
         </p>
@@ -190,14 +190,14 @@ export default function PrioritiesStep({
       <div className="flex gap-6 mt-16 pt-12 border-t border-editorial">
         <button
           onClick={onBack}
-          className="flex-1 px-8 py-5 border-2 border-white text-white text-xs font-black uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all flex items-center justify-center gap-3"
+          className="flex-1 px-8 py-5 border-2 border-text text-text text-xs font-black uppercase tracking-[0.2em] hover:bg-text hover:text-base hover:dark:text-base-dark transition-all flex items-center justify-center gap-3"
         >
           <ArrowLeft className="w-4 h-4" />
           Retreat
         </button>
         <button
           onClick={onNext}
-          className="flex-1 px-8 py-5 bg-white text-black text-xs font-black uppercase tracking-[0.2em] hover:bg-purple hover:text-white transition-all shadow-2xl flex items-center justify-center gap-3"
+          className="flex-1 px-8 py-5 bg-text text-base dark:text-base-dark text-xs font-black uppercase tracking-[0.2em] hover:bg-purple hover:text-white transition-all shadow-2xl flex items-center justify-center gap-3"
         >
           Execute Analysis
           <ArrowRight className="w-4 h-4" />

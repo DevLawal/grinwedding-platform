@@ -18,7 +18,7 @@ export default function VendorCard({ vendor }: VendorCardProps) {
                     className="object-cover transition-transform duration-1000 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
-                <div className="absolute top-0 right-0 bg-surface/90 backdrop-blur-sm border-l border-b border-editorial px-3 py-1.5 text-[10px] font-black uppercase tracking-widest text-white">
+                <div className="absolute top-0 right-0 bg-surface/90 backdrop-blur-sm border-l border-b border-editorial px-3 py-1.5 text-[10px] font-black uppercase tracking-widest text-text">
                     {vendor.category}
                 </div>
             </Link>
@@ -26,14 +26,14 @@ export default function VendorCard({ vendor }: VendorCardProps) {
             {/* Analysis & Details */}
             <div className="flex flex-col">
                 <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-xl font-serif font-bold text-white leading-tight">
+                    <h3 className="text-xl font-serif font-bold text-text leading-tight">
                         <Link href={`/vendors/${vendor.slug}`} className="hover:opacity-70 transition-opacity">
                             {vendor.name}
                         </Link>
                     </h3>
                     <div className="flex flex-col items-end">
                         <span className="text-[10px] font-black tracking-widest text-purple uppercase mb-1">Rank Score</span>
-                        <span className="text-lg font-mono font-black text-white">{( (vendor.rating || 0) * 20).toFixed(0)}%</span>
+                        <span className="text-lg font-mono font-black text-text">{( (vendor.rating || 0) * 20).toFixed(0)}%</span>
                     </div>
                 </div>
 
@@ -51,7 +51,7 @@ export default function VendorCard({ vendor }: VendorCardProps) {
                     </span>
                     <Link 
                         href={`/vendors/${vendor.slug}`} 
-                        className="text-[10px] font-black uppercase tracking-widest text-white hover:text-purple transition-all border-b-2 border-purple pb-1"
+                        className="text-[10px] font-black uppercase tracking-widest text-text hover:text-purple transition-all border-b-2 border-purple pb-1"
                     >
                         View Intelligence Profile
                     </Link>

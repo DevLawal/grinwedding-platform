@@ -43,7 +43,7 @@ export default function FaqAccordion() {
 
   return (
     <section className="max-w-4xl mx-auto px-4 py-16 border-t border-editorial mt-16">
-      <h2 className="text-3xl font-serif font-black text-white mb-8 text-center uppercase tracking-tight">
+      <h2 className="text-3xl font-serif font-black text-text mb-8 text-center uppercase tracking-tight">
         Market Intelligence FAQ
       </h2>
       
@@ -58,10 +58,10 @@ export default function FaqAccordion() {
               className="w-full flex items-center justify-between p-6 text-left transition-colors hover:bg-surface-2 focus:outline-none"
               aria-expanded={openIndex === index}
             >
-              <h3 className="text-sm font-black text-white uppercase tracking-widest pr-8">
+              <h3 className="text-sm font-black text-text uppercase tracking-widest pr-8">
                 {item.question}
               </h3>
-              <div className={`shrink-0 text-purple-600 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}>
+              <div className={`shrink-0 text-purple transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}>
                 <svg 
                   className="w-5 h-5" 
                   fill="none" 

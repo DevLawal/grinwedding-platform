@@ -24,11 +24,12 @@ export default async function CategoryPage({ params, searchParams }: CategoryPag
     const posts = await getPostsByCategory(category.id, 9);
 
     return (
-        <div className="container mx-auto px-4 py-12">
+        <div className="bg-base min-h-screen py-12">
+            <div className="container mx-auto px-4">
             <header className="text-center mb-16">
-                <span className="text-purple-600 font-semibold tracking-wider text-sm uppercase">Category</span>
-                <h1 className="font-serif text-4xl font-bold text-gray-900 mt-2">{category.name}</h1>
-                <div className="w-16 h-1 bg-purple-300 mx-auto mt-6"></div>
+                <span className="text-purple font-black tracking-[0.3em] text-[10px] uppercase">Category Sector</span>
+                <h1 className="font-serif text-4xl font-black text-text mt-4 tracking-tight">{category.name}</h1>
+                <div className="w-16 h-1 bg-purple/30 mx-auto mt-8"></div>
             </header>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -36,7 +37,7 @@ export default async function CategoryPage({ params, searchParams }: CategoryPag
                     <PostCard key={post.id} post={post} />
                 ))}
                 {posts.length === 0 && (
-                    <div className="col-span-full text-center text-gray-500 py-20">
+                    <div className="col-span-full text-center text-text-muted py-20 italic">
                         No posts found in this category yet.
                     </div>
                 )}
@@ -44,6 +45,7 @@ export default async function CategoryPage({ params, searchParams }: CategoryPag
 
             <div className="mt-12">
                 <Pagination currentPage={currentPage} totalPages={currentPage + 1} basePath={`/category/${slug}`} />
+            </div>
             </div>
         </div>
     );

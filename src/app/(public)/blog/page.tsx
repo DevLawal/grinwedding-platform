@@ -14,11 +14,11 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
     const posts = await getPosts(12, currentPage);
 
     return (
-        <div className="bg-ivory min-h-screen py-24">
+        <div className="bg-base min-h-screen py-24">
             <div className="container">
-                <header className="mb-20 text-center border-b border-gray-100 pb-16">
-                    <h1 className="font-serif text-5xl md:text-7xl font-black text-charcoal mb-6 tracking-tight">Wedding Insights.</h1>
-                    <p className="text-gray-400 font-black uppercase text-[10px] tracking-[0.4em]">Tracking the evolution of the wedding economy</p>
+                <header className="mb-20 text-center border-b border-editorial pb-16">
+                    <h1 className="font-serif text-5xl md:text-7xl font-black text-text mb-6 tracking-tight">Wedding Insights.</h1>
+                    <p className="text-text-dim font-black uppercase text-[10px] tracking-[0.4em]">Tracking the evolution of the wedding economy</p>
                 </header>
 
                 <div className="magazine-grid">
@@ -27,7 +27,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                     ))}
                 </div>
 
-                <div className="mt-24 pt-12 border-t border-gray-50 flex justify-center">
+                <div className="mt-24 pt-12 border-t border-editorial flex justify-center">
                     {posts.length >= 12 && (
                         <Pagination currentPage={currentPage} totalPages={currentPage + 1} basePath="/blog" />
                     )}

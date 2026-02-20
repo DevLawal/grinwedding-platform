@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export default function Sidebar() {
   const pathname = usePathname();
@@ -13,39 +14,25 @@ export default function Sidebar() {
     { href: '/blog', label: 'Wedding Insights' },
     { href: '/vendors', label: 'Top Rankings' },
     { href: '/tools/budget-calculator', label: 'Wedding Tools' },
+    { href: '/tools/wedding-playbook', label: 'Wedding Playbook' },
   ];
 
   return (
-    <aside className="hidden lg:flex fixed left-0 top-0 h-screen w-64 flex-col z-40"
-      style={{
-        background: '#0d0d0d',
-        borderRight: '1px solid rgba(255,255,255,0.07)',
-      }}
-    >
+    <aside className="hidden lg:flex fixed left-0 top-0 h-screen w-64 flex-col z-40 bg-base border-r border-editorial">
       {/* Purple top glow */}
-      <div
-        className="absolute top-0 left-0 right-0 h-48 pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse 80% 100% at 50% -10%, rgba(167,139,250,0.12) 0%, transparent 70%)',
-        }}
-      />
+      <div className="absolute top-0 right-0 h-48 pointer-events-none purple-glow-bg opacity-50" />
 
       {/* Logo */}
-      <div className="px-8 pt-8 pb-6 relative">
-        <Link href="/" className="block hover:opacity-70 transition-opacity">
-          <Image
+        <Link href="/" className="block w-32 h-32 hover:opacity-70 transition-opacity">
+          <img
             src="/images/logo.png"
             alt="Grin Weddings"
-            width={140}
-            height={56}
-            className="h-16 w-auto object-contain brightness-0 invert opacity-90"
-            priority
+            className="h-full w-auto pl-8 object-contain mix-blend-multiply dark:invert dark:mix-blend-screen"
           />
         </Link>
-      </div>
 
       {/* Divider */}
-      <div className="mx-8 mb-6" style={{ height: '1px', background: 'rgba(255,255,255,0.07)' }} />
+      <div className="mx-8 mb-6 h-px bg-border" />
 
       {/* Navigation */}
       <nav className="flex flex-col px-8 gap-1 relative">
@@ -62,17 +49,13 @@ export default function Sidebar() {
                 href={item.href}
                 className={`group relative flex items-center gap-3 px-3 py-2.5 rounded-lg text-[0.78rem] font-bold uppercase tracking-widest transition-all duration-200 ${
                   isActive
-                    ? 'text-[#c4b5fd]'
-                    : 'text-[#6b6b75] hover:text-[#a0a0a8]'
+                    ? 'text-purple bg-purple-dim'
+                    : 'text-text-dim hover:text-text-muted'
                 }`}
-                style={isActive ? { background: 'rgba(196,181,253,0.08)' } : {}}
               >
                 {/* Active indicator */}
                 {isActive && (
-                  <span
-                    className="absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-5 rounded-r-full"
-                    style={{ background: '#c4b5fd' }}
-                  />
+                  <span className="absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-5 rounded-r-full bg-purple" />
                 )}
                 {item.label}
               </Link>
@@ -83,11 +66,16 @@ export default function Sidebar() {
 
       {/* Footer Info */}
       <div className="mt-auto p-8 relative">
-        <div style={{ height: '1px', background: 'rgba(255,255,255,0.07)', marginBottom: '1.25rem' }} />
-        <p className="text-[0.6rem] font-bold uppercase tracking-widest" style={{ color: '#6b6b75' }}>
+        <div className="flex items-center justify-between mb-6">
+          <div className="h-px flex-grow bg-border" />
+          <div className="ml-4">
+            <ThemeToggle />
+          </div>
+        </div>
+        <p className="text-[0.6rem] font-bold uppercase tracking-widest text-text-dim">
           Grin Weddings
         </p>
-        <p className="text-[0.55rem] mt-1" style={{ color: '#444448' }}>
+        <p className="text-[0.55rem] mt-1 text-text-dim/60">
           © 2026 · Data-Driven Excellence
         </p>
       </div>

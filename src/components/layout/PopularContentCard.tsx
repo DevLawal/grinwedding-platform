@@ -36,34 +36,24 @@ const popularItems: PopularItem[] = [
 
 // Pure CSS hovers — no client-side event handlers
 const styles = `
-  .pop-index { color: rgba(196,181,253,0.15); transition: color 0.3s; }
-  .pop-item:hover .pop-index { color: rgba(196,181,253,0.5); }
-  .pop-item:hover .pop-title { color: #c4b5fd; }
-  .pop-cta { color: #6b6b75; border-bottom: 1px solid transparent; transition: color 0.2s, border-color 0.2s; }
-  .pop-cta:hover { color: #c4b5fd; border-bottom-color: #c4b5fd; }
+  .pop-index { color: var(--purple-dim); opacity: 0.5; transition: color 0.3s; }
+  .pop-item:hover .pop-index { color: var(--purple); opacity: 1; }
+  .pop-item:hover .pop-title { color: var(--purple); }
+  .pop-cta { color: var(--text-dim); border-bottom: 1px solid transparent; transition: color 0.2s, border-color 0.2s; }
+  .pop-cta:hover { color: var(--purple); border-bottom-color: var(--purple); }
 `;
 
 export default function PopularContentCard() {
   return (
     <>
       <style>{styles}</style>
-      <div
-        className="p-8 relative overflow-hidden"
-        style={{
-          background: '#141414',
-          border: '1px solid rgba(255,255,255,0.07)',
-          borderRadius: '2px',
-        }}
-      >
+      <div className="p-8 relative overflow-hidden bg-surface border border-editorial rounded-[2px] shadow-premium">
         {/* Section header */}
-        <div
-          className="flex items-center justify-between mb-8 pb-4"
-          style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}
-        >
-          <h3 className="text-[10px] font-black uppercase tracking-[0.3em]" style={{ color: '#6b6b75' }}>
+        <div className="flex items-center justify-between mb-8 pb-4 border-b border-editorial opacity-50">
+          <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-text-dim">
             Market Movers
           </h3>
-          <span className="text-[8px] font-black tracking-widest" style={{ color: '#3a3a40' }}>
+          <span className="text-[8px] font-black tracking-widest text-text-dim/50">
             VOL 01
           </span>
         </div>
@@ -77,11 +67,11 @@ export default function PopularContentCard() {
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <div>
-                    <h4 className="pop-title text-[0.87rem] font-bold leading-snug mb-2 transition-colors" style={{ color: '#a0a0a8' }}>
+                    <h4 className="pop-title text-[0.87rem] font-bold leading-snug mb-2 transition-colors text-text-muted">
                       {item.title}
                     </h4>
-                    <p className="text-[9px] font-black uppercase tracking-widest flex items-center gap-2" style={{ color: '#444448' }}>
-                      <span style={{ color: '#c4b5fd' }}>{item.metric}</span>
+                    <p className="text-[9px] font-black uppercase tracking-widest flex items-center gap-2 text-text-dim">
+                      <span className="text-purple">{item.metric}</span>
                       {item.metricLabel}
                     </p>
                   </div>
@@ -91,7 +81,7 @@ export default function PopularContentCard() {
           ))}
         </div>
 
-        <div className="mt-10 pt-6 flex justify-center" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <div className="mt-10 pt-6 flex justify-center border-t border-editorial opacity-50">
           <Link href="/blog" className="pop-cta text-[9px] font-black uppercase tracking-[0.3em] pb-1">
             Full Analytics &rarr;
           </Link>

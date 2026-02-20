@@ -16,42 +16,42 @@ export default function DashboardLayout({
     children: React.ReactNode;
 }) {
     return (
-        <div className="flex min-h-screen bg-gray-100 font-sans">
+        <div className="flex min-h-screen bg-base font-sans transition-colors duration-500">
             {/* Sidebar */}
-            <aside className="w-64 bg-white border-r border-gray-200 hidden md:flex flex-col">
-                <div className="p-6 border-b border-gray-100">
-                    <Link href="/" className="font-serif text-2xl font-bold text-gray-900">
-                        Grin<span className="text-purple-600">.</span>
+            <aside className="w-64 bg-surface border-r border-editorial hidden md:flex flex-col">
+                <div className="p-6 border-b border-editorial">
+                    <Link href="/" className="font-serif text-2xl font-black text-text uppercase tracking-tighter italic">
+                        Grin<span className="text-purple">.</span>
                     </Link>
                 </div>
 
-                <nav className="flex-1 p-4 space-y-1">
-                    <Link href="/dashboard" className="flex items-center px-4 py-2 text-gray-700 bg-gray-50 rounded-md hover:bg-purple-50 hover:text-purple-600 transition-colors">
-                        <span className="mr-3">📊</span>
+                <nav className="flex-1 p-6 space-y-2">
+                    <Link href="/dashboard" className="flex items-center px-4 py-3 text-[10px] font-black uppercase tracking-widest text-purple bg-purple-dim border border-purple/10 rounded-md transition-all">
+                        <span className="mr-3 text-lg">📊</span>
                         Overview
                     </Link>
-                    <Link href="/dashboard/guests" className="flex items-center px-4 py-2 text-gray-600 rounded-md hover:bg-purple-50 hover:text-purple-600 transition-colors">
-                        <span className="mr-3">👥</span>
+                    <Link href="/dashboard/guests" className="flex items-center px-4 py-3 text-[10px] font-black uppercase tracking-widest text-text-dim hover:text-text hover:bg-surface-2 border border-transparent rounded-md transition-all">
+                        <span className="mr-3 text-lg">👥</span>
                         Guests
                     </Link>
-                    <Link href="/dashboard/events" className="flex items-center px-4 py-2 text-gray-600 rounded-md hover:bg-purple-50 hover:text-purple-600 transition-colors">
-                        <span className="mr-3">📅</span>
+                    <Link href="/dashboard/events" className="flex items-center px-4 py-3 text-[10px] font-black uppercase tracking-widest text-text-dim hover:text-text hover:bg-surface-2 border border-transparent rounded-md transition-all">
+                        <span className="mr-3 text-lg">📅</span>
                         Events
                     </Link>
-                    <Link href="/dashboard/vendors" className="flex items-center px-4 py-2 text-gray-600 rounded-md hover:bg-purple-50 hover:text-purple-600 transition-colors">
-                        <span className="mr-3">🏪</span>
+                    <Link href="/dashboard/vendors" className="flex items-center px-4 py-3 text-[10px] font-black uppercase tracking-widest text-text-dim hover:text-text hover:bg-surface-2 border border-transparent rounded-md transition-all">
+                        <span className="mr-3 text-lg">🏪</span>
                         My Vendors
                     </Link>
                 </nav>
 
-                <div className="p-4 border-t border-gray-100">
-                    <div className="flex items-center gap-3 px-4 py-2">
-                        <div className="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-xs">
+                <div className="p-6 border-t border-editorial">
+                    <div className="flex items-center gap-4 px-2 py-2">
+                        <div className="w-10 h-10 rounded-full bg-purple-dim border border-purple/10 flex items-center justify-center text-purple font-black text-xs">
                             JD
                         </div>
-                        <div className="text-sm">
-                            <p className="font-medium text-gray-900">John Doe</p>
-                            <p className="text-gray-500 text-xs">john@example.com</p>
+                        <div className="text-[10px] font-black uppercase tracking-widest">
+                            <p className="text-text">John Doe</p>
+                            <p className="text-text-dim opacity-60">john@example.com</p>
                         </div>
                     </div>
                 </div>
@@ -60,13 +60,15 @@ export default function DashboardLayout({
             {/* Main Content */}
             <main className="flex-1 overflow-y-auto">
                 {/* Mobile Header */}
-                <header className="md:hidden bg-white border-b border-gray-200 p-4 flex justify-between items-center sticky top-0 z-10">
-                    <Link href="/" className="font-serif text-xl font-bold text-gray-900">
-                        Grin<span className="text-purple-600">.</span>
+                <header className="md:hidden bg-surface border-b border-editorial p-6 flex justify-between items-center sticky top-0 z-10">
+                    <Link href="/" className="font-serif text-xl font-black text-text uppercase italic">
+                        Grin<span className="text-purple">.</span>
                     </Link>
-                    <button className="text-gray-500">
+                    <button className="text-text">
                         <span className="sr-only">Menu</span>
-                        ☰
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+                        </svg>
                     </button>
                 </header>
 

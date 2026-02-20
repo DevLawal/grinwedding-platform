@@ -66,9 +66,9 @@ export default function GuestBudgetStep({
         <div className="flex justify-between items-end mb-4">
           <div>
             <span className="text-[10px] font-black uppercase tracking-[0.2em] text-purple">Phase 02</span>
-            <h2 className="text-2xl font-serif font-black text-white">Capital Projection</h2>
+            <h2 className="text-2xl font-serif font-black text-text">Capital Projection</h2>
           </div>
-          <p className="text-[10px] font-black uppercase tracking-widest text-muted">50% Complete</p>
+          <p className="text-[10px] font-black uppercase tracking-widest text-text-dim">50% Complete</p>
         </div>
         <div className="h-1 bg-surface-2 overflow-hidden">
           <motion.div 
@@ -84,7 +84,7 @@ export default function GuestBudgetStep({
         <section>
           <div className="flex items-center gap-2 mb-6">
             <Users className="w-4 h-4 text-purple" />
-            <label htmlFor="guestCount" className="text-sm font-black uppercase tracking-widest text-white">
+            <label htmlFor="guestCount" className="text-sm font-black uppercase tracking-widest text-text">
               Expected Volume
             </label>
           </div>
@@ -96,11 +96,11 @@ export default function GuestBudgetStep({
               onChange={(e) => onGuestCountChange(parseInt(e.target.value, 10) || 0)}
               placeholder="e.g., 200"
               min="1"
-              className="w-full bg-surface-2 border-2 border-transparent px-6 py-6 text-2xl font-black text-white focus:outline-none focus:border-purple transition-all"
+              className="w-full bg-surface-2 border-2 border-transparent px-6 py-6 text-2xl font-black text-text focus:outline-none focus:border-purple transition-all"
             />
-            <span className="absolute right-6 top-1/2 -translate-y-1/2 text-[10px] font-black uppercase tracking-widest text-muted">Attendees</span>
+            <span className="absolute right-6 top-1/2 -translate-y-1/2 text-[10px] font-black uppercase tracking-widest text-text-dim">Attendees</span>
           </div>
-          <p className="text-[10px] text-muted font-bold mt-2 uppercase tracking-tight italic">
+          <p className="text-[10px] text-text-dim font-bold mt-2 uppercase tracking-tight italic">
             * Statistical variance suggests a 15% increase in final list metrics.
           </p>
         </section>
@@ -109,22 +109,22 @@ export default function GuestBudgetStep({
         <section>
           <div className="flex items-center gap-2 mb-6">
             <Wallet className="w-4 h-4 text-purple" />
-            <label htmlFor="totalBudget" className="text-sm font-black uppercase tracking-widest text-white">
-              Budget Allocation <span className="text-muted font-bold">(Target Cap)</span>
+            <label htmlFor="totalBudget" className="text-sm font-black uppercase tracking-widest text-text">
+              Budget Allocation <span className="text-text-dim font-bold">(Target Cap)</span>
             </label>
           </div>
           <div className="relative">
-            <span className="absolute left-6 top-1/2 -translate-y-1/2 text-2xl font-black text-muted">₦</span>
+            <span className="absolute left-6 top-1/2 -translate-y-1/2 text-2xl font-black text-text-dim">₦</span>
             <input
               type="text"
               id="totalBudget"
               value={budgetInput}
               onChange={(e) => handleBudgetChange(e.target.value)}
               placeholder="e.g., 5,000,000"
-              className="w-full bg-surface-2 border-2 border-transparent pl-12 pr-6 py-6 text-2xl font-black text-white focus:outline-none focus:border-purple transition-all"
+              className="w-full bg-surface-2 border-2 border-transparent pl-12 pr-6 py-6 text-2xl font-black text-text focus:outline-none focus:border-purple transition-all"
             />
           </div>
-          <p className="text-[10px] text-muted font-bold mt-2 uppercase tracking-tight">
+          <p className="text-[10px] text-text-dim font-bold mt-2 uppercase tracking-tight">
             Leave blank for automated market-derived projection in {CITY_NAMES[city].toUpperCase()}.
           </p>
         </section>
@@ -136,21 +136,21 @@ export default function GuestBudgetStep({
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
-              className="bg-surface text-white p-8 shadow-2xl border border-editorial relative overflow-hidden group"
+              className="bg-surface p-8 shadow-2xl border border-editorial relative overflow-hidden group"
             >
               <div className="absolute top-0 right-0 p-4">
-                <TrendingUp className="w-12 h-12 text-white/5 group-hover:text-purple/10 transition-colors" />
+                <TrendingUp className="w-12 h-12 text-text/5 group-hover:text-purple/10 transition-colors" />
               </div>
               
               <div className="grid md:grid-cols-2 gap-8 relative z-10">
                 <div>
-                  <p className="text-[10px] font-black uppercase tracking-[0.2em] text-muted mb-2">Cost Per Head Index</p>
-                  <p className="text-4xl font-serif font-black">
+                  <p className="text-[10px] font-black uppercase tracking-[0.2em] text-text-dim mb-2">Cost Per Head Index</p>
+                  <p className="text-4xl font-serif font-black text-text">
                     {totalBudget ? `₦${formatNumber(Math.round(costPerGuest))}` : 'PROJECTION'}
                   </p>
                 </div>
                 <div className="flex flex-col justify-end text-right">
-                  <p className="text-[10px] font-black uppercase tracking-widest text-muted mb-1">{CITY_NAMES[city]} Market Range</p>
+                  <p className="text-[10px] font-black uppercase tracking-widest text-text-dim mb-1">{CITY_NAMES[city]} Market Range</p>
                   <p className="text-xs font-black text-purple uppercase tracking-widest">
                     ₦{formatNumber(costRange.min)} — ₦{formatNumber(costRange.max)}
                   </p>
@@ -194,7 +194,7 @@ export default function GuestBudgetStep({
       <div className="flex gap-6 mt-16 pt-12 border-t border-editorial">
         <button
           onClick={onBack}
-          className="flex-1 px-8 py-5 border-2 border-white text-white text-xs font-black uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all flex items-center justify-center gap-3"
+          className="flex-1 px-8 py-5 border-2 border-text text-text text-xs font-black uppercase tracking-[0.2em] hover:bg-text hover:text-base hover:dark:text-base-dark transition-all flex items-center justify-center gap-3"
         >
           <ArrowLeft className="w-4 h-4" />
           Retreat
@@ -202,7 +202,7 @@ export default function GuestBudgetStep({
         <button
           onClick={onNext}
           disabled={!canProceed}
-          className="flex-1 px-8 py-5 bg-white text-black text-xs font-black uppercase tracking-[0.2em] hover:bg-purple hover:text-white transition-all shadow-2xl flex items-center justify-center gap-3 disabled:bg-gray-800 disabled:opacity-50"
+          className="flex-1 px-8 py-5 bg-text text-base dark:text-base-dark text-xs font-black uppercase tracking-[0.2em] hover:bg-purple hover:text-white transition-all shadow-2xl flex items-center justify-center gap-3 disabled:bg-surface-2 disabled:text-text-dim disabled:opacity-50"
         >
           Proceed
           <ArrowRight className="w-4 h-4" />

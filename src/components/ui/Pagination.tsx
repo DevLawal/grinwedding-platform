@@ -17,29 +17,29 @@ export default function Pagination({ currentPage, totalPages, basePath }: Pagina
             {prevPage ? (
                 <Link
                     href={`${basePath}?page=${prevPage}`}
-                    className="px-6 py-2 border border-gray-200 text-gray-600 rounded-lg hover:border-gray-300 hover:text-gray-800 transition-colors"
+                    className="px-6 py-2 border border-editorial text-text-muted rounded-lg hover:border-text hover:text-text transition-colors"
                 >
                     Previous
                 </Link>
             ) : (
-                <span className="px-6 py-2 border border-gray-100 text-gray-300 rounded-lg cursor-not-allowed">
+                <span className="px-6 py-2 border border-editorial text-text-dim rounded-lg cursor-not-allowed opacity-50">
                     Previous
                 </span>
             )}
 
-            <span className="px-4 py-2 text-gray-500">
-                Page {currentPage} of {totalPages}
+            <span className="px-4 py-2 text-text-dim font-black uppercase tracking-widest text-[10px]">
+                Page {currentPage} / {totalPages}
             </span>
 
             {nextPage ? (
                 <Link
                     href={`${basePath}?page=${nextPage}`}
-                    className="px-6 py-2 border border-gray-200 text-gray-600 rounded-lg hover:border-gray-300 hover:text-gray-800 transition-colors"
+                    className="px-6 py-2 border border-editorial text-text-muted rounded-lg hover:border-text hover:text-text transition-colors"
                 >
                     Next
                 </Link>
             ) : (
-                <span className="px-6 py-2 border border-gray-100 text-gray-300 rounded-lg cursor-not-allowed">
+                <span className="px-6 py-2 border border-editorial text-text-dim rounded-lg cursor-not-allowed opacity-50">
                     Next
                 </span>
             )}

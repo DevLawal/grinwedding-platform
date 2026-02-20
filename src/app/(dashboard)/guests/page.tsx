@@ -1,25 +1,25 @@
 export default function GuestsPage() {
     return (
-        <div>
-            <div className="flex justify-between items-center mb-6">
-                <h1 className="text-2xl font-bold text-gray-900">Guest List</h1>
-                <button className="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 transition-colors">
-                    + Add Guest
-                </button>
-            </div>
+    <div className="space-y-8">
+        <div className="flex justify-between items-center">
+            <h1 className="text-3xl font-serif font-black text-text tracking-tight uppercase">Guest List</h1>
+            <button className="bg-text text-base dark:text-base-dark px-6 py-3 text-[10px] font-black uppercase tracking-[0.2em] hover:bg-purple hover:text-white transition-all">
+                + Add Guest
+            </button>
+        </div>
 
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 flex flex-col items-center justify-center min-h-[400px]">
-                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center text-3xl mb-4">
-                    👥
-                </div>
-                <h3 className="text-lg font-medium text-gray-900 mb-2">No guests yet</h3>
-                <p className="text-gray-500 text-center max-w-sm mb-6">
-                    Start building your guest list by importing contacts or adding them manually.
-                </p>
-                <button className="text-purple-600 font-medium hover:text-purple-700">
-                    Import from Spreadsheet
-                </button>
+        <div className="bg-surface border border-editorial p-12 flex flex-col items-center justify-center min-h-[500px] shadow-premium">
+            <div className="w-20 h-20 bg-surface-2 border border-editorial rounded-full flex items-center justify-center text-3xl mb-8">
+                👥
             </div>
+            <h3 className="text-lg font-black text-text uppercase tracking-tight mb-2">No guests mapped</h3>
+            <p className="text-text-muted text-center max-w-sm mb-10 font-medium leading-relaxed">
+                Start building your guest list by importing contacts or adding them manually to the Grin Intelligence database.
+            </p>
+            <button className="text-[10px] font-black text-purple uppercase tracking-[0.3em] hover:text-text transition-colors border-b-2 border-purple hover:border-text pb-1">
+                Import from Spreadsheet &rarr;
+            </button>
+        </div>
         </div>
     );
 }

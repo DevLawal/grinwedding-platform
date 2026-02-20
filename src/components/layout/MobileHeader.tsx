@@ -6,6 +6,8 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
+
 export default function MobileHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -15,39 +17,36 @@ export default function MobileHeader() {
     { href: '/blog', label: 'Market Insights' },
     { href: '/vendors', label: 'Top Rankings' },
     { href: '/tools/budget-calculator', label: 'Analysis Tools' },
+    { href: '/tools/wedding-playbook', label: 'Wedding Playbook' },
   ];
 
   return (
     <>
       {/* Mobile Header Bar */}
-      <header
-        className="lg:hidden fixed top-0 left-0 right-0 z-50 backdrop-blur-xl"
-        style={{
-          background: 'rgba(13,13,13,0.95)',
-          borderBottom: '1px solid rgba(255,255,255,0.07)',
-        }}
-      >
+      <header className="lg:hidden fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-base/95 border-b border-editorial">
         <div className="flex items-center justify-between px-6 py-4">
           <Link
             href="/"
-            className="block hover:opacity-70 transition-opacity"
+            className="block w-24 h-8 hover:opacity-70 transition-opacity"
             onClick={() => setIsMenuOpen(false)}
           >
             <img
               src="/images/logo.png"
               alt="Grin Weddings"
-              className="h-8 w-auto object-contain brightness-0 invert opacity-90"
+              className="h-full w-auto object-contain mix-blend-multiply dark:invert dark:mix-blend-screen"
             />
           </Link>
 
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-2 transition-colors"
-            style={{ color: isMenuOpen ? '#c4b5fd' : '#a0a0a8' }}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
+          <div className="flex items-center gap-4">
+            <ThemeToggle />
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className={`p-2 transition-colors ${isMenuOpen ? 'text-purple' : 'text-text-muted'}`}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -60,8 +59,7 @@ export default function MobileHeader() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="lg:hidden fixed inset-0 z-40"
-              style={{ background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)' }}
+              className="lg:hidden fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
               onClick={() => setIsMenuOpen(false)}
             />
 
@@ -71,22 +69,13 @@ export default function MobileHeader() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 28, stiffness: 220 }}
-              className="lg:hidden fixed top-0 right-0 bottom-0 w-72 z-50 flex flex-col pt-20"
-              style={{
-                background: '#0d0d0d',
-                borderLeft: '1px solid rgba(255,255,255,0.07)',
-              }}
+              className="lg:hidden fixed top-0 right-0 bottom-0 w-72 z-50 flex flex-col pt-20 bg-base border-l border-editorial"
             >
               {/* Purple top glow in drawer */}
-              <div
-                className="absolute top-0 left-0 right-0 h-40 pointer-events-none"
-                style={{
-                  background: 'radial-gradient(ellipse 80% 100% at 100% -10%, rgba(167,139,250,0.1) 0%, transparent 70%)',
-                }}
-              />
+              <div className="absolute top-0 left-0 right-0 h-40 pointer-events-none purple-glow-bg opacity-50" />
 
               <div className="px-8 mb-6">
-                <span className="text-[0.6rem] font-black uppercase tracking-[0.25em]" style={{ color: '#6b6b75' }}>
+                <span className="text-[0.6rem] font-black uppercase tracking-[0.25em] text-text-dim">
                   Navigation
                 </span>
               </div>
@@ -104,11 +93,9 @@ export default function MobileHeader() {
                       <Link
                         href={item.href}
                         onClick={() => setIsMenuOpen(false)}
-                        className="block py-3 px-4 rounded-lg text-[0.9rem] font-bold uppercase tracking-wider transition-all"
-                        style={{
-                          color: isActive ? '#c4b5fd' : '#a0a0a8',
-                          background: isActive ? 'rgba(196,181,253,0.08)' : 'transparent',
-                        }}
+                        className={`block py-3 px-4 rounded-lg text-[0.9rem] font-bold uppercase tracking-wider transition-all ${
+                          isActive ? 'text-purple bg-purple-dim' : 'text-text-muted hover:bg-surface-2'
+                        }`}
                       >
                         {item.label}
                       </Link>
@@ -117,11 +104,11 @@ export default function MobileHeader() {
                 })}
               </nav>
 
-              <div className="mt-auto p-8" style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
-                <p className="text-[0.65rem] font-black uppercase tracking-widest mb-1" style={{ color: '#6b6b75' }}>
+              <div className="mt-auto p-8 border-t border-editorial">
+                <p className="text-[0.65rem] font-black uppercase tracking-widest mb-1 text-text-dim">
                   Grin Weddings
                 </p>
-                <p className="text-xs font-medium leading-relaxed" style={{ color: '#444448' }}>
+                <p className="text-xs font-medium leading-relaxed text-text-dim/60">
                   Defining the future of wedding intelligence.
                 </p>
               </div>

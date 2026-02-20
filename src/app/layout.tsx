@@ -6,6 +6,8 @@ import MobileHeader from "@/components/layout/MobileHeader";
 import Footer from "@/components/layout/Footer";
 import PageTransition from "@/components/layout/PageTransition";
 
+import { ThemeProvider } from "@/components/layout/ThemeProvider";
+
 const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: '--font-playfair' });
 
@@ -20,16 +22,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="font-sans flex flex-col min-h-screen" style={{ background: '#0d0d0d', color: '#f0f0f2' }}>
-        <Sidebar />
-        <MobileHeader />
-        <main className="flex-grow lg:ml-64 flex flex-col">
-          <PageTransition>
-            {children}
-          </PageTransition>
-          <Footer />
-        </main>
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
+      <body className="font-sans flex flex-col min-h-screen">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Sidebar />
+          <MobileHeader />
+          <main className="flex-grow lg:ml-64 flex flex-col">
+            <PageTransition>
+              {children}
+            </PageTransition>
+            <Footer />
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );
