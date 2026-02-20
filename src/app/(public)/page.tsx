@@ -1,4 +1,9 @@
 import Link from 'next/link';
+
+const leaderboardStyles = `
+  .lb-row:hover { background: #1c1c1c; }
+  .lb-vendor:hover { color: #c4b5fd; }
+`;
 import { getPosts } from '@/lib/wordpress';
 import { getVendors } from '@/lib/vendors';
 import NewsletterCard from '@/components/layout/NewsletterCard';
@@ -9,7 +14,6 @@ import parse from 'html-react-parser';
 export const revalidate = 3600;
 
 export default async function Home() {
-  // Fetch data in parallel
   const [posts, vendors] = await Promise.all([
     getPosts(4),
     getVendors()
@@ -18,24 +22,77 @@ export default async function Home() {
   const topVendors = vendors.slice(0, 6);
 
   return (
-    <div className="min-h-screen bg-ivory">
-      <div className="flex flex-col lg:flex-row gap-20 max-w-[1400px] mx-auto px-6 lg:px-12 py-20 md:py-8">
-        
-        {/* Main Intelligence Stream */}
-        <div className="flex-1">
-          {/* Hero - Text Driven */}
-          <section className="mb-24">
-            
-            <p className="text-xl md:text-2xl text-gray-500 leading-relaxed max-w-2xl font-medium">
-              Join <span className="text-charcoal font-black">10,000+</span> elite planners and couples tracking vendor performance, market trends, and wedding intelligence.
+    <div className="min-h-screen" style={{ background: '#0d0d0d' }}>
+      {/* Purple Hero Glow */}
+      <div
+        className="absolute top-0 left-64 right-0 h-[500px] pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse 70% 80% at 60% -10%, rgba(167,139,250,0.1) 0%, transparent 65%)',
+          zIndex: 0,
+        }}
+      />
+
+      <div className="relative flex flex-col lg:flex-row gap-16 max-w-[1400px] mx-auto px-6 lg:px-12 py-20 md:py-10" style={{ zIndex: 1 }}>
+
+        {/* Main Content Stream */}
+        <div className="flex-1 min-w-0">
+
+          {/* Hero */}
+          <section className="mb-20 pt-4">
+            <div className="mb-3">
+              <span className="text-[10px] font-black uppercase tracking-[0.3em]" style={{ color: '#c4b5fd' }}>
+                Grin Weddings · Intelligence Platform
+              </span>
+            </div>
+            <h1 className="font-serif text-5xl md:text-6xl font-black mb-6 leading-[1.1]" style={{ color: '#f0f0f2' }}>
+              The Future of<br />
+              <span style={{ color: '#c4b5fd' }}>Wedding Planning.</span>
+            </h1>
+            <p className="text-lg md:text-xl leading-relaxed max-w-2xl font-medium" style={{ color: '#6b6b75' }}>
+              Join <span style={{ color: '#f0f0f2', fontWeight: 900 }}>10,000+</span> elite planners and couples
+              tracking vendor performance, market trends, and wedding intelligence.
             </p>
+
+            {/* CTA Links */}
+            <div className="flex flex-wrap gap-4 mt-10">
+              <Link
+                href="/tools/budget-calculator"
+                className="inline-flex items-center gap-2 px-6 py-3 text-[11px] font-black uppercase tracking-[0.2em] transition-all"
+                style={{
+                  background: '#c4b5fd',
+                  color: '#0d0d0d',
+                }}
+              >
+                Budget Calculator →
+              </Link>
+              <Link
+                href="/vendors"
+                className="inline-flex items-center gap-2 px-6 py-3 text-[11px] font-black uppercase tracking-[0.2em] transition-all"
+                style={{
+                  background: 'transparent',
+                  color: '#a0a0a8',
+                  border: '1px solid rgba(255,255,255,0.12)',
+                }}
+              >
+                Explore Vendors
+              </Link>
+            </div>
           </section>
 
-          {/* Core Insights */}
-          <section className="mb-24">
-            <div className="flex items-center justify-between mb-12 border-b border-gray-100 pb-6">
-              <h2 className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">Latest Intelligence</h2>
-              <Link href="/blog" className="text-[10px] font-black text-plum uppercase tracking-[0.2em] hover:text-black transition-colors">
+          {/* Divider */}
+          <div className="mb-16" style={{ height: '1px', background: 'rgba(255,255,255,0.06)' }} />
+
+          {/* Latest Intelligence */}
+          <section className="mb-20">
+            <div className="flex items-center justify-between mb-10">
+              <h2 className="text-[10px] font-black uppercase tracking-[0.3em]" style={{ color: '#6b6b75' }}>
+                Latest Intelligence
+              </h2>
+              <Link
+                href="/blog"
+                className="text-[10px] font-black uppercase tracking-[0.2em] transition-colors"
+                style={{ color: '#c4b5fd' }}
+              >
                 Archive &rarr;
               </Link>
             </div>
@@ -47,42 +104,70 @@ export default async function Home() {
             </div>
           </section>
 
-          {/* Performance Rankings */}
-          <section className="mb-24">
-            <div className="flex items-center justify-between mb-12 border-b border-gray-100 pb-6">
-              <h2 className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">Market Leaderboard</h2>
-              <Link href="/vendors" className="text-[10px] font-black text-plum uppercase tracking-[0.2em] hover:text-black transition-colors">
+          {/* Market Leaderboard */}
+          <section className="mb-20">
+            <div className="flex items-center justify-between mb-10">
+              <h2 className="text-[10px] font-black uppercase tracking-[0.3em]" style={{ color: '#6b6b75' }}>
+                Market Leaderboard
+              </h2>
+              <Link
+                href="/vendors"
+                className="text-[10px] font-black uppercase tracking-[0.2em] transition-colors"
+                style={{ color: '#c4b5fd' }}
+              >
                 Full Indices &rarr;
               </Link>
             </div>
 
-            <div className="bg-white border border-gray-100 overflow-hidden">
+            <style>{leaderboardStyles}</style>
+          <div
+              className="overflow-hidden"
+              style={{
+                background: '#141414',
+                border: '1px solid rgba(255,255,255,0.07)',
+              }}
+            >
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="bg-gray-50/50 border-b border-gray-100 text-[9px] uppercase font-black tracking-[0.2em] text-gray-400">
-                    <th className="py-4 px-8">Index</th>
-                    <th className="py-4 px-8">Entity</th>
-                    <th className="py-4 px-8">Specialty</th>
-                    <th className="py-4 px-8 text-right">Rating Score</th>
+                  <tr
+                    className="text-[9px] uppercase font-black tracking-[0.2em]"
+                    style={{
+                      background: '#1c1c1c',
+                      borderBottom: '1px solid rgba(255,255,255,0.06)',
+                      color: '#444448',
+                    }}
+                  >
+                    <th className="py-4 px-6">#</th>
+                    <th className="py-4 px-6">Vendor</th>
+                    <th className="py-4 px-6">Category</th>
+                    <th className="py-4 px-6 text-right">Score</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-50">
+                <tbody>
                   {topVendors.map((vendor, index) => (
-                    <tr key={vendor.id} className="group hover:bg-gray-50/30 transition-all duration-300">
-                      <td className="py-6 px-8 font-mono text-gray-300 font-bold text-xs group-hover:text-charcoal transition-colors">
-                         {String(index + 1).padStart(2, '0')}
+                    <tr
+                      key={vendor.id}
+                      className="lb-row transition-all duration-200"
+                      style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}
+                    >
+                      <td className="py-5 px-6 font-mono text-sm font-black" style={{ color: 'rgba(196,181,253,0.4)' }}>
+                        {String(index + 1).padStart(2, '0')}
                       </td>
-                      <td className="py-6 px-8">
-                        <Link href={`/vendors/${vendor.slug}`} className="font-black text-charcoal hover:text-plum transition-colors uppercase tracking-widest text-[0.8rem]">
+                      <td className="py-5 px-6">
+                        <Link
+                          href={`/vendors/${vendor.slug}`}
+                          className="lb-vendor font-black uppercase tracking-widest text-[0.8rem] transition-colors"
+                          style={{ color: '#a0a0a8' }}
+                        >
                           {vendor.name}
                         </Link>
                       </td>
-                      <td className="py-6 px-8">
-                        <span className="text-[9px] font-black uppercase tracking-widest text-gray-400">
+                      <td className="py-5 px-6">
+                        <span className="text-[9px] font-black uppercase tracking-widest" style={{ color: '#444448' }}>
                           {vendor.category}
                         </span>
                       </td>
-                      <td className="py-6 px-8 text-right font-mono text-sm font-black text-charcoal">
+                      <td className="py-5 px-6 text-right font-mono text-sm font-black" style={{ color: '#f0f0f2' }}>
                         {(vendor.rating || 0).toFixed(1)}
                       </td>
                     </tr>
@@ -92,25 +177,58 @@ export default async function Home() {
             </div>
           </section>
 
-          {/* Clinical CTA */}
-          <section className="bg-charcoal p-16 md:p-24 text-center mt-32 border border-gray-100">
-            <h2 className="text-3xl md:text-5xl font-serif font-black text-white mb-8 tracking-tight">The Future of Planning.</h2>
-            <p className="text-gray-400 mb-12 max-w-lg mx-auto font-medium leading-relaxed">
-              Access curated intelligence, verified rankings, and precision tools for the modern wedding market.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-10">
-              <Link href="/tools/budget-calculator" className="text-[10px] font-black text-white uppercase tracking-[0.3em] border-b-2 border-plum hover:border-white transition-all pb-2">
-                Budget Analytics
-              </Link>
-              <Link href="/vendors" className="text-[10px] font-black text-white uppercase tracking-[0.3em] border-b-2 border-white hover:border-plum transition-all pb-2">
-                Market Exploration
-              </Link>
+          {/* CTA Block */}
+          <section
+            className="p-14 md:p-20 text-center relative overflow-hidden"
+            style={{
+              background: 'linear-gradient(135deg, #1a0f2e 0%, #0f0a1e 50%, #0d0d0d 100%)',
+              border: '1px solid rgba(196,181,253,0.1)',
+            }}
+          >
+            {/* Glow */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background: 'radial-gradient(ellipse 60% 60% at 50% 0%, rgba(167,139,250,0.12) 0%, transparent 70%)',
+              }}
+            />
+
+            <div className="relative">
+              <span className="text-[10px] font-black uppercase tracking-[0.3em] block mb-6" style={{ color: '#c4b5fd' }}>
+                Get Started Today
+              </span>
+              <h2 className="text-3xl md:text-5xl font-serif font-black mb-6 tracking-tight" style={{ color: '#f0f0f2' }}>
+                The Future of Planning.
+              </h2>
+              <p className="mb-10 max-w-lg mx-auto font-medium leading-relaxed" style={{ color: '#6b6b75' }}>
+                Access curated intelligence, verified rankings, and precision tools for the modern wedding market.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-6">
+                <Link
+                  href="/tools/budget-calculator"
+                  className="px-8 py-3.5 text-[11px] font-black uppercase tracking-[0.25em] transition-all"
+                  style={{ background: '#c4b5fd', color: '#0d0d0d' }}
+                >
+                  Budget Analytics
+                </Link>
+                <Link
+                  href="/vendors"
+                  className="px-8 py-3.5 text-[11px] font-black uppercase tracking-[0.25em] transition-all"
+                  style={{
+                    background: 'transparent',
+                    color: '#a0a0a8',
+                    border: '1px solid rgba(255,255,255,0.15)',
+                  }}
+                >
+                  Market Exploration
+                </Link>
+              </div>
             </div>
           </section>
         </div>
 
-        {/* Intelligence Supplements */}
-        <aside className="w-full lg:w-80 space-y-12 shrink-0">
+        {/* Sidebar Cards */}
+        <aside className="w-full lg:w-72 space-y-8 shrink-0">
           <NewsletterCard />
           <PopularContentCard />
         </aside>

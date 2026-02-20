@@ -10,8 +10,8 @@ const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: '--font-playfair' });
 
 export const metadata: Metadata = {
-  title: "Modern Wedding Blog",
-  description: "Inspiration, stories, and tips for your perfect wedding.",
+  title: "Grin Weddings — Wedding Intelligence Platform",
+  description: "The authoritative network for data-driven wedding planning. Vendor rankings, market insights, and planning tools.",
 };
 
 export default function RootLayout({
@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="font-sans text-gray-800 bg-white flex flex-col min-h-screen selection:bg-purple-100 selection:text-purple-900">
+      <body className="font-sans flex flex-col min-h-screen" style={{ background: '#0d0d0d', color: '#f0f0f2' }}>
         <Sidebar />
         <MobileHeader />
         <main className="flex-grow lg:ml-64 flex flex-col">

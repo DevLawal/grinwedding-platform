@@ -34,44 +34,69 @@ const popularItems: PopularItem[] = [
   }
 ];
 
+// Pure CSS hovers — no client-side event handlers
+const styles = `
+  .pop-index { color: rgba(196,181,253,0.15); transition: color 0.3s; }
+  .pop-item:hover .pop-index { color: rgba(196,181,253,0.5); }
+  .pop-item:hover .pop-title { color: #c4b5fd; }
+  .pop-cta { color: #6b6b75; border-bottom: 1px solid transparent; transition: color 0.2s, border-color 0.2s; }
+  .pop-cta:hover { color: #c4b5fd; border-bottom-color: #c4b5fd; }
+`;
+
 export default function PopularContentCard() {
   return (
-    <div className="bg-white border border-gray-100 p-10">
-      <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 mb-10 pb-4 border-b border-gray-50 flex items-center justify-between">
-        Market Movers
-        <span className="text-[8px] opacity-40">VOL 01</span>
-      </h3>
-      
-      <div className="space-y-12">
-        {popularItems.map((item, index) => (
-          <div key={index} className="group">
-            <Link 
-              href={item.href}
-              className="block"
-            >
-              <div className="flex gap-6">
-                <span className="font-mono text-xl font-black text-gray-100 group-hover:text-plum transition-colors duration-500">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <div>
-                  <h4 className="text-[0.9rem] font-black text-charcoal group-hover:opacity-70 transition-opacity mb-2 leading-snug tracking-tight">
-                    {item.title}
-                  </h4>
-                  <p className="text-[9px] font-black text-gray-300 uppercase tracking-widest flex items-center gap-3">
-                    <span className="text-plum">{item.metric}</span> {item.metricLabel}
-                  </p>
-                </div>
-              </div>
-            </Link>
-          </div>
-        ))}
-      </div>
+    <>
+      <style>{styles}</style>
+      <div
+        className="p-8 relative overflow-hidden"
+        style={{
+          background: '#141414',
+          border: '1px solid rgba(255,255,255,0.07)',
+          borderRadius: '2px',
+        }}
+      >
+        {/* Section header */}
+        <div
+          className="flex items-center justify-between mb-8 pb-4"
+          style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}
+        >
+          <h3 className="text-[10px] font-black uppercase tracking-[0.3em]" style={{ color: '#6b6b75' }}>
+            Market Movers
+          </h3>
+          <span className="text-[8px] font-black tracking-widest" style={{ color: '#3a3a40' }}>
+            VOL 01
+          </span>
+        </div>
 
-      <div className="mt-12 pt-8 border-t border-gray-50 flex justify-center">
-        <Link href="/blog" className="text-[9px] font-black uppercase tracking-[0.3em] text-gray-400 hover:text-plum transition-all border-b border-transparent hover:border-plum pb-1">
-          Full Analytics &rarr;
-        </Link>
+        <div className="space-y-8">
+          {popularItems.map((item, index) => (
+            <div key={index} className="pop-item group">
+              <Link href={item.href} className="block">
+                <div className="flex gap-5">
+                  <span className="pop-index font-mono text-2xl font-black leading-none shrink-0">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <div>
+                    <h4 className="pop-title text-[0.87rem] font-bold leading-snug mb-2 transition-colors" style={{ color: '#a0a0a8' }}>
+                      {item.title}
+                    </h4>
+                    <p className="text-[9px] font-black uppercase tracking-widest flex items-center gap-2" style={{ color: '#444448' }}>
+                      <span style={{ color: '#c4b5fd' }}>{item.metric}</span>
+                      {item.metricLabel}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-10 pt-6 flex justify-center" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+          <Link href="/blog" className="pop-cta text-[9px] font-black uppercase tracking-[0.3em] pb-1">
+            Full Analytics &rarr;
+          </Link>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -17,36 +17,35 @@ export default function WelcomeStep({ onStart }: WelcomeStepProps) {
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.2 }}
-        className="inline-flex items-center gap-2 bg-purple-50 border border-purple-100 px-4 py-2 rounded-full mb-8"
+        className="inline-flex items-center gap-2 bg-purple-dim border border-purple-dim px-4 py-2 rounded-full mb-8"
       >
-        <ShieldCheck className="w-4 h-4 text-purple-600" />
-        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-purple-600">Enterprise Grade Planning</span>
+        <ShieldCheck className="w-4 h-4 text-purple" />
+        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-purple">Enterprise Grade Planning</span>
       </motion.div>
 
       {/* Hero Headline */}
-      <h1 className="text-3xl md:text-4xl font-serif font-black text-black mb-8 leading-[1.05] tracking-tight">
+      <h1 className="text-3xl md:text-4xl font-serif font-black text-white mb-8 leading-[1.05] tracking-tight">
         Plan Your WeddingWithout<br /> the Stress.
       </h1>
 
       {/* Value Proposition */}
-      <p className="text-xl text-gray-500 mb-12 leading-relaxed max-w-2xl mx-auto font-medium">
-        Get a realistic, personalized budget breakdown for your wedding. 
+      <p className="text-xl text-muted mb-12 leading-relaxed max-w-2xl mx-auto font-medium">
         Our proprietary algorithm adapts to Nigerian and African market realities, 
         detecting hidden costs before they arise.
       </p>
 
       {/* Trust Signals */}
-      <div className="flex flex-wrap items-center justify-center gap-8 mb-16 text-xs font-black uppercase tracking-[0.1em] text-gray-400">
+      <div className="flex flex-wrap items-center justify-center gap-8 mb-16 text-xs font-black uppercase tracking-[0.1em] text-muted">
         <div className="flex items-center gap-2">
-          <CheckCircle2 className="w-4 h-4 text-purple-600" />
+          <CheckCircle2 className="w-4 h-4 text-purple" />
           <span>Used by 10,000+ planners</span>
         </div>
         <div className="flex items-center gap-2">
-          <CheckCircle2 className="w-4 h-4 text-purple-600" />
+          <CheckCircle2 className="w-4 h-4 text-purple" />
           <span>Verified Market Data</span>
         </div>
         <div className="flex items-center gap-2">
-          <CheckCircle2 className="w-4 h-4 text-purple-600" />
+          <CheckCircle2 className="w-4 h-4 text-purple" />
           <span>Zero Commission</span>
         </div>
       </div>
@@ -75,13 +74,13 @@ export default function WelcomeStep({ onStart }: WelcomeStepProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 + idx * 0.1 }}
-            className="bg-white p-8 border border-gray-100 shadow-premium hover:shadow-hover transition-all duration-300 group"
+            className="bg-surface p-8 border border-editorial shadow-premium hover:shadow-hover transition-all duration-300 group"
           >
-            <div className="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-black group-hover:text-white transition-colors">
+            <div className="w-12 h-12 bg-surface-2 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple group-hover:text-white transition-colors">
               <feat.icon className="w-6 h-6" />
             </div>
-            <h3 className="text-lg font-serif font-black text-black mb-3">{feat.title}</h3>
-            <p className="text-sm text-gray-500 font-medium leading-relaxed">
+            <h3 className="text-lg font-serif font-black text-white mb-3">{feat.title}</h3>
+            <p className="text-sm text-muted font-medium leading-relaxed">
               {feat.description}
             </p>
           </motion.div>
@@ -93,14 +92,14 @@ export default function WelcomeStep({ onStart }: WelcomeStepProps) {
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         onClick={onStart}
-        className="group bg-black text-white px-10 py-5 text-sm font-black uppercase tracking-[0.2em] hover:bg-purple-600 transition-all shadow-2xl flex items-center gap-4 mx-auto"
+        className="group bg-white text-black px-10 py-5 text-sm font-black uppercase tracking-[0.2em] hover:bg-purple hover:text-white transition-all shadow-2xl flex items-center gap-4 mx-auto"
       >
         Start Executive Analysis
         <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
       </motion.button>
 
       {/* Time Estimate */}
-      <p className="text-[10px] font-bold text-gray-400 mt-8 uppercase tracking-widest">
+      <p className="text-[10px] font-bold text-muted mt-8 uppercase tracking-widest">
         Average completion time: 180 seconds
       </p>
     </motion.div>

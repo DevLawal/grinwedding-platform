@@ -4,43 +4,59 @@
   --font-sans: var(--font-inter);
   --font-serif: var(--font-playfair);
 
-  /* Editorial Palette - "North Star" */
-  --color-ivory: #fdfcfb;
-  --color-charcoal: #1a1a1a;
-  --color-plum: #6b5a7b;
-  --color-plum-light: #f5f3f7;
-  
-  /* Clinical & Authoritative UI */
-  --shadow-premium: 0 1px 3px rgba(0,0,0,0.05);
-  --shadow-hover: 0 4px 12px rgba(0,0,0,0.06);
-  
-  --color-purple-50: var(--color-plum-light);
-  --color-purple-600: var(--color-plum);
-}
+  /* === Dark Premium Palette === */
+  --color-base: #0d0d0d;
+  --color-surface: #141414;
+  --color-surface-2: #1c1c1c;
+  --color-surface-3: #222222;
 
-/* 
-  Tailwind v4 uses CSS variables for theme configuration.
-*/
+  --color-border: rgba(255, 255, 255, 0.07);
+  --color-border-strong: rgba(255, 255, 255, 0.12);
+
+  --color-text: #f0f0f2;
+  --color-text-muted: #a0a0a8;
+  --color-text-dim: #6b6b75;
+
+  /* Light Purple Accent */
+  --color-purple: #c4b5fd;
+  --color-purple-bright: #a78bfa;
+  --color-purple-dim: rgba(196, 181, 253, 0.12);
+  --color-purple-glow: rgba(167, 139, 250, 0.08);
+
+  /* Legacy aliases (keep for compat) */
+  --color-ivory: var(--color-base);
+  --color-charcoal: var(--color-text);
+  --color-plum: var(--color-purple);
+  --color-plum-light: var(--color-purple-dim);
+
+  /* Shadows */
+  --shadow-premium: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 4px 24px rgba(0, 0, 0, 0.5);
+  --shadow-purple: 0 0 40px rgba(167, 139, 250, 0.1);
+
+  --color-purple-50: var(--color-purple-dim);
+  --color-purple-600: var(--color-purple);
+}
 
 html {
   font-family: var(--font-sans);
   font-size: 18px;
-  line-height: 1.75; /* Comfortable reading height */
-  color: var(--color-charcoal);
-  background-color: var(--color-ivory);
+  line-height: 1.75;
+  color: var(--color-text);
+  background-color: var(--color-base);
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background-color: var(--color-plum-light);
-  color: var(--color-charcoal);
+  background-color: var(--color-purple-dim);
+  color: var(--color-purple);
 }
 
 body {
   min-height: 100vh;
-  color: var(--color-charcoal);
-  background-color: var(--color-ivory);
+  color: var(--color-text);
+  background-color: var(--color-base);
 }
 
 h1,
@@ -53,19 +69,19 @@ h6 {
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  
+  color: var(--color-text);
 }
 
 /* Magazine Layout Constants */
 .magazine-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2.5rem;
 }
 
 .container {
   width: 100%;
-  max-width: 1100px; /* Optimized reading width */
+  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 2rem;
@@ -76,15 +92,15 @@ a {
   text-decoration-thickness: 1px;
   text-underline-offset: 4px;
   transition: opacity 0.2s ease;
+  color: inherit;
 }
 
 a:hover {
-  opacity: 0.7;
-  text-decoration: underline;
+  opacity: 0.8;
 }
 
 .text-subtle {
-  color: #888;
+  color: var(--color-text-dim);
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -93,5 +109,14 @@ a:hover {
 
 /* Section Borders */
 .border-editorial {
-  border-color: #eee;
+  border-color: var(--color-border);
+}
+
+/* Purple glow gradient utility */
+.purple-glow-bg {
+  background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(167, 139, 250, 0.15) 0%, transparent 70%);
+}
+
+.purple-glow-top {
+  background: linear-gradient(180deg, rgba(167, 139, 250, 0.08) 0%, transparent 40%);
 }

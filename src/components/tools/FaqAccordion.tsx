@@ -42,23 +42,23 @@ export default function FaqAccordion() {
   };
 
   return (
-    <section className="max-w-4xl mx-auto px-4 py-16 border-t border-gray-200 mt-16">
-      <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-        Frequently Asked Questions
+    <section className="max-w-4xl mx-auto px-4 py-16 border-t border-editorial mt-16">
+      <h2 className="text-3xl font-serif font-black text-white mb-8 text-center uppercase tracking-tight">
+        Market Intelligence FAQ
       </h2>
       
       <div className="space-y-4">
         {faqData.map((item, index) => (
           <div 
             key={index}
-            className="border border-gray-100 rounded-xl overflow-hidden bg-white shadow-sm transition-all duration-200 hover:shadow-md"
+            className="border border-editorial overflow-hidden bg-surface shadow-premium transition-all duration-300 hover:border-purple/30"
           >
             <button
               onClick={() => toggleItem(index)}
-              className="w-full flex items-center justify-between p-5 text-left transition-colors hover:bg-gray-50/50 focus:outline-hidden"
+              className="w-full flex items-center justify-between p-6 text-left transition-colors hover:bg-surface-2 focus:outline-none"
               aria-expanded={openIndex === index}
             >
-              <h3 className="text-lg font-bold text-gray-900 pr-8">
+              <h3 className="text-sm font-black text-white uppercase tracking-widest pr-8">
                 {item.question}
               </h3>
               <div className={`shrink-0 text-purple-600 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}>
@@ -75,11 +75,11 @@ export default function FaqAccordion() {
             </button>
             
             <div 
-              className={`transition-all duration-300 ease-in-out overflow-hidden ${
+              className={`transition-all duration-500 ease-in-out overflow-hidden ${
                 openIndex === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
               }`}
             >
-              <div className="p-5 pt-0 text-gray-600 leading-relaxed border-t border-gray-50/50">
+              <div className="p-6 pt-0 text-sm text-muted font-medium leading-relaxed border-t border-editorial mt-4 pt-4">
                 {item.answer}
               </div>
             </div>
