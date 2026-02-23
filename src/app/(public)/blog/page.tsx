@@ -14,11 +14,11 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
     const posts = await getPosts(12, currentPage);
 
     return (
-        <div className="bg-base min-h-screen py-24">
-            <div className="container">
-                <header className="mb-20 text-center border-b border-editorial pb-16">
-                    <h1 className="font-serif text-5xl md:text-7xl font-black text-text mb-6 tracking-tight">Wedding Insights.</h1>
-                    <p className="text-text-dim font-black uppercase text-[10px] tracking-[0.4em]">Tracking the evolution of the wedding economy</p>
+        <div className="bg-base min-h-screen py-24 md:py-12">
+            <div className="container px-4 md:px-12 mx-auto">
+                <header className="mb-12 md:mb-20 text-center border-b border-editorial pb-5 md:pb-8">
+                    <h1 className="font-serif text-3xl md:text-5xl font-black text-text mb-2 md:mb-3 tracking-tight leading-tight">Wedding Insights.</h1>
+                    <p className="text-text-dim font-black uppercase text-[8px] md:text-[10px] tracking-[0.3em] md:tracking-[0.4em] max-w-xs md:max-w-none mx-auto">Tracking the evolution of the wedding economy</p>
                 </header>
 
                 <div className="magazine-grid">

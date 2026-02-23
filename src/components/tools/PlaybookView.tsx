@@ -57,73 +57,73 @@ export default function PlaybookView() {
   }, [filteredEntries, currentIndex]);
 
   return (
-    <div className="max-w-4xl mx-auto py-12 px-6 overflow-hidden">
+    <div className="max-w-4xl mx-auto py-8 md:py-2 px-4 md:px-6 overflow-hidden relative">
       {/* Background Decor */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden opacity-[0.03]">
-        <div className="absolute -top-24 -left-24 w-96 h-96 bg-purple rounded-full blur-[120px]" />
-        <div className="absolute top-1/2 -right-24 w-96 h-96 bg-rose-400 rounded-full blur-[120px]" />
+        <div className="absolute -top-24 -left-24 w-64 md:w-96 h-64 md:h-96 bg-purple rounded-full blur-[80px] md:blur-[120px]" />
+        <div className="absolute top-1/2 -right-24 w-64 md:w-96 h-64 md:h-96 bg-rose-400 rounded-full blur-[80px] md:blur-[120px]" />
       </div>
 
       {/* Header */}
-      <header className="mb-12 text-center relative z-10">
-        <div className="inline-block mb-4">
+      <header className="mb-8 md:mb-12 text-center relative z-10">
+        <div className="inline-block mb-3 md:mb-4">
           <motion.span 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-[10px] font-black uppercase tracking-[0.4em] text-purple"
+            className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-purple"
           >
             Wedding Playbook · Premium Intelligence
           </motion.span>
         </div>
-        <h1 className="font-serif text-4xl md:text-6xl font-black mb-4 text-text tracking-tight">
+        <h1 className="font-serif text-3xl md:text-6xl font-black mb-3 md:mb-4 text-text tracking-tight">
           The Intelligence <span className="italic serif text-purple">Deck.</span>
         </h1>
-        <p className="text-text-muted max-w-xl mx-auto text-sm font-medium leading-relaxed">
+        <p className="text-text-muted max-w-xl mx-auto text-xs md:text-sm font-medium leading-relaxed px-4 md:px-0">
           The ultimate wedding market playbook. Swipe through curated indices, 
           strategic advice, and deep-market inspiration.
         </p>
       </header>
 
       {/* Controls */}
-      <div className="flex flex-col md:flex-row gap-6 items-center justify-between mb-20 relative z-10">
-        <div className="flex bg-surface-2/50 backdrop-blur-md p-1.5 border border-editorial rounded-2xl overflow-x-auto no-scrollbar shadow-sm">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center justify-between mb-12 md:mb-20 relative z-10">
+        <div className="flex bg-surface-2/50 backdrop-blur-md p-1 md:p-1.5 border border-editorial rounded-xl md:rounded-2xl overflow-x-auto no-scrollbar shadow-sm w-full md:w-auto">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`flex items-center gap-2.5 px-6 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all whitespace-nowrap ${
+              className={`flex-1 md:flex-none flex items-center justify-center gap-2 md:gap-2.5 px-4 md:px-6 py-2 md:py-2.5 rounded-lg md:rounded-xl text-[9px] md:text-[10px] font-black uppercase tracking-widest transition-all whitespace-nowrap ${
                 activeCategory === cat.id 
                   ? `${cat.color} text-white shadow-lg scale-[1.02]` 
                   : 'text-text-dim hover:text-text hover:bg-surface'
               }`}
             >
-              <cat.icon className="w-3.5 h-3.5" />
+              <cat.icon className="w-3 md:w-3.5 h-3 md:h-3.5" />
               {cat.label}
             </button>
           ))}
         </div>
 
         <div className="relative w-full md:w-72 group">
-          <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-4 h-4 text-text-dim group-focus-within:text-purple transition-colors" />
+          <Search className="absolute left-4 md:left-5 top-1/2 -translate-y-1/2 w-3.5 md:w-4 h-3.5 md:h-4 text-text-dim group-focus-within:text-purple transition-colors" />
           <input
             type="text"
             placeholder="Search the deck..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-12 pr-5 py-3.5 bg-surface-2/50 backdrop-blur-md border border-editorial rounded-2xl text-[11px] font-medium focus:outline-none focus:ring-2 focus:ring-purple/20 focus:border-purple/30 transition-all shadow-sm"
+            className="w-full pl-10 md:pl-12 pr-4 md:pr-5 py-2.5 md:py-3.5 bg-surface-2/50 backdrop-blur-md border border-editorial rounded-lg md:rounded-2xl text-[10px] md:text-[11px] font-medium focus:outline-none focus:ring-2 focus:ring-purple/20 focus:border-purple/30 transition-all shadow-sm"
           />
         </div>
       </div>
 
       {/* Stacked Cards Area */}
-      <div className="relative h-[500px] flex items-center justify-center">
-        {/* Background Large Text (Inspired by reference) */}
+      <div className="relative h-[400px] md:h-[500px] flex items-center justify-center">
+        {/* Background Large Text */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 0.05, scale: 1 }}
             key={activeCategory}
-            className="text-[12rem] font-black text-text whitespace-nowrap tracking-tighter"
+            className="text-[6rem] md:text-[12rem] font-black text-text whitespace-nowrap tracking-tighter"
           >
             {activeCategory.toUpperCase()}
           </motion.div>
@@ -134,7 +134,6 @@ export default function PlaybookView() {
             {filteredEntries.length > 0 ? (
               visibleCards.map((card, index) => {
                 const isTop = card.stackIndex === 0;
-                // Rotations: 0, 3, -2, 5
                 const rotations = [0, 4, -3, 6];
                 const rotation = rotations[card.stackIndex] || 0;
                 
@@ -148,7 +147,7 @@ export default function PlaybookView() {
                     initial={isTop ? { x: 400, opacity: 0, rotate: 15 } : { opacity: 0, scale: 0.8 }}
                     animate={{
                       x: 0,
-                      y: card.stackIndex * 15,
+                      y: card.stackIndex * (window?.innerWidth < 768 ? 10 : 15),
                       scale: 1 - card.stackIndex * 0.05,
                       rotate: rotation,
                       opacity: 1 - card.stackIndex * 0.2,
@@ -168,58 +167,58 @@ export default function PlaybookView() {
                     dragConstraints={{ left: 0, right: 0 }}
                     dragElastic={0.8}
                     onDragEnd={(_, info) => {
-                      if (info.offset.x > 120) prevCard();
-                      else if (info.offset.x < -120) nextCard();
+                      if (info.offset.x > 100) prevCard();
+                      else if (info.offset.x < -100) nextCard();
                     }}
-                    className={`absolute inset-0 bg-surface rounded-[2rem] p-10 shadow-2xl flex flex-col justify-between border-2 border-editorial/50 cursor-grab active:cursor-grabbing select-none group ${isTop ? 'ring-1 ring-white/10 shadow-premium' : ''}`}
+                    className={`absolute inset-0 bg-surface rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-10 shadow-2xl flex flex-col justify-between border-2 border-editorial/50 cursor-grab active:cursor-grabbing select-none group ${isTop ? 'ring-1 ring-white/10 shadow-premium' : ''}`}
                   >
                     {/* Card Content Decoration */}
-                    <div className={`absolute top-0 right-0 w-32 h-32 ${categoryConfig.color} opacity-[0.03] blur-3xl rounded-full -mr-16 -mt-16`} />
+                    <div className={`absolute top-0 right-0 w-24 md:w-32 h-24 md:h-32 ${categoryConfig.color} opacity-[0.03] blur-2xl md:blur-3xl rounded-full -mr-12 md:-mr-16 -mt-12 md:-mt-16`} />
                     
                     <div className="relative">
-                      <div className="flex justify-between items-start mb-10">
-                        <div className={`p-3 rounded-2xl ${categoryConfig.color} bg-opacity-10`}>
-                          <categoryConfig.icon className={`w-6 h-6 ${categoryConfig.textColor}`} />
+                      <div className="flex justify-between items-start mb-6 md:mb-10">
+                        <div className={`p-2.5 md:p-3 rounded-xl md:rounded-2xl ${categoryConfig.color} bg-opacity-10`}>
+                          <categoryConfig.icon className={`w-5 md:w-6 h-5 md:h-6 ${categoryConfig.textColor}`} />
                         </div>
                         
                         <div className="flex flex-col items-end">
-                          <span className="font-mono text-[10px] font-black tracking-widest text-text-dim opacity-40">
+                          <span className="font-mono text-[8px] md:text-[10px] font-black tracking-widest text-text-dim opacity-40">
                             ENTRY NO.
                           </span>
-                          <span className="font-mono text-xs font-black text-text">
+                          <span className="font-mono text-[10px] md:text-xs font-black text-text">
                             {String(currentIndex + 1).padStart(3, '0')}
                           </span>
                         </div>
                       </div>
 
                       <div className="relative">
-                        <Quote className="absolute -left-6 -top-4 w-12 h-12 text-text opacity-[0.03]" />
-                        <p className="text-2xl md:text-3xl font-serif font-black leading-tight text-text tracking-tight">
+                        <Quote className="absolute -left-4 -top-3 w-8 md:w-12 h-8 md:h-12 text-text opacity-[0.03]" />
+                        <p className="text-lg md:text-xl lg:text-2xl font-serif font-black leading-tight text-text tracking-tight">
                           {card.content}
                         </p>
                       </div>
                     </div>
 
-                    <div className="space-y-8 relative">
-                      <div className="flex items-center gap-4">
+                    <div className="space-y-6 md:space-y-8 relative">
+                      <div className="flex items-center gap-3 md:gap-4">
                         <div className={`h-px flex-1 ${categoryConfig.color} opacity-20`} />
                         {card.source && (
-                          <span className={`text-[10px] font-black uppercase tracking-[0.3em] ${categoryConfig.textColor} whitespace-nowrap`}>
+                          <span className={`text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] md:tracking-[0.3em] ${categoryConfig.textColor} whitespace-nowrap`}>
                             {card.source}
                           </span>
                         )}
-                        <div className={`h-1.5 w-1.5 rounded-full ${categoryConfig.color}`} />
+                        <div className={`h-1 w-1 md:h-1.5 md:w-1.5 rounded-full ${categoryConfig.color}`} />
                       </div>
 
                       {/* Stack Progress Indicators */}
-                      <div className="flex justify-center gap-2">
+                      <div className="flex justify-center gap-1.5 md:gap-2">
                         {Array.from({ length: Math.min(10, filteredEntries.length) }).map((_, i) => (
                           <div 
                             key={i}
-                            className={`h-1 rounded-full transition-all duration-300 ${
-                              Math.floor((currentIndex / filteredEntries.length) * 10) === i 
-                                ? `w-8 ${categoryConfig.color}` 
-                                : 'w-2 bg-editorial'
+                            className={`h-0.5 md:h-1 rounded-full transition-all duration-300 ${
+                              Math.floor((currentIndex / (filteredEntries.length || 1)) * 10) === i 
+                                ? `w-6 md:w-8 ${categoryConfig.color}` 
+                                : 'w-1.5 md:w-2 bg-editorial'
                             }`}
                           />
                         ))}
@@ -229,12 +228,12 @@ export default function PlaybookView() {
                 );
               })
             ) : (
-              <div className="text-center bg-surface-2 p-12 rounded-[2rem] border border-editorial border-dashed w-full">
-                <Search className="w-12 h-12 text-text-dim mx-auto mb-4 opacity-20" />
-                <p className="text-text-dim font-black uppercase tracking-widest text-sm">No Results Found</p>
+              <div className="text-center bg-surface-2 p-8 md:p-12 rounded-[1.5rem] md:rounded-[2rem] border border-editorial border-dashed w-full max-w-[320px]">
+                <Search className="w-8 md:w-12 h-8 md:h-12 text-text-dim mx-auto mb-4 opacity-20" />
+                <p className="text-text-dim font-black uppercase tracking-widest text-[10px] md:text-sm">No Results Found</p>
                 <button 
                   onClick={() => setSearchQuery('')}
-                  className="mt-4 text-[10px] font-black uppercase tracking-widest text-purple hover:underline"
+                  className="mt-4 text-[9px] md:text-[10px] font-black uppercase tracking-widest text-purple hover:underline"
                 >
                   Clear Search
                 </button>
@@ -243,42 +242,42 @@ export default function PlaybookView() {
           </AnimatePresence>
         </div>
 
-        {/* Navigation Buttons - Enhanced and Positioned */}
+        {/* Navigation Buttons */}
         {filteredEntries.length > 1 && (
-          <div className="absolute inset-x-0 bottom-[-80px] flex justify-center gap-6 md:contents">
+          <div className="absolute inset-x-0 bottom-[-60px] md:bottom-[-80px] flex justify-center gap-4 md:contents">
             <button 
               onClick={prevCard}
-              className="md:absolute md:left-[-100px] md:top-1/2 md:-translate-y-1/2 p-5 rounded-2xl bg-surface border border-editorial text-text hover:text-purple hover:border-purple/30 transition-all shadow-premium group active:scale-95"
+              className="md:absolute md:left-[-80px] lg:left-[-100px] md:top-1/2 md:-translate-y-1/2 p-4 md:p-5 rounded-xl md:rounded-2xl bg-surface border border-editorial text-text hover:text-purple hover:border-purple/30 transition-all shadow-premium group active:scale-95"
               aria-label="Previous card"
             >
-              <ChevronRight className="w-6 h-6 rotate-180 group-hover:-translate-x-1 transition-transform" />
+              <ChevronRight className="w-5 md:w-6 h-5 md:h-6 rotate-180 group-hover:-translate-x-1 transition-transform" />
             </button>
             <button 
               onClick={nextCard}
-              className="md:absolute md:right-[-100px] md:top-1/2 md:-translate-y-1/2 p-5 rounded-2xl bg-surface border border-editorial text-text hover:text-purple hover:border-purple/30 transition-all shadow-premium group active:scale-95"
+              className="md:absolute md:right-[-80px] lg:right-[-100px] md:top-1/2 md:-translate-y-1/2 p-4 md:p-5 rounded-xl md:rounded-2xl bg-surface border border-editorial text-text hover:text-purple hover:border-purple/30 transition-all shadow-premium group active:scale-95"
               aria-label="Next card"
             >
-              <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              <ChevronRight className="w-5 md:w-6 h-5 md:h-6 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
         )}
       </div>
 
       {/* Manual Swiping Instructions */}
-      <footer className="mt-28 text-center relative z-10">
-        <div className="flex items-center justify-center gap-4 mb-8">
-          <div className="w-12 h-px bg-editorial/30" />
-          <p className="text-[9px] font-black uppercase tracking-[0.4em] text-text-dim/60">
+      <footer className="mt-20 md:mt-28 text-center relative z-10">
+        <div className="flex items-center justify-center gap-3 md:gap-4 mb-6 md:mb-8">
+          <div className="w-8 md:w-12 h-px bg-editorial/30" />
+          <p className="text-[8px] md:text-[9px] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-text-dim/60">
             Flick or use arrows to navigate
           </p>
-          <div className="w-12 h-px bg-editorial/30" />
+          <div className="w-8 md:w-12 h-px bg-editorial/30" />
         </div>
         
-        <div className="pt-10 border-t border-editorial max-w-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-[10px] font-black uppercase tracking-[0.3em] text-text-dim/40">
+        <div className="pt-8 md:pt-10 border-t border-editorial max-w-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 px-4 md:px-0">
+          <p className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] md:tracking-[0.3em] text-text-dim/40">
             Total Intelligence: {filteredEntries.length} Indices
           </p>
-          <p className="text-[10px] font-black uppercase tracking-[0.3em] text-text-dim/40 italic">
+          <p className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] md:tracking-[0.3em] text-text-dim/40 italic">
             Part of the Grin Global Network
           </p>
         </div>

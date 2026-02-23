@@ -1,0 +1,773 @@
+﻿{
+    "value":  [
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  0
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T19:14:44.307Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9bb5",
+                      "username":  "mrkayvee",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "fullName":  "KayVee",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T19:14:44.308Z",
+                      "profilePic":  "https://instagram.fflr4-1.fna.fbcdn.net/v/t51.2885-19/456199618_471314455712187_207650341566281879_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=instagram.fflr4-1.fna.fbcdn.net\u0026_nc_cat=103\u0026_nc_oc=Q6cZ2QFBnl3DGiq7MKXR0UWjz9C7E3YeSjYKC0f5LbEC9x3Kkoihxg3jeK_WfrwfqertZ_U\u0026_nc_ohc=auBKMfGfWYAQ7kNvwH4R4o_\u0026_nc_gid=GHL7iYd8ds6G-qUDaFRrRw\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfsREHamgAquQBLVogYNZ5RME-ayD56ndNeMYXepXxKtFQ\u0026oe=699F5F92\u0026_nc_sid=8b3546",
+                      "id":  "699979eefed144b0f45d9bb5",
+                      "name":  "KayVee",
+                      "slug":  "mrkayvee",
+                      "category":  "wedding photographer",
+                      "featuredImage":  "https://instagram.fflr4-1.fna.fbcdn.net/v/t51.2885-19/456199618_471314455712187_207650341566281879_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=instagram.fflr4-1.fna.fbcdn.net\u0026_nc_cat=103\u0026_nc_oc=Q6cZ2QFBnl3DGiq7MKXR0UWjz9C7E3YeSjYKC0f5LbEC9x3Kkoihxg3jeK_WfrwfqertZ_U\u0026_nc_ohc=auBKMfGfWYAQ7kNvwH4R4o_\u0026_nc_gid=GHL7iYd8ds6G-qUDaFRrRw\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfsREHamgAquQBLVogYNZ5RME-ayD56ndNeMYXepXxKtFQ\u0026oe=699F5F92\u0026_nc_sid=8b3546",
+                      "instagramHandle":  "@mrkayvee",
+                      "rating":  4.5,
+                      "reviewCount":  0,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  0
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T19:14:44.307Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9bb4",
+                      "username":  "hbpixels",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "fullName":  "HB Pixels",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T19:14:44.308Z",
+                      "profilePic":  "https://scontent-mxp1-1.cdninstagram.com/v/t51.2885-19/450619612_1859640717877207_8275472417489307717_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=scontent-mxp1-1.cdninstagram.com\u0026_nc_cat=107\u0026_nc_oc=Q6cZ2QFp_baxHSl5nfe0Vj3Qh6KJ07o7ZpxuVcyrGmk_yu0zWvWiYrq7tbRVj8INd1RQ14U\u0026_nc_ohc=Crqgi-HBxqIQ7kNvwF5Qjc8\u0026_nc_gid=cnaX46cJRadpJ61z-Yk1gg\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AftI_KhkH-T4EMdQGwbQ42-vQVNh8n3gAJdVenHo5ykDpg\u0026oe=699F50DE\u0026_nc_sid=8b3546",
+                      "id":  "699979eefed144b0f45d9bb4",
+                      "name":  "HB Pixels",
+                      "slug":  "hbpixels",
+                      "category":  "wedding photographer",
+                      "featuredImage":  "https://scontent-mxp1-1.cdninstagram.com/v/t51.2885-19/450619612_1859640717877207_8275472417489307717_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=scontent-mxp1-1.cdninstagram.com\u0026_nc_cat=107\u0026_nc_oc=Q6cZ2QFp_baxHSl5nfe0Vj3Qh6KJ07o7ZpxuVcyrGmk_yu0zWvWiYrq7tbRVj8INd1RQ14U\u0026_nc_ohc=Crqgi-HBxqIQ7kNvwF5Qjc8\u0026_nc_gid=cnaX46cJRadpJ61z-Yk1gg\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AftI_KhkH-T4EMdQGwbQ42-vQVNh8n3gAJdVenHo5ykDpg\u0026oe=699F50DE\u0026_nc_sid=8b3546",
+                      "instagramHandle":  "@hbpixels",
+                      "rating":  4.5,
+                      "reviewCount":  0,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  0
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T19:14:44.307Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9bb3",
+                      "username":  "ahmedzol",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "fullName":  "Ahmedzol Photography",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T19:14:44.308Z",
+                      "profilePic":  "https://instagram.ftrn5-1.fna.fbcdn.net/v/t51.2885-19/625051118_18554288254020965_9161974953644721684_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=instagram.ftrn5-1.fna.fbcdn.net\u0026_nc_cat=105\u0026_nc_oc=Q6cZ2QE9q8tDDapIjFkfL9AI9kxPQ3UsR5dnpm8NfsutmZ6-nGXxREzl0rsXri3LLhqGRFo\u0026_nc_ohc=vHqQ91PA0GEQ7kNvwGkt5xn\u0026_nc_gid=KEsVOH-5NrTbDigYS4CkSQ\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfvGgCVSqqgEwFxKmQQDlPdyeS6e3LYHp2fp5ISM6GafQg\u0026oe=699F61D7\u0026_nc_sid=8b3546",
+                      "id":  "699979eefed144b0f45d9bb3",
+                      "name":  "Ahmedzol Photography",
+                      "slug":  "ahmedzol",
+                      "category":  "wedding photographer",
+                      "featuredImage":  "https://instagram.ftrn5-1.fna.fbcdn.net/v/t51.2885-19/625051118_18554288254020965_9161974953644721684_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=instagram.ftrn5-1.fna.fbcdn.net\u0026_nc_cat=105\u0026_nc_oc=Q6cZ2QE9q8tDDapIjFkfL9AI9kxPQ3UsR5dnpm8NfsutmZ6-nGXxREzl0rsXri3LLhqGRFo\u0026_nc_ohc=vHqQ91PA0GEQ7kNvwGkt5xn\u0026_nc_gid=KEsVOH-5NrTbDigYS4CkSQ\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfvGgCVSqqgEwFxKmQQDlPdyeS6e3LYHp2fp5ISM6GafQg\u0026oe=699F61D7\u0026_nc_sid=8b3546",
+                      "instagramHandle":  "@ahmedzol",
+                      "rating":  4.5,
+                      "reviewCount":  0,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  0
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T19:14:44.307Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9bb2",
+                      "username":  "tobibakre",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "fullName":  "Tobi Bakre",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T19:14:44.308Z",
+                      "profilePic":  "https://scontent-mxp1-1.cdninstagram.com/v/t51.2885-19/583111655_18543300640025673_2397708759258642913_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=scontent-mxp1-1.cdninstagram.com\u0026_nc_cat=109\u0026_nc_oc=Q6cZ2QGCHP6TtbVndP8iHOpf1QFmE4PGGLyS3I1Y2C-J1-fazCQgHAdh12N01W_-Vns4k5g\u0026_nc_ohc=CocpisoyYnEQ7kNvwFwhEtR\u0026_nc_gid=zp9dD1QGnHfPSh28zkXHWA\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_Afurx03zFQ5_DFOAsHEdWXHe--yaU3YQpnuF6p31BAjC6A\u0026oe=699F47B5\u0026_nc_sid=8b3546",
+                      "id":  "699979eefed144b0f45d9bb2",
+                      "name":  "Tobi Bakre",
+                      "slug":  "tobibakre",
+                      "category":  "wedding photographer",
+                      "featuredImage":  "https://scontent-mxp1-1.cdninstagram.com/v/t51.2885-19/583111655_18543300640025673_2397708759258642913_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=scontent-mxp1-1.cdninstagram.com\u0026_nc_cat=109\u0026_nc_oc=Q6cZ2QGCHP6TtbVndP8iHOpf1QFmE4PGGLyS3I1Y2C-J1-fazCQgHAdh12N01W_-Vns4k5g\u0026_nc_ohc=CocpisoyYnEQ7kNvwFwhEtR\u0026_nc_gid=zp9dD1QGnHfPSh28zkXHWA\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_Afurx03zFQ5_DFOAsHEdWXHe--yaU3YQpnuF6p31BAjC6A\u0026oe=699F47B5\u0026_nc_sid=8b3546",
+                      "instagramHandle":  "@tobibakre",
+                      "rating":  4.5,
+                      "reviewCount":  0,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  0
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T19:14:44.307Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9bb1",
+                      "username":  "banksbmpro",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "externalUrl":  "https://www.bmpro.me",
+                      "fullName":  "Banke Meshida Lawal",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T19:14:44.308Z",
+                      "profilePic":  "https://instagram.fmil1-1.fna.fbcdn.net/v/t51.2885-19/469243564_584549264299414_4197725078342872023_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=instagram.fmil1-1.fna.fbcdn.net\u0026_nc_cat=110\u0026_nc_oc=Q6cZ2QG8pTvn5m7rHg-cH4RNDVXuwl0TnFjvXnTowbFuFf8YRzY44Zu9G6cDm-HZLlc8YUI\u0026_nc_ohc=nqDHzMoBbm4Q7kNvwGf3Up_\u0026_nc_gid=3KRt4fVavfDV1eqC0HWClQ\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfunNK3Nj6BaC7dwLR1_ug5p_jEmcAdJJEFre0Lg8U7Jtg\u0026oe=699F5680\u0026_nc_sid=8b3546",
+                      "id":  "699979eefed144b0f45d9bb1",
+                      "name":  "Banke Meshida Lawal",
+                      "slug":  "banksbmpro",
+                      "category":  "wedding photographer",
+                      "featuredImage":  "https://instagram.fmil1-1.fna.fbcdn.net/v/t51.2885-19/469243564_584549264299414_4197725078342872023_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=instagram.fmil1-1.fna.fbcdn.net\u0026_nc_cat=110\u0026_nc_oc=Q6cZ2QG8pTvn5m7rHg-cH4RNDVXuwl0TnFjvXnTowbFuFf8YRzY44Zu9G6cDm-HZLlc8YUI\u0026_nc_ohc=nqDHzMoBbm4Q7kNvwGf3Up_\u0026_nc_gid=3KRt4fVavfDV1eqC0HWClQ\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfunNK3Nj6BaC7dwLR1_ug5p_jEmcAdJJEFre0Lg8U7Jtg\u0026oe=699F5680\u0026_nc_sid=8b3546",
+                      "instagramHandle":  "@banksbmpro",
+                      "rating":  4.5,
+                      "reviewCount":  0,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  0
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T19:14:44.307Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9bb0",
+                      "username":  "mayor_tony",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "fullName":  "Mayor Tony",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T19:14:44.308Z",
+                      "profilePic":  "https://scontent-mxp2-1.cdninstagram.com/v/t51.2885-19/382728905_24626406750283512_4102120876444253632_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=scontent-mxp2-1.cdninstagram.com\u0026_nc_cat=100\u0026_nc_oc=Q6cZ2QG44TiMdoRQMadF2eZ2t0woWZAt52B6L2g77rDpDfXPJjmUn4BU1rx3Qascx8l_v-A\u0026_nc_ohc=YEVd_B7nhGUQ7kNvwFdkVye\u0026_nc_gid=h884q2q5AaNi1KavJqCGeA\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfvXfcONg0W6HYFAcw4KicWcAWdZzqSH8eS_F5nTcFYfrg\u0026oe=699F4E1A\u0026_nc_sid=8b3546",
+                      "id":  "699979eefed144b0f45d9bb0",
+                      "name":  "Mayor Tony",
+                      "slug":  "mayor_tony",
+                      "category":  "wedding photographer",
+                      "featuredImage":  "https://scontent-mxp2-1.cdninstagram.com/v/t51.2885-19/382728905_24626406750283512_4102120876444253632_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=scontent-mxp2-1.cdninstagram.com\u0026_nc_cat=100\u0026_nc_oc=Q6cZ2QG44TiMdoRQMadF2eZ2t0woWZAt52B6L2g77rDpDfXPJjmUn4BU1rx3Qascx8l_v-A\u0026_nc_ohc=YEVd_B7nhGUQ7kNvwFdkVye\u0026_nc_gid=h884q2q5AaNi1KavJqCGeA\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfvXfcONg0W6HYFAcw4KicWcAWdZzqSH8eS_F5nTcFYfrg\u0026oe=699F4E1A\u0026_nc_sid=8b3546",
+                      "instagramHandle":  "@mayor_tony",
+                      "rating":  4.5,
+                      "reviewCount":  0,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  0
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T19:14:44.307Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9baf",
+                      "username":  "karl_shakur",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "fullName":  "Karl Ndieli",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T19:14:44.308Z",
+                      "profilePic":  "https://instagram.ftrn5-2.fna.fbcdn.net/v/t51.2885-19/247105900_423368079140187_5399100101581985837_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=instagram.ftrn5-2.fna.fbcdn.net\u0026_nc_cat=103\u0026_nc_oc=Q6cZ2QHVOJjyJMomtZXEQXFZmVbrX5RnDyeLrxO8OlJGhj-Dbm7QF87VeG5nIzj3ilEVHzE\u0026_nc_ohc=SgSajKuNDNwQ7kNvwG59M7M\u0026_nc_gid=sT5E8vPKLXt_phC3IcRK7A\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfsBuELBkrO8CbZ-Bv4uJg1tKlecuN3HaQvmGu-zeblghw\u0026oe=699F4500\u0026_nc_sid=8b3546",
+                      "id":  "699979eefed144b0f45d9baf",
+                      "name":  "Karl Ndieli",
+                      "slug":  "karl_shakur",
+                      "category":  "wedding photographer",
+                      "featuredImage":  "https://instagram.ftrn5-2.fna.fbcdn.net/v/t51.2885-19/247105900_423368079140187_5399100101581985837_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=instagram.ftrn5-2.fna.fbcdn.net\u0026_nc_cat=103\u0026_nc_oc=Q6cZ2QHVOJjyJMomtZXEQXFZmVbrX5RnDyeLrxO8OlJGhj-Dbm7QF87VeG5nIzj3ilEVHzE\u0026_nc_ohc=SgSajKuNDNwQ7kNvwG59M7M\u0026_nc_gid=sT5E8vPKLXt_phC3IcRK7A\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfsBuELBkrO8CbZ-Bv4uJg1tKlecuN3HaQvmGu-zeblghw\u0026oe=699F4500\u0026_nc_sid=8b3546",
+                      "instagramHandle":  "@karl_shakur",
+                      "rating":  4.5,
+                      "reviewCount":  0,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  0
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T19:14:44.307Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9bae",
+                      "username":  "damimanuels",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "externalUrl":  "https://www.damimanuels.com",
+                      "fullName":  "Dami Manuels",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T19:14:44.308Z",
+                      "profilePic":  "https://instagram.fflr4-2.fna.fbcdn.net/v/t51.2885-19/489324168_1197906808353504_7860268281817269390_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=instagram.fflr4-2.fna.fbcdn.net\u0026_nc_cat=100\u0026_nc_oc=Q6cZ2QFLuAJOHdcbKzvmr_4Iwn2hwS9EKuJrfugitRIy6vvZKBOdHDW2QXSh0ilkF1WnOMA\u0026_nc_ohc=c0PyfEB8CVkQ7kNvwEMyGr_\u0026_nc_gid=XBXZnGT4GNQJvq_Gv9oOuw\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AftlLWY-z4KBBkN2toaINXa2KaFnlVhbrndE5JGGR8k68A\u0026oe=699F5FD3\u0026_nc_sid=8b3546",
+                      "id":  "699979eefed144b0f45d9bae",
+                      "name":  "Dami Manuels",
+                      "slug":  "damimanuels",
+                      "category":  "wedding photographer",
+                      "featuredImage":  "https://instagram.fflr4-2.fna.fbcdn.net/v/t51.2885-19/489324168_1197906808353504_7860268281817269390_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=instagram.fflr4-2.fna.fbcdn.net\u0026_nc_cat=100\u0026_nc_oc=Q6cZ2QFLuAJOHdcbKzvmr_4Iwn2hwS9EKuJrfugitRIy6vvZKBOdHDW2QXSh0ilkF1WnOMA\u0026_nc_ohc=c0PyfEB8CVkQ7kNvwEMyGr_\u0026_nc_gid=XBXZnGT4GNQJvq_Gv9oOuw\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AftlLWY-z4KBBkN2toaINXa2KaFnlVhbrndE5JGGR8k68A\u0026oe=699F5FD3\u0026_nc_sid=8b3546",
+                      "instagramHandle":  "@damimanuels",
+                      "rating":  4.5,
+                      "reviewCount":  0,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  0
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T19:14:44.307Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9bad",
+                      "username":  "royal_images",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "fullName":  "Royal Images",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T19:14:44.308Z",
+                      "profilePic":  "https://instagram.fflr4-2.fna.fbcdn.net/v/t51.2885-19/11925714_1705282013036027_275464135_a.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=instagram.fflr4-2.fna.fbcdn.net\u0026_nc_cat=111\u0026_nc_oc=Q6cZ2QGbdb2bMCQ6l6xwc1B7EGufL-GQG4DCtugbgn104_6ax3rvhN_PE6quqxnMinGQ7NM\u0026_nc_ohc=FMtB1-k57YgQ7kNvwEAjRCv\u0026_nc_gid=9ZQk0k74_PhRUgeXkSdenQ\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfsPAu_VtIqpPxGzWJ4yg1vaXQN_z0k9mF_9E6wViZmwBA\u0026oe=699F54FA\u0026_nc_sid=8b3546",
+                      "id":  "699979eefed144b0f45d9bad",
+                      "name":  "Royal Images",
+                      "slug":  "royal_images",
+                      "category":  "wedding photographer",
+                      "featuredImage":  "https://instagram.fflr4-2.fna.fbcdn.net/v/t51.2885-19/11925714_1705282013036027_275464135_a.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=instagram.fflr4-2.fna.fbcdn.net\u0026_nc_cat=111\u0026_nc_oc=Q6cZ2QGbdb2bMCQ6l6xwc1B7EGufL-GQG4DCtugbgn104_6ax3rvhN_PE6quqxnMinGQ7NM\u0026_nc_ohc=FMtB1-k57YgQ7kNvwEAjRCv\u0026_nc_gid=9ZQk0k74_PhRUgeXkSdenQ\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfsPAu_VtIqpPxGzWJ4yg1vaXQN_z0k9mF_9E6wViZmwBA\u0026oe=699F54FA\u0026_nc_sid=8b3546",
+                      "instagramHandle":  "@royal_images",
+                      "rating":  4.5,
+                      "reviewCount":  0,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  0
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T19:14:44.307Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9bac",
+                      "username":  "bedgepictures",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "externalUrl":  "https://www.bedgepictures.com",
+                      "fullName":  "Bedge Pictures",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T19:14:44.308Z",
+                      "profilePic":  "https://scontent-mxp2-1.cdninstagram.com/v/t51.2885-19/64265851_620277178467394_3524001059842293760_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDAwLmMyIn0\u0026_nc_ht=scontent-mxp2-1.cdninstagram.com\u0026_nc_cat=110\u0026_nc_oc=Q6cZ2QH2ewsbjh7kTMfYlb70RcGhhgUlEx0hYQiO7pGjCDi3phqnH355DDP9bB57aS13PV0\u0026_nc_ohc=kzRuH9wDB90Q7kNvwEyk63i\u0026_nc_gid=H8ZHq7Z1QJWS6hPr6wCBbQ\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfsWtYil8tQbPjIZSVuEfw9M9UfoDVAYRl3BgfCRgDydPQ\u0026oe=699F5393\u0026_nc_sid=8b3546",
+                      "id":  "699979eefed144b0f45d9bac",
+                      "name":  "Bedge Pictures",
+                      "slug":  "bedgepictures",
+                      "category":  "wedding photographer",
+                      "featuredImage":  "https://scontent-mxp2-1.cdninstagram.com/v/t51.2885-19/64265851_620277178467394_3524001059842293760_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDAwLmMyIn0\u0026_nc_ht=scontent-mxp2-1.cdninstagram.com\u0026_nc_cat=110\u0026_nc_oc=Q6cZ2QH2ewsbjh7kTMfYlb70RcGhhgUlEx0hYQiO7pGjCDi3phqnH355DDP9bB57aS13PV0\u0026_nc_ohc=kzRuH9wDB90Q7kNvwEyk63i\u0026_nc_gid=H8ZHq7Z1QJWS6hPr6wCBbQ\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfsWtYil8tQbPjIZSVuEfw9M9UfoDVAYRl3BgfCRgDydPQ\u0026oe=699F5393\u0026_nc_sid=8b3546",
+                      "instagramHandle":  "@bedgepictures",
+                      "rating":  4.5,
+                      "reviewCount":  0,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  0
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T19:14:44.307Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9bab",
+                      "username":  "lakinogunbanwo",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "externalUrl":  "https://www.lakinogunbanwo.com",
+                      "fullName":  "Lakin Ogunbanwo",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T19:14:44.308Z",
+                      "profilePic":  "https://scontent-fra3-2.cdninstagram.com/v/t51.2885-19/573323465_1219825463302212_7278921664109726296_n.png?stp=dst-jpg_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xNTAuYzIifQ\u0026_nc_ht=scontent-fra3-2.cdninstagram.com\u0026_nc_cat=1\u0026_nc_oc=Q6cZ2QE_peDvvTkK_Kpz3FbVfwsH7eYv5mLYXO2DLOaaiLk_uvlLCL16skQ_abUMlPzbd_fHse4yNK-OeutdX2I4K7fl\u0026_nc_ohc=LU2ej65XLqkQ7kNvwEtznLj\u0026_nc_gid=CS-zyeK_BPSqzMUDAHl3JQ\u0026edm=APs17CUBAAAA\u0026ccb=7-5\u0026ig_cache_key=YW5vbnltb3VzX3Byb2ZpbGVfcGlj.3-ccb7-5\u0026oh=00_AfuJwCtPfjs2a7uZjPzHSeQBwfwv97ef_AANZLNoJZipUQ\u0026oe=699F592A\u0026_nc_sid=10d13b",
+                      "id":  "699979eefed144b0f45d9bab",
+                      "name":  "Lakin Ogunbanwo",
+                      "slug":  "lakinogunbanwo",
+                      "category":  "wedding photographer",
+                      "featuredImage":  "https://scontent-fra3-2.cdninstagram.com/v/t51.2885-19/573323465_1219825463302212_7278921664109726296_n.png?stp=dst-jpg_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xNTAuYzIifQ\u0026_nc_ht=scontent-fra3-2.cdninstagram.com\u0026_nc_cat=1\u0026_nc_oc=Q6cZ2QE_peDvvTkK_Kpz3FbVfwsH7eYv5mLYXO2DLOaaiLk_uvlLCL16skQ_abUMlPzbd_fHse4yNK-OeutdX2I4K7fl\u0026_nc_ohc=LU2ej65XLqkQ7kNvwEtznLj\u0026_nc_gid=CS-zyeK_BPSqzMUDAHl3JQ\u0026edm=APs17CUBAAAA\u0026ccb=7-5\u0026ig_cache_key=YW5vbnltb3VzX3Byb2ZpbGVfcGlj.3-ccb7-5\u0026oh=00_AfuJwCtPfjs2a7uZjPzHSeQBwfwv97ef_AANZLNoJZipUQ\u0026oe=699F592A\u0026_nc_sid=10d13b",
+                      "instagramHandle":  "@lakinogunbanwo",
+                      "rating":  4.5,
+                      "reviewCount":  0,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  0
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T19:14:44.307Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9baa",
+                      "username":  "thetomiwaajayi",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "externalUrl":  "https://www.tomiwaajayiphotography.com",
+                      "fullName":  "Tomiwa Ajayi Photography",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T19:14:44.308Z",
+                      "profilePic":  "https://scontent-mxp1-1.cdninstagram.com/v/t51.2885-19/375606950_688712242690868_8482157807121023741_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMxIn0\u0026_nc_ht=scontent-mxp1-1.cdninstagram.com\u0026_nc_cat=108\u0026_nc_oc=Q6cZ2QFps6FHTi5IjCjB1NPfpJk9tuIuSkzL3tqsbGEf_NH0IKMxLOmNzmQKu4LOzMD_lcI\u0026_nc_ohc=eEQHUmk3XzkQ7kNvwEA8MC1\u0026_nc_gid=gLyGVNR9w-Lv0U0mxdCrSg\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_Aft15V2Snm3DAQx2H1dd9URts4FzdqbutfRgSaIbC_gI_A\u0026oe=699F51C8\u0026_nc_sid=8b3546",
+                      "id":  "699979eefed144b0f45d9baa",
+                      "name":  "Tomiwa Ajayi Photography",
+                      "slug":  "thetomiwaajayi",
+                      "category":  "wedding photographer",
+                      "featuredImage":  "https://scontent-mxp1-1.cdninstagram.com/v/t51.2885-19/375606950_688712242690868_8482157807121023741_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMxIn0\u0026_nc_ht=scontent-mxp1-1.cdninstagram.com\u0026_nc_cat=108\u0026_nc_oc=Q6cZ2QFps6FHTi5IjCjB1NPfpJk9tuIuSkzL3tqsbGEf_NH0IKMxLOmNzmQKu4LOzMD_lcI\u0026_nc_ohc=eEQHUmk3XzkQ7kNvwEA8MC1\u0026_nc_gid=gLyGVNR9w-Lv0U0mxdCrSg\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_Aft15V2Snm3DAQx2H1dd9URts4FzdqbutfRgSaIbC_gI_A\u0026oe=699F51C8\u0026_nc_sid=8b3546",
+                      "instagramHandle":  "@thetomiwaajayi",
+                      "rating":  4.5,
+                      "reviewCount":  0,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  0
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T19:14:44.307Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9ba9",
+                      "username":  "david.afolayan",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "externalUrl":  "https://davidafolayan.com",
+                      "fullName":  "David Afolayan",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T19:14:44.308Z",
+                      "profilePic":  "https://scontent-mxp2-1.cdninstagram.com/v/t51.2885-19/579366249_18533650429001645_1583659899187151546_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=scontent-mxp2-1.cdninstagram.com\u0026_nc_cat=105\u0026_nc_oc=Q6cZ2QG5acFwmYa32HFnAD2UUo6UFIJrc2EjXZzV5Pc8rsKfFuHvMQh9YpzmN3j_oSFQZ2Q\u0026_nc_ohc=42l6ANXArToQ7kNvwHAsF_N\u0026_nc_gid=8vl5BzlsYDq4j6W2zzMMJQ\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AftY4fSAFUrkSsP6CVIRAC-wOVPbS8bWd11B2rYFAjFKug\u0026oe=699F57D1\u0026_nc_sid=8b3546",
+                      "id":  "699979eefed144b0f45d9ba9",
+                      "name":  "David Afolayan",
+                      "slug":  "david.afolayan",
+                      "category":  "wedding photographer",
+                      "featuredImage":  "https://scontent-mxp2-1.cdninstagram.com/v/t51.2885-19/579366249_18533650429001645_1583659899187151546_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=scontent-mxp2-1.cdninstagram.com\u0026_nc_cat=105\u0026_nc_oc=Q6cZ2QG5acFwmYa32HFnAD2UUo6UFIJrc2EjXZzV5Pc8rsKfFuHvMQh9YpzmN3j_oSFQZ2Q\u0026_nc_ohc=42l6ANXArToQ7kNvwHAsF_N\u0026_nc_gid=8vl5BzlsYDq4j6W2zzMMJQ\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AftY4fSAFUrkSsP6CVIRAC-wOVPbS8bWd11B2rYFAjFKug\u0026oe=699F57D1\u0026_nc_sid=8b3546",
+                      "instagramHandle":  "@david.afolayan",
+                      "rating":  4.5,
+                      "reviewCount":  0,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  0
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T19:14:44.307Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9ba8",
+                      "username":  "klalaphotography",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "fullName":  "Klala Photography",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T19:14:44.308Z",
+                      "profilePic":  "https://scontent-mxp1-1.cdninstagram.com/v/t51.2885-19/358365213_824053725555351_7494409992230210844_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4zMjAuYzIifQ\u0026_nc_ht=scontent-mxp1-1.cdninstagram.com\u0026_nc_cat=103\u0026_nc_oc=Q6cZ2QFzNdnzXl2ciSpl9VOs4Kc79UYs3M2k1otZATp_hi9NzKlYzUhgCf3aUdCTjOFuAlM\u0026_nc_ohc=-SB68pnSzL8Q7kNvwH-8zxa\u0026_nc_gid=YGwxYt-GRdcVpZZkPcFkew\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfutlwHZJ-gm7DdPnpIOfBWFt7gyM8WtPLA2eIbqYGVQCg\u0026oe=699F61D5\u0026_nc_sid=8b3546",
+                      "id":  "699979eefed144b0f45d9ba8",
+                      "name":  "Klala Photography",
+                      "slug":  "klalaphotography",
+                      "category":  "wedding photographer",
+                      "featuredImage":  "https://scontent-mxp1-1.cdninstagram.com/v/t51.2885-19/358365213_824053725555351_7494409992230210844_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4zMjAuYzIifQ\u0026_nc_ht=scontent-mxp1-1.cdninstagram.com\u0026_nc_cat=103\u0026_nc_oc=Q6cZ2QFzNdnzXl2ciSpl9VOs4Kc79UYs3M2k1otZATp_hi9NzKlYzUhgCf3aUdCTjOFuAlM\u0026_nc_ohc=-SB68pnSzL8Q7kNvwH-8zxa\u0026_nc_gid=YGwxYt-GRdcVpZZkPcFkew\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfutlwHZJ-gm7DdPnpIOfBWFt7gyM8WtPLA2eIbqYGVQCg\u0026oe=699F61D5\u0026_nc_sid=8b3546",
+                      "instagramHandle":  "@klalaphotography",
+                      "rating":  4.5,
+                      "reviewCount":  0,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  0
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T19:14:44.307Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9ba7",
+                      "username":  "lucasugoweddings",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "fullName":  "Lucas Ugo Weddings",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T19:14:44.308Z",
+                      "profilePic":  "https://instagram.fflr4-2.fna.fbcdn.net/v/t51.2885-19/617783475_18527759806067807_6790320756578789243_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=instagram.fflr4-2.fna.fbcdn.net\u0026_nc_cat=111\u0026_nc_oc=Q6cZ2QHrS-1TQMrWiQgpJxAOsuZKnsBO0Yqs1-nsh9jhkv3UhSYlq5v5iThuF-rpwHD3KAY\u0026_nc_ohc=XjWhGRQrZJQQ7kNvwFRyWJC\u0026_nc_gid=bQTo6d0cJo10T-ZD8F6v8g\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_Afv9gmIlwwLxl14tndirtKJse_cWOjIZYhiT0YCicth4kg\u0026oe=699F6E07\u0026_nc_sid=8b3546",
+                      "id":  "699979eefed144b0f45d9ba7",
+                      "name":  "Lucas Ugo Weddings",
+                      "slug":  "lucasugoweddings",
+                      "category":  "wedding photographer",
+                      "featuredImage":  "https://instagram.fflr4-2.fna.fbcdn.net/v/t51.2885-19/617783475_18527759806067807_6790320756578789243_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=instagram.fflr4-2.fna.fbcdn.net\u0026_nc_cat=111\u0026_nc_oc=Q6cZ2QHrS-1TQMrWiQgpJxAOsuZKnsBO0Yqs1-nsh9jhkv3UhSYlq5v5iThuF-rpwHD3KAY\u0026_nc_ohc=XjWhGRQrZJQQ7kNvwFRyWJC\u0026_nc_gid=bQTo6d0cJo10T-ZD8F6v8g\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_Afv9gmIlwwLxl14tndirtKJse_cWOjIZYhiT0YCicth4kg\u0026oe=699F6E07\u0026_nc_sid=8b3546",
+                      "instagramHandle":  "@lucasugoweddings",
+                      "rating":  4.5,
+                      "reviewCount":  0,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  0
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T19:14:44.307Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9ba6",
+                      "username":  "kayode_ogungbade",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "externalUrl":  "https://www.kayodeogungbade.com",
+                      "fullName":  "Kayode Ogungbade",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T19:14:44.308Z",
+                      "profilePic":  "https://instagram.fflr4-2.fna.fbcdn.net/v/t51.2885-19/566642341_18387999973132848_7195191639482925230_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=instagram.fflr4-2.fna.fbcdn.net\u0026_nc_cat=100\u0026_nc_oc=Q6cZ2QESBDru5hijKVnpYDAtUOX1AM7KoGbYAlzuDWitm-bP4rQywGKEP_Yu76iqUSgCW2w\u0026_nc_ohc=1wf9MyBsk18Q7kNvwGOHNOS\u0026_nc_gid=0IQLubm873hgoMQ0IyjVtA\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfstxkZcczFfow7INutBpfMYg_2HoDsMs9XwDIs60WTs3Q\u0026oe=699F423B\u0026_nc_sid=8b3546",
+                      "id":  "699979eefed144b0f45d9ba6",
+                      "name":  "Kayode Ogungbade",
+                      "slug":  "kayode_ogungbade",
+                      "category":  "wedding photographer",
+                      "featuredImage":  "https://instagram.fflr4-2.fna.fbcdn.net/v/t51.2885-19/566642341_18387999973132848_7195191639482925230_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=instagram.fflr4-2.fna.fbcdn.net\u0026_nc_cat=100\u0026_nc_oc=Q6cZ2QESBDru5hijKVnpYDAtUOX1AM7KoGbYAlzuDWitm-bP4rQywGKEP_Yu76iqUSgCW2w\u0026_nc_ohc=1wf9MyBsk18Q7kNvwGOHNOS\u0026_nc_gid=0IQLubm873hgoMQ0IyjVtA\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfstxkZcczFfow7INutBpfMYg_2HoDsMs9XwDIs60WTs3Q\u0026oe=699F423B\u0026_nc_sid=8b3546",
+                      "instagramHandle":  "@kayode_ogungbade",
+                      "rating":  4.5,
+                      "reviewCount":  0,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  0
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T19:14:44.307Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9ba5",
+                      "username":  "thedavidmartinss",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "externalUrl":  "https://www.thedavidmartins.com",
+                      "fullName":  "The David Martins",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T19:14:44.308Z",
+                      "profilePic":  "https://instagram.fqpa2-1.fna.fbcdn.net/v/t51.2885-19/500074593_18505567891032856_243405073037216461_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=instagram.fqpa2-1.fna.fbcdn.net\u0026_nc_cat=104\u0026_nc_oc=Q6cZ2QHMv7kv6pvchGsR8n5gPwMYkH6h4d2iXjEq1I755a-dUlwIueRxeURnK804aQZC1vQ\u0026_nc_ohc=d70DzHNn17IQ7kNvwEkvXHR\u0026_nc_gid=Qdh5f9wh40-0vhv1zEFsqQ\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfsWIt-CeJAWB-n86TRolCLRz2n6O5U4mu3cV7gckonBSA\u0026oe=699F3F48\u0026_nc_sid=8b3546",
+                      "id":  "699979eefed144b0f45d9ba5",
+                      "name":  "The David Martins",
+                      "slug":  "thedavidmartinss",
+                      "category":  "wedding photographer",
+                      "featuredImage":  "https://instagram.fqpa2-1.fna.fbcdn.net/v/t51.2885-19/500074593_18505567891032856_243405073037216461_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=instagram.fqpa2-1.fna.fbcdn.net\u0026_nc_cat=104\u0026_nc_oc=Q6cZ2QHMv7kv6pvchGsR8n5gPwMYkH6h4d2iXjEq1I755a-dUlwIueRxeURnK804aQZC1vQ\u0026_nc_ohc=d70DzHNn17IQ7kNvwEkvXHR\u0026_nc_gid=Qdh5f9wh40-0vhv1zEFsqQ\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfsWIt-CeJAWB-n86TRolCLRz2n6O5U4mu3cV7gckonBSA\u0026oe=699F3F48\u0026_nc_sid=8b3546",
+                      "instagramHandle":  "@thedavidmartinss",
+                      "rating":  4.5,
+                      "reviewCount":  0,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  0
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T19:14:44.307Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9ba4",
+                      "username":  "slammyphotography_",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "fullName":  "Slammy Photography",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T19:14:44.308Z",
+                      "profilePic":  "https://instagram.fmil1-1.fna.fbcdn.net/v/t51.2885-19/609073503_18068883323529949_2044304690674059951_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=instagram.fmil1-1.fna.fbcdn.net\u0026_nc_cat=101\u0026_nc_oc=Q6cZ2QEYWxK4Isd7jsk9eDC50OEAdzHhSHcyQZO-4Mm00vRlkrZVN3zuLaAVivya0kPD-og\u0026_nc_ohc=LgzZRgQ_ayQQ7kNvwH8Fvlc\u0026_nc_gid=IvhKB7E8FdzRbWFeqsoGdQ\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfsTwI1IaDM9nuKDA4YTI8DwxuDQuqPzC17jtolGoW-4TQ\u0026oe=699F6D25\u0026_nc_sid=8b3546",
+                      "id":  "699979eefed144b0f45d9ba4",
+                      "name":  "Slammy Photography",
+                      "slug":  "slammyphotography_",
+                      "category":  "wedding photographer",
+                      "featuredImage":  "https://instagram.fmil1-1.fna.fbcdn.net/v/t51.2885-19/609073503_18068883323529949_2044304690674059951_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0\u0026_nc_ht=instagram.fmil1-1.fna.fbcdn.net\u0026_nc_cat=101\u0026_nc_oc=Q6cZ2QEYWxK4Isd7jsk9eDC50OEAdzHhSHcyQZO-4Mm00vRlkrZVN3zuLaAVivya0kPD-og\u0026_nc_ohc=LgzZRgQ_ayQQ7kNvwH8Fvlc\u0026_nc_gid=IvhKB7E8FdzRbWFeqsoGdQ\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfsTwI1IaDM9nuKDA4YTI8DwxuDQuqPzC17jtolGoW-4TQ\u0026oe=699F6D25\u0026_nc_sid=8b3546",
+                      "instagramHandle":  "@slammyphotography_",
+                      "rating":  4.5,
+                      "reviewCount":  0,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  0
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T19:14:44.307Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9ba3",
+                      "username":  "nonsookoye_weddings",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "fullName":  "Nonso Okoye Weddings",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T19:14:44.308Z",
+                      "profilePic":  "https://scontent-mxp1-1.cdninstagram.com/v/t51.2885-19/491445348_1668364377132039_7175322923923912959_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby43NTAuYzIifQ\u0026_nc_ht=scontent-mxp1-1.cdninstagram.com\u0026_nc_cat=103\u0026_nc_oc=Q6cZ2QEtr7oW8VG5rCF2_W6LPiucgo2SDvlWUfRaIcKnygLWaWQA9SHR4-ZyY6-o-2tSob4\u0026_nc_ohc=7LyAOwf5Ei0Q7kNvwGS0syc\u0026_nc_gid=axYMk0AgSryd5r4a_5b1LQ\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfuXg_2Ne72bNQQsf7kOo_bKsjv8ziqub6Iqh3xFtj8HNw\u0026oe=699F49CA\u0026_nc_sid=8b3546",
+                      "id":  "699979eefed144b0f45d9ba3",
+                      "name":  "Nonso Okoye Weddings",
+                      "slug":  "nonsookoye_weddings",
+                      "category":  "wedding photographer",
+                      "featuredImage":  "https://scontent-mxp1-1.cdninstagram.com/v/t51.2885-19/491445348_1668364377132039_7175322923923912959_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby43NTAuYzIifQ\u0026_nc_ht=scontent-mxp1-1.cdninstagram.com\u0026_nc_cat=103\u0026_nc_oc=Q6cZ2QEtr7oW8VG5rCF2_W6LPiucgo2SDvlWUfRaIcKnygLWaWQA9SHR4-ZyY6-o-2tSob4\u0026_nc_ohc=7LyAOwf5Ei0Q7kNvwGS0syc\u0026_nc_gid=axYMk0AgSryd5r4a_5b1LQ\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfuXg_2Ne72bNQQsf7kOo_bKsjv8ziqub6Iqh3xFtj8HNw\u0026oe=699F49CA\u0026_nc_sid=8b3546",
+                      "instagramHandle":  "@nonsookoye_weddings",
+                      "rating":  4.5,
+                      "reviewCount":  0,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  0
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T19:14:44.307Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9ba2",
+                      "username":  "samsavvyphotography",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "fullName":  "Samsavvy Photography",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T19:14:44.308Z",
+                      "profilePic":  "https://instagram.fmil1-1.fna.fbcdn.net/v/t51.2885-19/47585182_807300472772204_8311249857973059584_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby42NDAuYzIifQ\u0026_nc_ht=instagram.fmil1-1.fna.fbcdn.net\u0026_nc_cat=108\u0026_nc_oc=Q6cZ2QGzQcY3TKHcP85ui-SV6KYbmxWPpOAGCI5EOnWKtQcT8w0UbUQSg_1aVhPoMsGPVlI\u0026_nc_ohc=vQhP0QA00ZEQ7kNvwEipuIu\u0026_nc_gid=jb8Y36wA2vEqNYI1s-XyCw\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfvpJ8YUWWD5ikjwbJJUQ0qW1HWOP2MAsFEzRWUEbd6EHg\u0026oe=699F50B9\u0026_nc_sid=8b3546",
+                      "id":  "699979eefed144b0f45d9ba2",
+                      "name":  "Samsavvy Photography",
+                      "slug":  "samsavvyphotography",
+                      "category":  "wedding photographer",
+                      "featuredImage":  "https://instagram.fmil1-1.fna.fbcdn.net/v/t51.2885-19/47585182_807300472772204_8311249857973059584_n.jpg?stp=dst-jpg_s320x320_tt6\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby42NDAuYzIifQ\u0026_nc_ht=instagram.fmil1-1.fna.fbcdn.net\u0026_nc_cat=108\u0026_nc_oc=Q6cZ2QGzQcY3TKHcP85ui-SV6KYbmxWPpOAGCI5EOnWKtQcT8w0UbUQSg_1aVhPoMsGPVlI\u0026_nc_ohc=vQhP0QA00ZEQ7kNvwEipuIu\u0026_nc_gid=jb8Y36wA2vEqNYI1s-XyCw\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfvpJ8YUWWD5ikjwbJJUQ0qW1HWOP2MAsFEzRWUEbd6EHg\u0026oe=699F50B9\u0026_nc_sid=8b3546",
+                      "instagramHandle":  "@samsavvyphotography",
+                      "rating":  4.5,
+                      "reviewCount":  0,
+                      "priceRange":  "$$"
+                  }
+              ],
+    "Count":  20
+}

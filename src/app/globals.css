@@ -61,6 +61,7 @@
 
   --color-border: var(--border);
   --color-border-strong: var(--border-strong);
+  --color-editorial: var(--border);
 
   --color-text: var(--text);
   --color-text-muted: var(--text-muted);
@@ -82,8 +83,24 @@
   --shadow-hover: var(--shadow-hover);
   --shadow-accent: var(--shadow-accent);
 
-  --color-purple-50: var(--color-purple-dim);
-  --color-purple-600: var(--color-purple);
+  /* Wedding Theme */
+  --color-wedding-50: #f9f7f5;
+  --color-wedding-100: #f0eBE6;
+  --color-wedding-200: #e0d8cf;
+  --color-wedding-300: #cbbba8;
+  --color-wedding-400: #b49a80;
+  --color-wedding-500: #9e7f5e;
+  --color-wedding-600: #846648;
+  --color-wedding-700: #71553c;
+  --color-wedding-800: #554231;
+  --color-wedding-900: #463629;
+
+  --animate-heartbeat: heartbeat 1.5s ease-in-out infinite;
+
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+  }
 }
 
 html {
@@ -167,4 +184,25 @@ a:hover {
 
 .purple-glow-top {
   background: linear-gradient(180deg, rgba(167, 139, 250, 0.08) 0%, transparent 40%);
+}
+
+/* WordPress CMS Specifics */
+.cms-content .aligncenter {
+  @apply mx-auto block my-12;
+}
+
+.cms-content .alignleft {
+  @apply md:float-left md:mr-8 mb-6 block max-w-full md:max-w-[400px];
+}
+
+.cms-content .alignright {
+  @apply md:float-right md:ml-8 mb-6 block max-w-full md:max-w-[400px];
+}
+
+.cms-content .wp-block-image {
+  @apply my-12;
+}
+
+.cms-content .wp-block-image img {
+  @apply border border-editorial transition-all hover:shadow-hover;
 }

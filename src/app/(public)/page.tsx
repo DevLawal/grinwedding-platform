@@ -1,9 +1,6 @@
 import Link from 'next/link';
+import ProxyImage from '@/components/ui/ProxyImage';
 
-const leaderboardStyles = `
-  .lb-row:hover { background: #1c1c1c; }
-  .lb-vendor:hover { color: #c4b5fd; }
-`;
 import { getPosts } from '@/lib/wordpress';
 import { getVendors } from '@/lib/vendors';
 import NewsletterCard from '@/components/layout/NewsletterCard';
@@ -16,11 +13,13 @@ export const revalidate = 3600;
 
 export default async function Home() {
   const [posts, vendors] = await Promise.all([
-    getPosts(4),
+    getPosts(11),
     getVendors()
   ]);
 
   const topVendors = vendors.slice(0, 6);
+  const heroPost = posts[0];
+  const insightPosts = posts.slice(1, 11);
 
   return (
     <div className="min-h-screen bg-base">
@@ -79,10 +78,10 @@ export default async function Home() {
               </Link>
             </div>
 
-            <div className="magazine-grid">
-              {posts.map(post => (
-                <PostCard key={post.id} post={post} />
-              ))}
+            <div className="max-w-3xl">
+              {heroPost && (
+                <PostCard key={heroPost.id} post={heroPost} />
+              )}
             </div>
           </section>
 
@@ -120,12 +119,22 @@ export default async function Home() {
                         {String(index + 1).padStart(2, '0')}
                       </td>
                       <td className="py-5 px-6">
-                        <Link
-                          href={`/vendors/${vendor.slug}`}
-                          className="font-black uppercase tracking-widest text-[0.8rem] transition-colors text-text-muted group-hover:text-purple"
-                        >
-                          {vendor.name}
-                        </Link>
+                        <div className="flex items-center gap-4">
+                          <div className="w-10 h-10 relative bg-surface-2 border border-editorial overflow-hidden shrink-0 shadow-sm">
+                            <ProxyImage
+                              src={vendor.featuredImage}
+                              alt={vendor.name || ''}
+                              className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500"
+                              fallbackLetter={(vendor.name || '?').charAt(0)}
+                            />
+                          </div>
+                          <Link
+                            href={`/vendors/${vendor.slug}`}
+                            className="font-black uppercase tracking-widest text-[0.8rem] transition-colors text-text-muted group-hover:text-purple"
+                          >
+                            {vendor.name}
+                          </Link>
+                        </div>
                       </td>
                       <td className="py-5 px-6">
                         <span className="text-[9px] font-black uppercase tracking-widest text-text-dim">
@@ -179,6 +188,59 @@ export default async function Home() {
         <aside className="w-full lg:w-72 space-y-8 shrink-0">
           <NewsletterCard />
           <PopularContentCard />
+
+          {/* Latest Insights Section - Detailed.com SEO Playbook Style */}
+          <section>
+            <div className="flex items-center justify-between mb-8 pb-4 border-b border-editorial opacity-50">
+              <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-text-dim">
+                Latest Insights
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+              {insightPosts.map((post, index) => {
+                const featuredImage = (typeof post.featuredImage === 'string' ? post.featuredImage : post.featuredImage?.node?.sourceUrl) || '';
+                return (
+                  <article 
+                    key={post.id} 
+                    className="group relative bg-surface border-2 border-editorial p-5 transition-all duration-300 hover:border-purple hover:bg-surface-2 overflow-hidden"
+                  >
+                    <Link href={`/blog/${post.slug}`} className="flex gap-4 items-center">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-col gap-2">
+                          <span className="text-[7px] font-black uppercase tracking-[0.3em] text-purple/40 group-hover:text-purple transition-colors">
+                            INSIGHT {String(index + 1).padStart(2, '0')}
+                          </span>
+                          <h4 className="text-[0.88rem] font-serif font-black leading-[1.25] text-text transition-colors duration-200 group-hover:text-purple line-clamp-3">
+                            {parse(post.title)}
+                          </h4>
+                        </div>
+                      </div>
+                      
+                      {/* Compact High-Contrast Image */}
+                      <div className="relative w-14 h-14 shrink-0 overflow-hidden bg-surface-2 border border-editorial group-hover:border-purple/30 transition-colors">
+                        {featuredImage ? (
+                          <img
+                            src={featuredImage}
+                            alt={post.title}
+                            className="object-cover w-full h-full transition-all duration-700 scale-100 group-hover:scale-110"
+                          />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center text-[8px] font-black text-text-dim uppercase">N/A</div>
+                        )}
+                      </div>
+                    </Link>
+                  </article>
+                );
+              })}
+            </div>
+
+            <div className="mt-8 pt-6 flex justify-center border-t border-editorial opacity-50">
+              <Link href="/blog" className="text-[9px] font-black uppercase tracking-[0.3em] text-text-dim hover:text-purple transition-colors">
+                Full Feed &rarr;
+              </Link>
+            </div>
+          </section>
         </aside>
       </div>
     </div>

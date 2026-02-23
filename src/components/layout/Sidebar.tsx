@@ -18,7 +18,7 @@ export default function Sidebar() {
   ];
 
   return (
-    <aside className="hidden lg:flex fixed left-0 top-0 h-screen w-64 flex-col z-40 bg-base border-r border-editorial">
+    <aside id="sidebar" className="hidden lg:flex fixed left-0 top-0 h-screen w-64 flex-col z-40 bg-base border-r border-editorial print:hidden">
       {/* Purple top glow */}
       <div className="absolute top-0 right-0 h-48 pointer-events-none purple-glow-bg opacity-50" />
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BudgetInputs, CategoryPriorities, City, WeddingType, WeddingScale } from '@/lib/calculator/types';
 import { calculateBudget } from '@/lib/calculator/budgetLogic';
@@ -14,6 +14,11 @@ type Step = 'welcome' | 'basics' | 'guest-budget' | 'priorities' | 'results';
 
 export default function BudgetCalculator() {
   const [currentStep, setCurrentStep] = useState<Step>('welcome');
+
+  // Scroll to top when step changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [currentStep]);
   
   // Form state
   const [city, setCity] = useState<City>('lagos');
@@ -85,7 +90,7 @@ export default function BudgetCalculator() {
   };
 
   return (
-    <div className="min-h-screen bg-base px-4 selection:bg-purple/20 selection:text-purple">
+    <div className="min-h-screen bg-base py-12 md:py-0 px-4 selection:bg-purple/20 selection:text-purple">
       <AnimatePresence mode="wait">
         {currentStep === 'welcome' && (
           <motion.div key="welcome" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>

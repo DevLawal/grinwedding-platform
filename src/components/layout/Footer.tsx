@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Footer() {
     return (
-        <footer className="mt-32 py-20 bg-surface border-t border-editorial">
+        <footer id="footer" className="mt-32 py-20 bg-surface border-t border-editorial print:hidden">
             <div className="container">
                 <div className="grid md:grid-cols-12 gap-16">
                     <div className="md:col-span-5">
@@ -59,7 +59,7 @@ export default function Footer() {
                 </div>
 
                 <div className="mt-20 pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-black uppercase tracking-[0.25em] border-t border-editorial text-text-dim">
-                    <div>&copy; {new Date().getFullYear()} GRIN WEDDINGS. ALL INTEL RESERVED.</div>
+                    <div>&copy; {new Date().getFullYear()} GRIN WEDDINGS. ALL RIGHTS RESERVED.</div>
                     <div className="flex gap-8">
                         <Link href="/privacy" className="hover:text-text-muted transition-colors">Privacy</Link>
                         <Link href="/terms" className="hover:text-text-muted transition-colors">Terms</Link>

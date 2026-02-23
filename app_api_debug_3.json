@@ -1,0 +1,733 @@
+﻿{
+    "value":  [
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  8500
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T18:24:55.270Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9bb5",
+                      "username":  "mrkayvee",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "fullName":  "KayVee",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T18:24:55.270Z",
+                      "id":  "699979eefed144b0f45d9bb5",
+                      "name":  "KayVee",
+                      "slug":  "mrkayvee",
+                      "category":  "wedding photographer",
+                      "instagramHandle":  "@mrkayvee",
+                      "rating":  4.5,
+                      "reviewCount":  85,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  8500
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T18:24:55.270Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9bb4",
+                      "username":  "hbpixels",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "fullName":  "HB Pixels",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T18:24:55.270Z",
+                      "id":  "699979eefed144b0f45d9bb4",
+                      "name":  "HB Pixels",
+                      "slug":  "hbpixels",
+                      "category":  "wedding photographer",
+                      "instagramHandle":  "@hbpixels",
+                      "rating":  4.5,
+                      "reviewCount":  85,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  8500
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T18:24:55.270Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9bb3",
+                      "username":  "ahmedzol",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "fullName":  "Ahmedzol Photography",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T18:24:55.270Z",
+                      "id":  "699979eefed144b0f45d9bb3",
+                      "name":  "Ahmedzol Photography",
+                      "slug":  "ahmedzol",
+                      "category":  "wedding photographer",
+                      "instagramHandle":  "@ahmedzol",
+                      "rating":  4.5,
+                      "reviewCount":  85,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  9500
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T18:24:55.270Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9bb2",
+                      "username":  "tobibakre",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "fullName":  "Tobi Bakre",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T18:24:55.270Z",
+                      "id":  "699979eefed144b0f45d9bb2",
+                      "name":  "Tobi Bakre",
+                      "slug":  "tobibakre",
+                      "category":  "wedding photographer",
+                      "instagramHandle":  "@tobibakre",
+                      "rating":  4.5,
+                      "reviewCount":  95,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  10500
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T18:24:55.270Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9bb1",
+                      "username":  "banksbmpro",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "externalUrl":  "https://www.bmpro.me",
+                      "fullName":  "Banke Meshida Lawal",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T18:24:55.270Z",
+                      "id":  "699979eefed144b0f45d9bb1",
+                      "name":  "Banke Meshida Lawal",
+                      "slug":  "banksbmpro",
+                      "category":  "wedding photographer",
+                      "instagramHandle":  "@banksbmpro",
+                      "rating":  4.5,
+                      "reviewCount":  105,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  10500
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T18:24:55.270Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9bb0",
+                      "username":  "mayor_tony",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "fullName":  "Mayor Tony",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T18:24:55.270Z",
+                      "id":  "699979eefed144b0f45d9bb0",
+                      "name":  "Mayor Tony",
+                      "slug":  "mayor_tony",
+                      "category":  "wedding photographer",
+                      "instagramHandle":  "@mayor_tony",
+                      "rating":  4.5,
+                      "reviewCount":  105,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  11500
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T18:24:55.270Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9baf",
+                      "username":  "karl_shakur",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "fullName":  "Karl Ndieli",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T18:24:55.270Z",
+                      "id":  "699979eefed144b0f45d9baf",
+                      "name":  "Karl Ndieli",
+                      "slug":  "karl_shakur",
+                      "category":  "wedding photographer",
+                      "instagramHandle":  "@karl_shakur",
+                      "rating":  4.5,
+                      "reviewCount":  115,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  11500
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T18:24:55.270Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9bae",
+                      "username":  "damimanuels",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "externalUrl":  "https://www.damimanuels.com",
+                      "fullName":  "Dami Manuels",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T18:24:55.270Z",
+                      "id":  "699979eefed144b0f45d9bae",
+                      "name":  "Dami Manuels",
+                      "slug":  "damimanuels",
+                      "category":  "wedding photographer",
+                      "instagramHandle":  "@damimanuels",
+                      "rating":  4.5,
+                      "reviewCount":  115,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  12500
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T18:24:55.270Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9bad",
+                      "username":  "royal_images",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "fullName":  "Royal Images",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T18:24:55.270Z",
+                      "id":  "699979eefed144b0f45d9bad",
+                      "name":  "Royal Images",
+                      "slug":  "royal_images",
+                      "category":  "wedding photographer",
+                      "instagramHandle":  "@royal_images",
+                      "rating":  4.5,
+                      "reviewCount":  125,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  13500
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T18:24:55.270Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9bac",
+                      "username":  "bedgepictures",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "externalUrl":  "https://www.bedgepictures.com",
+                      "fullName":  "Bedge Pictures",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T18:24:55.270Z",
+                      "id":  "699979eefed144b0f45d9bac",
+                      "name":  "Bedge Pictures",
+                      "slug":  "bedgepictures",
+                      "category":  "wedding photographer",
+                      "instagramHandle":  "@bedgepictures",
+                      "rating":  4.5,
+                      "reviewCount":  135,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  14500
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T18:24:55.270Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9bab",
+                      "username":  "lakinogunbanwo",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "externalUrl":  "https://www.lakinogunbanwo.com",
+                      "fullName":  "Lakin Ogunbanwo",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T18:24:55.270Z",
+                      "id":  "699979eefed144b0f45d9bab",
+                      "name":  "Lakin Ogunbanwo",
+                      "slug":  "lakinogunbanwo",
+                      "category":  "wedding photographer",
+                      "instagramHandle":  "@lakinogunbanwo",
+                      "rating":  4.5,
+                      "reviewCount":  145,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  14500
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T18:24:55.270Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9baa",
+                      "username":  "thetomiwaajayi",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "externalUrl":  "https://www.tomiwaajayiphotography.com",
+                      "fullName":  "Tomiwa Ajayi Photography",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T18:24:55.270Z",
+                      "id":  "699979eefed144b0f45d9baa",
+                      "name":  "Tomiwa Ajayi Photography",
+                      "slug":  "thetomiwaajayi",
+                      "category":  "wedding photographer",
+                      "instagramHandle":  "@thetomiwaajayi",
+                      "rating":  4.5,
+                      "reviewCount":  145,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  14500
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T18:24:55.270Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9ba9",
+                      "username":  "david.afolayan",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "externalUrl":  "https://davidafolayan.com",
+                      "fullName":  "David Afolayan",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T18:24:55.270Z",
+                      "id":  "699979eefed144b0f45d9ba9",
+                      "name":  "David Afolayan",
+                      "slug":  "david.afolayan",
+                      "category":  "wedding photographer",
+                      "instagramHandle":  "@david.afolayan",
+                      "rating":  4.5,
+                      "reviewCount":  145,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  16500
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T18:24:55.270Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9ba8",
+                      "username":  "klalaphotography",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "fullName":  "Klala Photography",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T18:24:55.270Z",
+                      "id":  "699979eefed144b0f45d9ba8",
+                      "name":  "Klala Photography",
+                      "slug":  "klalaphotography",
+                      "category":  "wedding photographer",
+                      "instagramHandle":  "@klalaphotography",
+                      "rating":  4.5,
+                      "reviewCount":  165,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  16500
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T18:24:55.270Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9ba7",
+                      "username":  "lucasugoweddings",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "fullName":  "Lucas Ugo Weddings",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T18:24:55.270Z",
+                      "id":  "699979eefed144b0f45d9ba7",
+                      "name":  "Lucas Ugo Weddings",
+                      "slug":  "lucasugoweddings",
+                      "category":  "wedding photographer",
+                      "instagramHandle":  "@lucasugoweddings",
+                      "rating":  4.5,
+                      "reviewCount":  165,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  16500
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T18:24:55.270Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9ba6",
+                      "username":  "kayode_ogungbade",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "externalUrl":  "https://www.kayodeogungbade.com",
+                      "fullName":  "Kayode Ogungbade",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T18:24:55.270Z",
+                      "id":  "699979eefed144b0f45d9ba6",
+                      "name":  "Kayode Ogungbade",
+                      "slug":  "kayode_ogungbade",
+                      "category":  "wedding photographer",
+                      "instagramHandle":  "@kayode_ogungbade",
+                      "rating":  4.5,
+                      "reviewCount":  165,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  16500
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T18:24:55.270Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9ba5",
+                      "username":  "thedavidmartinss",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "externalUrl":  "https://www.thedavidmartins.com",
+                      "fullName":  "The David Martins",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T18:24:55.270Z",
+                      "id":  "699979eefed144b0f45d9ba5",
+                      "name":  "The David Martins",
+                      "slug":  "thedavidmartinss",
+                      "category":  "wedding photographer",
+                      "instagramHandle":  "@thedavidmartinss",
+                      "rating":  4.5,
+                      "reviewCount":  165,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  18500
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T18:24:55.270Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9ba4",
+                      "username":  "slammyphotography_",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "fullName":  "Slammy Photography",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T18:24:55.270Z",
+                      "id":  "699979eefed144b0f45d9ba4",
+                      "name":  "Slammy Photography",
+                      "slug":  "slammyphotography_",
+                      "category":  "wedding photographer",
+                      "instagramHandle":  "@slammyphotography_",
+                      "rating":  4.5,
+                      "reviewCount":  185,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  19500
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T18:24:55.270Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9ba3",
+                      "username":  "nonsookoye_weddings",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "fullName":  "Nonso Okoye Weddings",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T18:24:55.270Z",
+                      "id":  "699979eefed144b0f45d9ba3",
+                      "name":  "Nonso Okoye Weddings",
+                      "slug":  "nonsookoye_weddings",
+                      "category":  "wedding photographer",
+                      "instagramHandle":  "@nonsookoye_weddings",
+                      "rating":  4.5,
+                      "reviewCount":  195,
+                      "priceRange":  "$$"
+                  },
+                  {
+                      "metrics":  {
+                                      "following":  0,
+                                      "posts":  0,
+                                      "avgEngagement":  0,
+                                      "followers":  19500
+                                  },
+                      "ranking":  {
+                                      "score":  0,
+                                      "rank":  0,
+                                      "lastUpdated":  "2026-02-21T18:24:55.270Z"
+                                  },
+                      "confidence":  {
+                                         "location":  0,
+                                         "niche":  0
+                                     },
+                      "_id":  "699979eefed144b0f45d9ba2",
+                      "username":  "samsavvyphotography",
+                      "__v":  0,
+                      "bio":  "",
+                      "createdAt":  "2026-02-21T18:24:55.270Z",
+                      "fullName":  "Samsavvy Photography",
+                      "isVerified":  false,
+                      "isVisible":  true,
+                      "location":  "Lagos",
+                      "niche":  "wedding photographer",
+                      "updatedAt":  "2026-02-21T18:24:55.270Z",
+                      "id":  "699979eefed144b0f45d9ba2",
+                      "name":  "Samsavvy Photography",
+                      "slug":  "samsavvyphotography",
+                      "category":  "wedding photographer",
+                      "instagramHandle":  "@samsavvyphotography",
+                      "rating":  4.5,
+                      "reviewCount":  195,
+                      "priceRange":  "$$"
+                  }
+              ],
+    "Count":  20
+}

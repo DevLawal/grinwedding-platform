@@ -22,6 +22,7 @@ export interface CategoryPriorities {
   makeup: number;
   entertainment: number;
   planning: number;
+  [key: string]: number;
 }
 
 export interface BudgetCategory {

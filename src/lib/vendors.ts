@@ -1,6 +1,21 @@
 import { Vendor, VendorApiResponse } from '@/types/vendor';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_VENDOR_SERVICE_URL || 'http://localhost:5000/api';
+const resolveApiUrl = (envUrl?: string) => {
+  const defaultUrl = 'http://localhost:5000/api';
+  const baseUrl = envUrl || defaultUrl;
+  
+  if (typeof window !== 'undefined') {
+    const hostname = window.location.hostname;
+    // If the API points to localhost but we are accessing via an IP or another domain
+    if ((baseUrl.includes('localhost') || baseUrl.includes('127.0.0.1')) && 
+        hostname !== 'localhost' && hostname !== '127.0.0.1') {
+      return baseUrl.replace('localhost', hostname).replace('127.0.0.1', hostname);
+    }
+  }
+  return baseUrl;
+};
+
+const API_BASE_URL = resolveApiUrl(process.env.NEXT_PUBLIC_VENDOR_SERVICE_URL);
 
 /**
  * Helper to map new discovery fields to legacy fields for UI compatibility
@@ -8,64 +23,18 @@ const API_BASE_URL = process.env.NEXT_PUBLIC_VENDOR_SERVICE_URL || 'http://local
 function mapVendorFields(vendor: any): Vendor {
   return {
     ...vendor,
-    name: vendor.fullName,
-    slug: vendor.username,
-    category: vendor.niche,
-    description: vendor.bio,
-    featuredImage: vendor.profilePic,
-    instagramHandle: `@${vendor.username}`,
-    rating: (vendor.ranking?.score / 20) || 4.5, // Map 0-100 to 0-5
-    reviewCount: Math.floor(vendor.metrics?.followers / 100) || 0,
-    priceRange: '$$'
+    id: vendor._id || vendor.id,
+    name: vendor.fullName || vendor.name,
+    slug: vendor.username || vendor.slug,
+    category: vendor.niche || vendor.category,
+    description: vendor.bio || vendor.description,
+    featuredImage: vendor.profilePic || vendor.featuredImage,
+    instagramHandle: vendor.username ? `@${vendor.username}` : vendor.instagramHandle,
+    rating: vendor.ranking?.score ? (vendor.ranking.score / 20) : (vendor.rating || 4.5), // Map 0-100 to 0-5
+    reviewCount: vendor.metrics?.followers ? Math.floor(vendor.metrics.followers / 100) : (vendor.reviewCount || 0),
+    priceRange: vendor.priceRange || '$$'
   };
 }
-
-const MOCK_VENDORS: Vendor[] = [
-  {
-    id: '1',
-    name: 'Royal Orchid Hall',
-    slug: 'royal-orchid-hall',
-    category: 'Venues',
-    location: 'Lagos, Nigeria',
-    rating: 4.8,
-    reviewCount: 124,
-    description: 'A premium wedding venue in the heart of Lagos.',
-    featuredImage: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80',
-    priceRange: '$$$',
-    username: 'royalorchid',
-    fullName: 'Royal Orchid Hall',
-    bio: 'Premium venue service',
-    niche: 'Venues',
-    profilePic: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80',
-    instagramId: 'royalorchid',
-    metrics: { followers: 5000, following: 200, posts: 50, avgEngagement: 3.2 },
-    ranking: { score: 95, rank: 1, lastUpdated: new Date().toISOString() },
-    confidence: { location: 1, niche: 1 },
-    isVerified: true
-  },
-  {
-    id: '2',
-    name: 'Elite Catering',
-    slug: 'elite-catering',
-    category: 'Catering',
-    location: 'Abuja, Nigeria',
-    rating: 4.9,
-    reviewCount: 89,
-    description: 'Exquisite culinary experiences for your special day.',
-    featuredImage: 'https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&q=80',
-    priceRange: '$$',
-    username: 'elitecatering',
-    fullName: 'Elite Catering Services',
-    bio: 'Exquisite catering',
-    niche: 'Catering',
-    profilePic: 'https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&q=80',
-    instagramId: 'elitecatering',
-    metrics: { followers: 3200, following: 150, posts: 120, avgEngagement: 4.5 },
-    ranking: { score: 92, rank: 2, lastUpdated: new Date().toISOString() },
-    confidence: { location: 1, niche: 1 },
-    isVerified: true
-  }
-];
 
 /**
  * Fetches vendors based on niche and location from the discovery service
@@ -76,26 +45,69 @@ export async function getVendorsList(params: {
   page?: number;
   limit?: number;
 }): Promise<VendorApiResponse> {
-  console.log('>>> [DEBUG] getVendorsList called (MOCK FALLBACK ACTIVE)');
-  // Mocking the response for now as per user request to "leave vendor services for now"
-  return {
-    vendors: MOCK_VENDORS,
-    pagination: { total: 2, page: 1, pages: 1 }
-  };
+  try {
+    const query = new URLSearchParams();
+    if (params.niche) query.set('niche', params.niche);
+    if (params.location) query.set('location', params.location);
+    if (params.page) query.set('page', params.page.toString());
+    if (params.limit) query.set('limit', params.limit.toString());
+
+    const url = `${API_BASE_URL}/vendors?${query.toString()}`;
+    console.log(`[DEBUG] Fetching vendors from: ${url}`);
+
+    const response = await fetch(url, {
+      next: { revalidate: 0 } // Disable cache for debug
+    });
+    
+    if (!response.ok) {
+      console.error(`[ERROR] Fetch failed with status: ${response.status}`);
+      throw new Error('Failed to fetch vendors');
+    }
+
+    const data = await response.json();
+    console.log(`[DEBUG] Successfully fetched ${data.vendors?.length || 0} vendors`);
+    
+    return {
+      vendors: (data.vendors || []).map(mapVendorFields),
+      pagination: data.pagination || { total: 0, page: 1, pages: 1 }
+    };
+  } catch (error) {
+    console.error('[DEBUG] Error fetching vendors list:', error);
+    return {
+      vendors: [],
+      pagination: { total: 0, page: 1, pages: 1 }
+    };
+  }
 }
 
 /**
  * Legacy support for existing getVendors call
  */
 export async function getVendors(): Promise<Vendor[]> {
-    return MOCK_VENDORS;
+    const result = await getVendorsList({});
+    return result.vendors;
 }
 
 /**
  * Fetches a single vendor by slug (username)
  */
 export async function getVendorBySlug(slug: string): Promise<Vendor | null> {
-  return MOCK_VENDORS.find(v => v.slug === slug) || null;
+  try {
+    const response = await fetch(`${API_BASE_URL}/vendors/${slug}`, {
+      next: { revalidate: 3600 }
+    });
+    
+    if (!response.ok) {
+      if (response.status === 404) return null;
+      throw new Error('Failed to fetch vendor');
+    }
+
+    const data = await response.json();
+    return mapVendorFields(data);
+  } catch (error) {
+    console.error(`Error fetching vendor ${slug}:`, error);
+    return null;
+  }
 }
 
 /**

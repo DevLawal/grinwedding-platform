@@ -14,7 +14,7 @@ export default function MobileHeader() {
 
   const navItems = [
     { href: '/', label: 'Home' },
-    { href: '/blog', label: 'Market Insights' },
+    { href: '/blog', label: 'Wedding Insights' },
     { href: '/vendors', label: 'Top Rankings' },
     { href: '/tools/budget-calculator', label: 'Analysis Tools' },
     { href: '/tools/wedding-playbook', label: 'Wedding Playbook' },
@@ -23,11 +23,11 @@ export default function MobileHeader() {
   return (
     <>
       {/* Mobile Header Bar */}
-      <header className="lg:hidden fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-base/95 border-b border-editorial">
-        <div className="flex items-center justify-between px-6 py-4">
+      <header id="mobile-header" className="lg:hidden fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-base/95 border-b border-editorial print:hidden">
+        <div className="flex items-center justify-between px-6 py-2">
           <Link
             href="/"
-            className="block w-24 h-8 hover:opacity-70 transition-opacity"
+            className="block w-24 h-12 hover:opacity-70 transition-opacity"
             onClick={() => setIsMenuOpen(false)}
           >
             <img

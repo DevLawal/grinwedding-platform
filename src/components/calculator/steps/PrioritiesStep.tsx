@@ -75,16 +75,16 @@ export default function PrioritiesStep({
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -20 }}
-      className="max-w-3xl mx-auto px-6"
+      className="max-w-3xl mx-auto px-6 pb-12"
     >
       {/* Progress Indicator */}
-      <div className="mb-12">
+      <div className="mb-10 md:mb-12">
         <div className="flex justify-between items-end mb-4">
           <div>
             <span className="text-[10px] font-black uppercase tracking-[0.2em] text-purple">Phase 03</span>
-            <h2 className="text-2xl font-serif font-black text-text">Value Calibration</h2>
+            <h2 className="text-xl md:text-2xl font-serif font-black text-text">Value Calibration</h2>
           </div>
-          <p className="text-[10px] font-black uppercase tracking-widest text-text-dim">75% Complete</p>
+          <p className="text-[9px] md:text-[10px] font-black uppercase tracking-widest text-text-dim">75% Complete</p>
         </div>
         <div className="h-1 bg-surface-2 overflow-hidden">
           <motion.div 
@@ -99,7 +99,7 @@ export default function PrioritiesStep({
         variants={container}
         initial="hidden"
         animate="show"
-        className="space-y-6"
+        className="space-y-4 md:space-y-6"
       >
         {CATEGORIES.filter(cat => cat.id !== 'miscellaneous').map((category) => {
           const priority = priorities[category.id as keyof CategoryPriorities] || 3;
@@ -110,26 +110,26 @@ export default function PrioritiesStep({
             <motion.div 
               key={category.id} 
               variants={item}
-              className="bg-surface border-2 border-transparent hover:border-editorial p-8 shadow-premium transition-all group"
+              className="bg-surface border-2 border-transparent hover:border-editorial p-6 md:p-8 shadow-premium transition-all group"
             >
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
-                <div className="flex items-center gap-5">
-                  <div className="w-12 h-12 bg-surface-2 rounded-lg flex items-center justify-center text-text-dim group-hover:bg-purple group-hover:text-base dark:group-hover:text-base-dark transition-colors">
-                    <Icon className="w-6 h-6" />
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 md:gap-6 mb-6 md:mb-8">
+                <div className="flex items-center gap-4 md:gap-5">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-surface-2 rounded-lg flex items-center justify-center text-text-dim group-hover:bg-purple group-hover:text-base dark:group-hover:text-base-dark transition-colors shrink-0">
+                    <Icon className="w-5 h-5 md:w-6 md:h-6" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-black uppercase tracking-widest text-text mb-1">{category.name}</h3>
-                    <p className="text-[10px] font-bold text-text-dim uppercase tracking-tight italic decoration-purple decoration-2 underline-offset-4">Sector Focus: {category.description}</p>
+                    <h3 className="text-[11px] md:text-sm font-black uppercase tracking-widest text-text mb-1">{category.name}</h3>
+                    <p className="text-[8px] md:text-[10px] font-bold text-text-dim uppercase tracking-tight italic decoration-purple decoration-2 underline-offset-4">Sector Focus: {category.description}</p>
                   </div>
                 </div>
-                <div className="text-right">
-                  <p className="text-xs font-black text-purple-bright uppercase tracking-[0.15em] mb-1">{priorityLabel?.label}</p>
-                  <p className="text-[10px] text-text-dim font-bold uppercase tracking-tighter italic">{priorityLabel?.description}</p>
+                <div className="sm:text-right pl-14 sm:pl-0">
+                  <p className="text-[10px] md:text-xs font-black text-purple-bright uppercase tracking-[0.15em] mb-0.5 md:mb-1">{priorityLabel?.label}</p>
+                  <p className="text-[8px] md:text-[10px] text-text-dim font-bold uppercase tracking-tighter italic">{priorityLabel?.description}</p>
                 </div>
               </div>
 
               {/* Advanced Calibration Controls */}
-              <div className="relative pt-6">
+              <div className="relative pt-6 px-1 md:px-0">
                  {/* Custom Track */}
                  <div className="absolute top-1/2 left-0 right-0 h-1 bg-surface-2 -translate-y-1/2 rounded-full overflow-hidden">
                     <motion.div 
@@ -156,10 +156,10 @@ export default function PrioritiesStep({
                       const isActive = priority === label.value;
                       return (
                         <div key={label.value} className="flex flex-col items-center">
-                          <div className={`w-3 h-3 rounded-full border-2 transition-all duration-300 ${
+                          <div className={`w-2.5 h-2.5 md:w-3 md:h-3 rounded-full border-2 transition-all duration-300 ${
                             isActive ? 'bg-purple border-purple scale-150 ring-4 ring-purple/20' : 'bg-surface-2 border-editorial'
                           }`} />
-                          <span className={`mt-4 text-[10px] font-black uppercase tracking-widest transition-colors ${
+                          <span className={`mt-3 md:mt-4 text-[8px] md:text-[10px] font-black uppercase tracking-widest transition-colors ${
                             isActive ? 'text-text' : 'text-text-dim'
                           }`}>
                             0{label.value}
@@ -175,32 +175,32 @@ export default function PrioritiesStep({
       </motion.div>
 
       {/* Market Intelligence Alert */}
-      <div className="mt-12 p-8 bg-surface-2 border border-editorial relative overflow-hidden italic">
+      <div className="mt-8 md:mt-12 p-6 md:p-8 bg-surface-2 border border-editorial relative overflow-hidden italic">
         <div className="absolute top-0 right-0 p-4 opacity-10">
-           <BarChart3 className="w-12 h-12 text-text" />
+           <BarChart3 className="w-8 md:w-12 h-8 md:h-12 text-text" />
         </div>
-        <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-text mb-3">Market Intelligence Advisory</h3>
-        <p className="text-xs text-text-dim font-medium leading-relaxed uppercase tracking-tighter">
+        <h3 className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-text mb-2 md:mb-3">Market Intelligence Advisory</h3>
+        <p className="text-[10px] md:text-xs text-text-dim font-medium leading-relaxed uppercase tracking-tighter">
           Calibrating sector importance directly influences the variance threshold in your final dossier. 
           Focus capital on segments that drive maximum sentimental or aesthetic ROI for your specific profile.
         </p>
       </div>
 
       {/* Navigation Suite */}
-      <div className="flex gap-6 mt-16 pt-12 border-t border-editorial">
+      <div className="flex flex-col sm:flex-row gap-4 md:gap-6 mt-12 md:mt-16 pt-10 md:pt-12 border-t border-editorial">
         <button
           onClick={onBack}
-          className="flex-1 px-8 py-5 border-2 border-text text-text text-xs font-black uppercase tracking-[0.2em] hover:bg-text hover:text-base hover:dark:text-base-dark transition-all flex items-center justify-center gap-3"
+          className="w-full sm:flex-1 px-8 py-4 md:py-5 border-2 border-text text-text text-[10px] md:text-xs font-black uppercase tracking-[0.2em] hover:bg-text hover:text-base hover:dark:text-base-dark transition-all flex items-center justify-center gap-3"
         >
-          <ArrowLeft className="w-4 h-4" />
+          <ArrowLeft className="w-3.5 md:w-4 h-3.5 md:h-4" />
           Retreat
         </button>
         <button
           onClick={onNext}
-          className="flex-1 px-8 py-5 bg-text text-base dark:text-base-dark text-xs font-black uppercase tracking-[0.2em] hover:bg-purple hover:text-white transition-all shadow-2xl flex items-center justify-center gap-3"
+          className="w-full sm:flex-1 px-8 py-4 md:py-5 bg-text text-base dark:text-base-dark text-[10px] md:text-xs font-black uppercase tracking-[0.2em] hover:bg-purple hover:text-white transition-all shadow-2xl flex items-center justify-center gap-3"
         >
           Execute Analysis
-          <ArrowRight className="w-4 h-4" />
+          <ArrowRight className="w-3.5 md:w-4 h-3.5 md:h-4" />
         </button>
       </div>
     </motion.div>

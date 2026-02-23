@@ -42,7 +42,7 @@ export default function FaqAccordion() {
   };
 
   return (
-    <section className="max-w-4xl mx-auto px-4 py-16 border-t border-editorial mt-16">
+    <section id="faq-section" className="max-w-4xl mx-auto px-4 py-16 border-t border-editorial mt-16 print:hidden">
       <h2 className="text-3xl font-serif font-black text-text mb-8 text-center uppercase tracking-tight">
         Market Intelligence FAQ
       </h2>
